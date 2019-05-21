@@ -73,10 +73,46 @@ In Figure \ref{fig:SubHaloes_byz} In the left hand panel I show the halo mass fu
 	\label{fig:SubHaloes_byz}
 \end{figure}
 
-In addition to the distinction between central and satellite haloes and their number densities information about the assembly is gained from simulations. Halo assembly histories are visualized as simple(ish) tree network, refered to as a merger tree. Central haloes are identified at a low redshift and the main progenitors followed backwards in time to create the central 'trunk', at any epoch where a merger occurs the main progenitor is assigned to be the larger of the two haloes\footnote{This remains true even if the main progenitor branch becomes smaller than the other branch at an earlier redshift.}. At each merger a 'branch' is created following this branch gives the history of that subhalo. In this way all the contributing haloes can be visualized. In Figure \ref{fig:SimpleTree} I give a example of a merger tree. There are increasingly more complex merger tree diagrams, it is not the case that a haloes merge simply I give some examples and examples of what these may look like on a stylized merger tree.
+In addition to the distinction between central and satellite haloes and their number densities information about the assembly is gained from simulations. Halo assembly histories are visualized as simple(ish) tree network, referred to as a merger tree. Central haloes are identified at a low redshift and the main progenitors followed backwards in time to create the central 'trunk', at any epoch where a merger occurs the main progenitor is assigned to be the larger of the two haloes\footnote{This remains true even if the main progenitor branch becomes smaller than the other branch at an earlier redshift.}. At each merger a 'branch' is created following this branch gives the history of that subhalo. In this way all the contributing haloes can be visualized. In Figure \ref{fig:SimpleTree} I give a example of a simple merger tree. There are increasingly more complex merger tree diagrams, it is not the case that a haloes merge simply I list some examples and show what these may look like on a stylized merger tree in Figure \ref{fig:Substructures}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width = \linewidth]{Figures/Chapter1/Merger_Tree_Simple.png}
+    \caption{A cartoon of a simple merger tree. Forward time moves up the page as indicated on the right, horizontal lines separate epochs. Dark blue circles represent the main progenitor or trunk haloes of the merger tree. Haloes that merge directly onto the trunk are coloured in light blue, the merger history or branch for each of these merging haloes is shown in green.}
+	\label{fig:SimpleTree}
+\end{figure}
 
 \begin{itemize}
-    \item Substructure: A halo is not immediately dissolved
+    \item Substructure: A halo is not immediately dissolved upon accretion to the central halo, substructure is therefore maintained in central haloes between epochs. Furthermore, haloes on accretion may also carry substructure this creates 2nd (and above) order substructure.
+    \item Flyby Haloes: Some haloes may pass through another halo and loose mass but not be fully captured. These haloes are known as flyby halos and must be accounted for to not over count accretion.
+    \item Re-Accreted Haloes: Halos on particularly eccentric orbits or halos with initially high velocity may enter a halo and leave with a large velocity. These halos can then go to a distance where a simulation does not regard them as part of the halo group appearing to be flyby haloes. However, at some later time these halos may reenter the group. One must ensure these halos are not double counted, and that the mass they are accreted at is fir for purpose (i.e., mass at last accretion, mass at first accretion, or peak mass).
+\end{itemize}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width = \linewidth]{Figures/Chapter1/Substructures.png}
+    \caption{From left to right: An example of, $1^{st}$ order substructure, a Flyby halo, a re-accreted halo.}
+	\label{fig:Substructures}
+\end{figure}
+
+Whilst there is clearly a wealth of information in large dark matter simulations for many galaxy models that only require the simple dark matter distributions. Press-Schechter Formalism \citep{Press1974} provides an alternative way to generate simple analytic dark matter distributions. For a simple visualization one can consider the dark matter distribution at high redshift as a random Gaussian probability distribution, peaks in this distribution represent dark matter over densities and higher peaks collapse earlier. This can be visualized as a time evolving threshold above which the dark matter is a collapsed halo, if the summation of two gaussians are above this threshold then they are together are collapsed structure created by the merging of two haloes. A simple cartoon is shown to visualize this in Figure \ref{fig:PS_Cartoon}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width = \linewidth]{Figures/Chapter1/PS_Cartoon.png}
+    \caption{A visualization of the core theory of Press-Schechter Formalism. The solid coloured lines are random gaussian distributions representing fluctuations in the initial mass density field, the grey dotted line is the total mass distribution, the three black dashed lines are for visualizing the threshold of collapse at different epochs.}
+	\label{fig:PS_Cartoon}
+\end{figure}
+
+Following Figure \ref{fig:PS_Cartoon} considering the topped dashed line, as the first epoch we look for collapsed haloes, there are two peaks in the density field above the threshold the area above the threshold is related to the size of the halo and the spread the concentration. At the second threshold there is another collapsed peak mostly contributed by the brown gaussian that is close to a peak seen at the previous threshold from the yellow gaussian, furthermore, the two peaks from the first collapse have grown in mass as can be seen by an increased area. Finally, looking at the last collapse threshold,  on the left there is a new isolated peak more importantly on the right the peaks created by the yellow and brown gaussians now create one continuous area above the threshold this is an indication of two merged haloes, there are still two peaks that can be thought of in a simmilar manner to substructure. It is simple to see that at later epochs the merged substructures will also include the purple peak. This picture is a oversimplification of Press-Schechter Formalism, the gaussian field is actually significantly more interesting modeled from the CMB, instead of simple collapse thresholds a window function is used to smooth the density field. 
+
+The Press-Schechter Formalism can be used to analytically build a merger tree by understanding the probability of any two over densities merging one can construct an algorithm that starting at a given redshift with a given mass halo and construct a theoretically valid merger history. I summarize here the \textsc{galform} \citep{Cole2000} method for making merger trees from Press-Schechter Formalism\footnote{In \citet{Parkinson2008GeneratingTrees} improvements to this method are proposed to better align the generated merger trees with the millennium simulation }.
+
+\begin{itemize}
+    \item Pick a starting Mass, $M_{h}$ and redshift $z$. This will be the final mass/redshift for the main progenitor halo in the tree.
+    \item Step backwards in redshift in steps, $dz$, where $dz$ is chosen that the probability, $P$, of a halo having a merger in $dz$ is $P\ll1$.
+    \item Generate a uniform random number, $N$, if $N<P$ the halo splits, else the mass is reduced to account for unresolved haloes or smooth accretion and the process repeats.
+    \item If the halo has split a random number is generated from the probability distribution that defines the possible progenitor halo masses from  Press-Schechter Formalism this is the mass of the split halo, $M_{split}$. The central halo mass is then updated to be less the split mass and a smooth/unresolved accretion component and the process repeated.
 \end{itemize}
 
 %How do these predictions effect galaxy assembly
