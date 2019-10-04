@@ -74,10 +74,6 @@
 %%
 %% define your own frequently used commands here
 % e.g
-\newcommand{\ltsim}{\mathrel{\hbox{\rlap{\hbox{\lower4pt\hbox{$\sim$}}}\hbox{$<$}}}~}
-\newcommand{\gtsim}{\mathrel{\hbox{\rlap{\hbox{\lower4pt\hbox{$\sim$}}}\hbox{$>$}}}~}
-\newcommand*\mean[1]{\bar{#1}}
-\newcommand*\median[1]{\hat{#1}}
 \newcommand{\steel}{\textsc{steel} }
 \newcommand{\LCDM}{$\Lambda$CDM }
 
@@ -197,7 +193,7 @@ $\omega$ & angular frequency & rads$^{-1}$ \\
 
 \addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
 
-I, AUTHOR NAME, declare that this thesis titled, `THESIS TITLE' and the work presented in it are my own. I confirm that:
+I, Philip John Grylls, declare that this thesis titled, `THESIS TITLE' and the work presented in it are my own. I confirm that:
 
 \begin{itemize} 
 \item[\tiny{$\blacksquare$}] This work was done wholly or mainly while in candidature for a research degree at this University.
@@ -232,7 +228,15 @@ Date:\\
 \acknowledgements{
 \addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
 
-The acknowledgements and the people to thank go here, don't forget to include your project advisor\ldots
+\begin{itemize}
+    \item Charlotte Louise Grylls, without whom none of this would be possible.
+    \item Jamie Francis Friel, my original co-author.
+    \item Helen Frances and John Grylls, my parents whom encouraged my science from day one and endured the tedious conversations that have yet to stop.
+    \item St. Louis
+    \item Molley Scoble, Liam Jones, Rebecca Pembrooke, and Kieran Neville, whom have kept me sane throughout my education.
+    \item My Friends and colleagues in the Southampton Astronomy Department, even if only Lorenzo Zanizi studies the correct objects!
+    \item Finally, Dr. Francesco Shankar, his dedication to astronomy and this work has been outstanding throughout.
+\end{itemize}
 
 }
 \clearpage  % End of the Acknowledgements
@@ -256,19 +260,17 @@ The acknowledgements and the people to thank go here, don't forget to include yo
 % Include the chapters of the thesis, as separate files
 % Just uncomment the lines as you write the chapters
 
-\input{./Chapters/Chapter1} % Introduction
+\input{./Chapters/C1_Introduction} % Introduction
 
-%\input{./Chapters/Chapter2} % Background Theory 
+\input{./Chapters/C2_Method} % Describing STEEL. What, why and how... 
 
-%\input{./Chapters/Chapter3} % Experimental Setup
+\input{./Chapters/C3_GalaxyDistributions} % Discuss the distributions of galaxies and the factors that influence this
 
-%\input{./Chapters/Chapter4} % Experiment 1
+\input{./Chapters/C4_GalaxyGrowth} % Discuss how galaxies grow including how we can use this as a tool for scientific testing
 
-%\input{./Chapters/Chapter5} % Experiment 2
+\input{./Chapters/C5_GalaxyPairs} % Discuss Galaxy pair fractions and the systematics thereof how this impacts mergers and morphologies 
 
-%\input{./Chapters/Chapter6} % Results and Discussion
-
-%\input{./Chapters/Chapter7} % Conclusion
+\input{./Chapters/C6_Conclusion} % Conclusion
 
 %% ----------------------------------------------------------------
 % Now begin the Appendices, including them as separate files
