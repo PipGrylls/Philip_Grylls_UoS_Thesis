@@ -138,10 +138,44 @@ The drawbacks of using a hydrodynamic model are foremost a limitation of resourc
 \section{Semi-Analytic Modeling}
 \label{sec:SAM}
 %What is a SAM
+\subsection{History of Semi-Analytic Models}
+Building off the hierarchical collapse models from \LCDM cosmology and the power of generating merger trees from EPS routines \citep{Press1974} a new form of galaxy model was conceived. The dark-universe was conceived of from the rotation curves of galaxies it followed that galaxies follow the structure formation of the dark matter haloes predicted in \LCDM cosmology. The earliest models successfully recreated the galaxy luminosity function by assigning baryonic matter to EPS haloes and solving analytic gas collapse equations \citep{White1978CoreClustering}.
+
+%Brief aside on the simple analytics here?
+
+These models were then developed and extended to include more advanced galactic properties such as the formation of galaxy disks \citep{Mo1998TheDiscs}. Increasing in complexity by both folding in more advanced physics such as AGN feedback and using merger trees form N-body dark matter simulations the models were able to increase the scope of predictions by tuning parameters over several simulation runs to best fit the observations \citep{Bower2006BreakingFormation}. Continuing improvements in cosmological (dark matter) simulations have allowed for semi-analytic models to improve both in resolution and size in addition to this as computing power has become cheaper and better monti-carlo methods have been developed that allow for the multi-parameter semi-analytic models tuned over hundreds or thousands of runs popular today \citep{Guo2011FromCosmology,DeLucia2011TimesCosmology,Fontanot2011TheUniverse,Menci2014TriggeringInteractions,Somerville2015StarGas}.
+In this section I will discuss the state of the art in semi-analytic modelling by summarizing a review by \citet{Somerville2015StarGas} followed by deconstructing a subset of the latest models and finally present a consideration the drawbacks of semi-analytic models compared to other galaxy modelling techniques.
+
+\subsubsection{\citet{Somerville2015StarGas} Review}
+%The semi-analytic models used here have been described in detail in Somerville & Primack (1999), Somerville et al. (2001) and most recently in Somerville et al. (2008a, hereafter S08) and Somerville et al. (2012, S12). The Santa Cruz modeling framework has also recently been described in Porter et al. (2014). We refer the reader to those papers for details.
+
+This review explores 3 models published in \citet{Somerville2008ANuclei} (hereafter S08), \citet{Somerville2012GalaxyObservations} (hereafter S12), \citet{Porter2014ModellingSpace} (hereafter Santa Cruz). Each of these models is run using EPS merger trees, using analytic merger trees allows for high resolution reducing the minimum halo size capturing small galaxies that pose semi-analytic models difficulty at redshifts $z = 0.5 - 2$. Galaxies grow via the cooling of gas from re-ionization, before this point haloes are seeded with gas at the cosmic baryon fraction. After this gas cools as given in \cite{White1991GalaxyClustering} this gas condenses and forms stars at the center of dark matter haloes. 
+
+The prescriptions made to handle the hierarchical assembly predicted by \LCDM cosmology concern firstly the halo structures. At the point of halo merger the larger halo and associated galaxy become the central, the smaller halo(es) and associated galaxies become sub-haloes and satellite galaxies creating the substructure seen around galaxies. Satellite galaxies then merge with the central galaxies on timescales given by the Chandrasekhar formula \citep{Chandrasekhar1943DYNAMICALFRICTION} as given in \citet{Boylan-Kolchin2008}. The mergers of satellites with the central galaxies gradually transform the morphologies of the central galaxies by reducing the central galaxies angular momentum eventually creating a spheroid \cite{Hopkins2009HOWMERGERS}. 
+
+In addition to changing the morphologies of central galaxies mergers are also though to drive one of the two pathways of star formation. During a merger as the gas of the two merging galaxies is disrupted the galaxies can undergo a starburst, a short period where star formation is enhanced by an order of magnitude \citep{Hopkins2009HOWMERGERS}. The second mode of star formation is referred to as 'disk mode' and is investigated using three models: The Kennicutt Schmitt \citep{KennicuttJr.1998TheGalaxies} assumes the surface density of starformation, $\Sigma_{SFR}$, is related to the surface density of cold neutral gas, $\Sigma_{gas}$, 
+
+\begin{equation}
+    \Sigma_{SFR} = A_{SF}\Sigma_{gas}^{N_{SF}}.
+\end{equation}
+
+It is here and in the following two molecular gas star formation rate recipes that the first tuning parameters $A_{SF}$ and $N_{SF}$ are found; they control respectively the normalisation and slope of the star formation rate. In addition to these there are two critical gas densities $\Sigma_{crit}$ and $\Sigma_{H2,crit}$, that below which neutral gas or molecular gas will not form stars. 
 
 %State of the art SAM
+\subsection{State of the art}
+\subsubsection{GAEA}
+%Hirschmann2016GalaxyModel
+%Zoldan2019TheEvolution
+
+\subsubsection{SHARK}
+%lagos 2018 
+%lagos 2019
+
 
 %Drawbacks of SAM
+\subsection{Drawbacks of Semi-Analytic Modeling}
+
+
 
 \section{Semi-Empirical Modelling}
 \label{sec:SEM}
