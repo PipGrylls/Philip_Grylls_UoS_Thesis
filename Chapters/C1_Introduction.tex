@@ -159,7 +159,19 @@ In addition to changing the morphologies of central galaxies mergers are also th
     \Sigma_{SFR} = A_{SF}\Sigma_{gas}^{N_{SF}}.
 \end{equation}
 
-It is here and in the following two molecular gas star formation rate recipes that the first tuning parameters $A_{SF}$ and $N_{SF}$ are found; they control respectively the normalisation and slope of the star formation rate. In addition to these there are two critical gas densities $\Sigma_{crit}$ and $\Sigma_{H2,crit}$, that below which neutral gas or molecular gas will not form stars. 
+It is here and in the following star formation rate recipes that the first tuning parameters $A_{SF}$ and $N_{SF}$ are found; they control respectively the normalisation and slope of the star formation rate. In addition to these there are two critical gas densities $\Sigma_{crit}$ and $\Sigma_{H2,crit}$, that below which neutral gas or molecular gas will not form stars. Similar to the Kennicutt Schmitt recipe molecular gas star formation follows empirical results that link the molecular gas surface density to the star formation rate simply from \citet{Bigiel2008TheResolution},
+
+\begin{equation}
+    \Sigma_{\mathrm{SFR}}=\left(\frac{A_{\mathrm{SF}}}{10 M_{\odot \mathrm{PC}^{-2}}}\right) \Sigma_{\mathrm{H}_{2}} N_{\mathrm{SF}}.
+\end{equation}
+
+Its observed that above a critical H2 density the SFR steepens \citep{Narayanan2012ALaw} the SFR is modeled using a two part scaling law,
+
+\begin{equation}
+    \Sigma_{\mathrm{SFR}}=A_{\mathrm{SF}}\left(\frac{\Sigma_{\mathrm{H}_{2}}}{10 M_{\odot \mathrm{pc}^{-2}}}\right)\left(1+\frac{\Sigma_{H_{2}}}{\Sigma_{\mathrm{H}_{2}, \mathrm{crit}}}\right)^{N_{\mathrm{SP}}}
+\end{equation}
+
+
 
 %State of the art SAM
 \subsection{State of the art}
