@@ -189,7 +189,7 @@ The $H_1$ \& $H_2$ surface densities are given by $\Sigma_{\mathrm{HI}}$ \& $\Si
     f_{H_{2}}=1-\left[1+\left(\frac{3}{4} \frac{s}{1+\delta}\right)^{-5}\right]^{-1 / 5}
 \end{equation}.
 
-This is by no means a complete record of the various analytic recipies used in semi-analytic modelling. However here we have shown a subset of the multitude of free parameters that enable tuning of such models to achieve results consistent with observations.
+This is by no means a complete record of the various analytic recipes used in semi-analytic modelling. However here we have shown a subset of the multitude of free parameters that enable tuning of such models to achieve results consistent with observations.
 
 \begin{equation}
 s=\ln (1+0.6 \chi) /\left(0.04 \Sigma_{\operatorname{comp}, 0} Z^{\prime}\right),
@@ -217,27 +217,78 @@ $\zeta_{10}$ and $M_{\mathrm{ret}}$ are free parameters, R is the recycled fract
 
 %State of the art SAM
 \subsection{State of the art}
+Modern semi-analytic models are arguably reaching a plateau in usefulness, many were conceived in the mid two-thousands and have been iterated on for over a decade. During this time the amount, quality and availability of comparison data has increased several orders of magnitude. The maturing models have been refit with many physical prescriptions to model a wide variety of observations but many still struggle to reproduce the basics of galaxy evolution such as the evolution of the stellar mass function \cite{Asquith2018CosmicModels}. Here we detail two state of the art models that represent the cutting edge of semi-analytic galaxy modelling.
+
 \subsubsection{GAEA}
 %Hirschmann2016GalaxyModel
+The GAEA model is a good example of a mature semi-analytic model originally described in \citet{DeLucia2007TheGalaxies} to model the assembly time of BCGs. It has subsequently been updated many times in 2008 (De Lucia & Helmi) 2010 (Li et al.) 2014 (De Lucia et al.) and \citet{Hirschmann2016GalaxyModel} (see references within).
 %Zoldan2019TheEvolution
+One of the latest renditions of this model based on that of \citep{Xie2017H2-basedFormation} and updated in \citep{Zoldan2019TheEvolution}. This latest version of the model adds a description of quasar driven winds in an effort to model the size mass relation for both early and late type galaxies.
 
 \subsubsection{SHARK}
-%lagos 2018 
+%lagos 2018 Li et al.
 %lagos 2019
-
+The SHARK semi-analytic model represents a push to keep the field of semi-analytic models in line with current software engineering best practice. The release paper \citep{Lagos2018Shark:Formation} carefully details the physical prescriptions and modularity that defines the code. SHARK is designed to be flexible and modular and takes pride in being the most accessible open source code available. In \citet{Lagos2018Shark:Formation} the authors show the baseline performance of SHARK to be as good as or exceeding other semi-analytic models in the mass-size, gas-stellar mass and stellar mass-metallicity relations. The flexibility of SHARK is then demonstrated in \citet{Lagos2019FromModel} where  shark is modified to use different dust mass models to match spectral energy distribution observations of galaxy emission from the far-UV to the far-IR.
 
 %Drawbacks of SAM
 \subsection{Drawbacks of Semi-Analytic Modeling}
-
+A major component of a Semi-Analytic model is the number of parameters that can be tuned to reproduce observations, for example the default SHARK configuration has over 50 parameters defined. Whilst the breadth of these parameters allows for semi-analytic models to produce fits to a wide range of observational properties where multiple parameters can both affect the same observable degeneracies that obscure the actual physics arise during the tuning process \citep{Lapi2011DarkModels,Gonzalez2011Evolution4}.
 
 
 \section{Semi-Empirical Modelling}
 \label{sec:SEM}
 %What is a SEM
+Semi-empirical models similarly to semi-analytic models are built on prepossessed dark matter accretion. A semi-empirical model additionally uses observations as an input. By comparing the relative abundance of dark matter haloes and observed galaxies a correlation between halo mass and stellar mass is determined \citep{Kravtsov2004TheDistribution,Shankar2006NewFormation}. This process is called abundance matching and is explained in greater depth in Section \ref{C2:SubSec:AbnMtch}. When used correctly abundance matching ensures that semi empirical models recreate the observed distributions of galaxies over many redshift epochs. Constraining galaxy masses and other properties via observations significantly reduces the parameter search space compared to hydro-dynamical or semi-analytic models. In doing so semi-empirical models are able to probe areas of physics that may not yet have clear constraint or physical mechanism.
 
-%State of the art SEM
+Since there inception semi-empirical models have grown in complexity their complexity and parametrization, even approaching the levels of semi-analytic models. However semi-empirical models retain more flexibility and transparency. Where the complexity of the models is controlled by observational priors and the model is internally consistent it is possible to accurately probe very specific aspects of galaxy formation whereas in models that require tuning to fit observations subtle effects can be missed in degeneracies. It is possible to make models where the observational priors and by extension the model are not consistent. For example the observed stellar mass function for a long time has been inconsistent with the observed star formation rate \citep{Leja2015ReconcilingFunction,Lapi2017StellarEquation}. Similar yet unappreciated effects make up a significant parts of Chapters \ref{Chapter:GalGrowth} \& \ref{Chapter:GalPairs}.
 
+\subsection{State of the art}
+Here we describe three state of the art semi-empirical models. Each of the models described here has a radically different approach to semi-empirical modelling. They are each constrained by observational priors and make predictions about the buildup of mass in galaxies though mergers and star formation rate. The range of approaches show the flexibility and the agreement between models shows the power of the empirical approach. 
+
+
+\subsubsection{\citet{Rodriguez-Puebla2017ConstrainingProperties}}
+%Aldo
+In the model presented in \citet{Rodriguez-Puebla2017ConstrainingProperties} the SMHM is constrained using the 2 point correlation function and the evolution of the SMF. Using this constraint the inconsistent between observed SFR and SMF evolution are avoided. The results of this paper are exceptional constraints on the SFR and quenched fraction of galaxies in multi-parameter space, in both halo mass - redshift space and stellar mass - redshift space.
+
+%Figure
+
+The key findings are that most stellar mass is built up in-situ at high redshift. Massive galaxies then quench at the point where the sSFR is equal to the specific halo mass accretion rate which happens at $M_{vir} \sim 2 x 10^{11} M_{\odot}$.
+
+
+\subsubsection{E\textsc{merge}}
+%Moster Emerge
+E\textsc{merge} is presented in \citet{Moster2018Emerge10} built upon N-body dark matter simulations. From the dark matter simulation each halo is tracked its growth history and relation to other haloes recorded. E\textsc{merge} works under the core assumption that galaxies grow in conjunction with the dark matter haloes they reside in. This is achieved through coupling the SFR of each galaxy to the accretion rate of the host dark matter halo parameterised in the following way,
+
+\begin{equation}
+\begin{aligned} \log _{10} M_{1}(z) &=M_{0}+M_{z}(1-a)=M_{0}+M_{z} \frac{z}{z+1}, \\ \epsilon_{\mathrm{N}}(z) &=\epsilon_{0}+\epsilon_{z}(1-a)=\epsilon_{0}+\epsilon_{z} \frac{z}{z+1}, \\ \beta(z) &=\beta_{0}+\beta_{z}(1-a)=\beta_{0}+\beta_{z} \frac{z}{z+1}, \\ \gamma(z) &=\gamma_{0}, \end{aligned}
+\end{equation}
+
+where $M$, $\epsilon_{\mathrm{N}}$, $\beta$ and $\gamma$ are the characteristic mass, efficiency normalisation, low mass slope and high mass slope respectively each has a redshift evolution parameter with the exception of $\gamma$. In addition to this additional parameters determining; the point at which satellite galaxies are disrupted returning all mass to the ICM, the fraction of mass ejected to the ICM during a merger, and quenching parameters from \citet{Wetzel2013GalaxyUniverse}. The fractions of in-situ vs ex-situ mass build up are computed and fit by,
+
+\begin{equation}
+f_{\mathrm{acc}}(z) =f_{2} \exp \left[-f_{1}(z+1)\right] 
+\end{equation}
+
+as well as the star formation histories fit by,
+
+\begin{equation}
+\log \Psi(z) =-\log \left[\Psi_{1}(z+1)^{-\Psi_{2}}+\mathrm{e}^{\Psi_{3}(z+1)-\Psi_{4}}\right] 
+\end{equation}.
+
+Similarly to \citet{Rodriguez-Puebla2017ConstrainingProperties} it is found that stellar mass is built up in-situ until a break point at $1.1 x 10^{12} M_{\odot}$. Above this mass larger galaxies may accrete a significant proportion of their mass.
+
+\subsubsection{U\textsc{niverse}M\textsc{achine}}
+%Behroozi UnivM
+U\textsc{niverse}M\textsc{achine} is built on a background of halo merger trees extracted from the Bolshoi simulation \citep{Klypin2016,Rodriguez-Puebla2016HaloSimulations}, using the \textsc{rockstar} halo finder and the C\textsc{onsistent} T\textsc{rees} codes \cite{Behroozi2013TheCores, Behroozi2013GRAVITATIONALLYCOSMOLOGY}. There are 21 tuning aspects with 44 parameters and 6 priors using a Markov Chain Monte Carlo the parameters are fit to a large set of observations though the algorithm depicted in Figure %\ref{BEHROOZIFIGURE}.
+
+%go to here for the source https://arxiv.org/format/1806.07893
+
+Using the iterative approach of parameter selection, mapping into halo structures, observable creation, through comparison to the observations the parameters are updated based on their likelihood and the process is iterated. This model is massively parallel allowing for over $10^{5}$ cores involved in any given parameter estimation. The model predictions are numerous included in which are in-situ vs ex-situ growth ratios in broad agreement with the other models.
+
+\subsection{Limitations of the empirical technique}
 %Drawbacks of SEM
+Semi-empirical models as demonstrated above come in many different flavours. Each are able to draw conclusions about the connections that must exist between observational steps under given physical models. Whilst data is what empowers semi-empirical models it also presents one of semi-empirical models major limitations. Having wide and deep data sets which give statistically representative samples via large volumes to high redshift is difficult and costly. Most techniques involve correcting data sets and surveys to be consistent with one another creating a patchwork connecting the local and distant Universe. Semi-empirical models will continue to improve along with the available data although when built upon traditional dark matter simulations they share the volume constrains found in semi-analytic and hydro-dynamical models, however, this will continue to improve with increasing computational power.
+
 
 \section{Galaxy Surveys Present and Future}
 \label{sec:Surveys}
