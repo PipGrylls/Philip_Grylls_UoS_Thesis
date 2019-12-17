@@ -279,9 +279,16 @@ Similarly to \citet{Rodriguez-Puebla2017ConstrainingProperties} it is found that
 
 \subsubsection{U\textsc{niverse}M\textsc{achine}}
 %Behroozi UnivM
-U\textsc{niverse}M\textsc{achine} is built on a background of halo merger trees extracted from the Bolshoi simulation \citep{Klypin2016,Rodriguez-Puebla2016HaloSimulations}, using the \textsc{rockstar} halo finder and the C\textsc{onsistent} T\textsc{rees} codes \cite{Behroozi2013TheCores, Behroozi2013GRAVITATIONALLYCOSMOLOGY}. There are 21 tuning aspects with 44 parameters and 6 priors using a Markov Chain Monte Carlo the parameters are fit to a large set of observations though the algorithm depicted in Figure %\ref{BEHROOZIFIGURE}.
+U\textsc{niverse}M\textsc{achine} \cite{Behroozi2019UniverseMachine:010} is built on a background of halo merger trees extracted from the Bolshoi simulation \citep{Klypin2016,Rodriguez-Puebla2016HaloSimulations}, using the \textsc{rockstar} halo finder and the C\textsc{onsistent} T\textsc{rees} codes \cite{Behroozi2013TheCores, Behroozi2013GRAVITATIONALLYCOSMOLOGY}. There are 21 tuning aspects with 44 parameters and 6 priors using a Markov Chain Monte Carlo the parameters are fit to a large set of observations though the algorithm depicted in Figure \ref{fig:BehMeth}.
 
 %go to here for the source https://arxiv.org/format/1806.07893
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = \linewidth]{Figures/Chapter1/sfr_method.pdf}
+    \caption{Image used with permission from: Peter Behroozi \cite{Behroozi2019UniverseMachine:010}}
+    \label{fig:BehMeth}
+\end{figure}
+
 
 Using the iterative approach of parameter selection, mapping into halo structures, observable creation, through comparison to the observations the parameters are updated based on their likelihood and the process is iterated. This model is massively parallel allowing for over $10^{5}$ cores involved in any given parameter estimation. The model predictions are numerous included in which are in-situ vs ex-situ growth ratios in broad agreement with the other models.
 
@@ -292,12 +299,52 @@ Semi-empirical models as demonstrated above come in many different flavours. Eac
 
 \section{Galaxy Surveys Present and Future}
 \label{sec:Surveys}
-%First galaxy surveys
+Galaxy surveys are the cornerstone of semi-empirical galaxy modelling, combined with dark matter simulations they form the basis of abundance matching. Other properties such as star formation, colour, shape, size, position, e.t.c. can all form either inputs to or constraints for the output for semi-empirical models. It therefore stands that improving the quality of models is predicated on improving the quality of the data.
 
-%SDSS
+\subsection{Past and Ongoing Surveys}
+Present surveys as important to semi empirical models come in two forms 'wide' and 'deep'. Wide surveys look to cover a large area of the sky to get a statistically significant look at the galaxy population. Deep surveys cover a much smaller area but using longer exposure can observe much fainter objects. The trade-off between width and depth is visualised in by a simple example in Figure \ref{fig:WvD}. Tight surveys collect more photons per unit area and can therefore see to greater depth.
 
-%COSMOS and CANDLES 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = \linewidth]{Figures/Chapter1/W_v_D_Toon.png}
+    \caption{A simplified visualisation of how a trade off is made between width and depth in surveys. Given two observation areas the telescope is able to pick up galaxies to a much greater depth in narrow observation. By spending more time on one area of the sky the telescope can pick up more photons and therefore observe to a greater depth.}
+    \label{fig:WvD}
+\end{figure}
 
-%Euclid
+In addition larger galaxies are significantly brighter, the example in Figure \ref{fig:Vmax} uses two galaxy size examples. The smaller galaxies can be observed to the solid line and the larger galaxies to the dashed line. The telescope observes 6 small galaxies and 5 large galaxies, however as the larger galaxies are brighter and can be seen to greater depth. Corrections are therefore made to the number density of galaxies based on the depth that the galaxy can be observed to. In the 2D example from Figure \ref{fig:Vmax} the small galaxies can be seen in an area given by the solid area which we can call 1 unit$^2$ the larger galaxies can be seen in an area given by the dashed area that is 4 unit$^2$. In this example the smaller galaxies have a number density 6 galaxies p.u. area, the larger galaxies 1.25 galaxies p.u. area.
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = \linewidth]{Figures/Chapter1/Vmax_Toon.png}
+    \caption{A simplified visualisation of how the brightness of galaxies effects the observation depth. The smaller dimmer galaxies can be seen in the solid cone, larger and brighter galaxies can be seen up to the limits of the dashed cone.}
+    \label{fig:Vmax}
+\end{figure}
+
+For each galaxy luminosity observed in a survey a correction must be made by the total depth it could have been observed to and the associated volume. In this way the volumetric density correction can be calculated for each galaxy in a given survey.
+
+\subsubsection{Sloan Digital Sky Survey (SDSS)}
+
+The Sloan Digital Sky Survey (SDSS) is arguably the premier wide survey for galaxies. SDSS started in 1998 with the mission to catalogue and map as much of the universe as possible. The latest release of the fourth phase is SDSS-DR19 \citep{AhumadaDamsted61} now includes one-third of the night sky, it covers (u,g,r,i,z) wavelengths, has over 1.2 billion objects including over 200 million galaxies.
+
+\subsubsection{CANDLES}
+CANDLES (The Cosmic Assembly Near-infrared Deep Extragalactic Leagacy Survey) observed galaxies in the redshift range z = 8 to 1.5. CANDLES uses three Hubble Space Telescope (HST) cameras to capture emission from mid-UV to near-IR for 250,000 galaxies. The primary goals of this survey of interest to this thesis is the observation of the peak of starformation and AGN activity at $z \simeq 2$ \cite{Grogin2011Candels:Survey}.
+
+\subsubsection{COSMOS}
+
+COSMOS: The Cosmic Evolution Survey is a 2 square degree survey covering many wavelengths using a combination of observation from many space based and ground based telescopes (Space: Hubble, Spitzer, GALEX, XMM, Chandra, Herschel, NuStar) (Ground: Keck, Subaru, VLA, ESO-VLT, UKIRT, NOAO, Badde and Blanco, CFHT). Combining the data allows cosmos to create a rich view of the observed objects across a huge range of wavelengths. COSMOS was designed to observe galaxy evolution across cosmic time and understand the environmental effects of galaxies growing in groups and clusters \citep{HomeCOSMOS}.
+
+\subsubsection{3D-HST}
+
+Using 248 orbits and 124 pointings the 3D-HST is a highly complementary survey observing 625 arcminuites of previously observed extra-galactic fields \citep{Brammer20123D-HST:Telescope}. 3D-HST provides spectroscopic redshifts for over 10,000 galaxies in the range $1 < z < 3.5$. The survey provides 22 bands of rest frame colours used for the redshift catalogs, the UV-IR star formation rates and, stellar masses. The primary science goal is to investigate the evolution of galaxies at high redshifts and in combination with CANDLES be the primary spectroscopic data set until the launch of JWST.
+
+\subsection{Future Surveys}
+
+Due to the pace of technological advancement and the difficult and expensive nature of building (and launching in the case of space based missions) telescopes our current survey telescopes are far behind what is theoretically possible. In this subsection to of the next generation survey telescopes are described, both are space based missions being launched into orbit at the second Lagrange\footnote{The Lagrange points are 5 distinct points in a gravitational two body system at which an object can remain at rest relative to the two major bodies. In these points the forces of gravitational acceleration, centripetal acceleration and for some points the Coriolis effect are all in balance.} point 4 times the distance of the moon away from earth. The second Lagrange point is unique in its position as it sits behind the earth and is therefore permanently in the earths shadow. This positioning is ideal for satellites as it is also within the earths magneto tail and therefore experiences lower solar wind irradiation. The drawback of this point is that from here any faults that are present at launch or develop during the operation of the missions will be permanent as it is not possible to retrieve and/or fix objects sent to these points.
+
+\subsubsection{JWST \cite{JamesNASA}}
+
+The James Webb Space Telescope is a cold infrared telescope with a planned launch in 2021\footnote{Correct at time of writing, JWST has some notoriety for pushing this date back}. Using multi-object near-infrared spectroscopy JWST will be able to take spectra for ~100 galaxies simultaneously. Galaxies will be observed in the redshift range $1 < z < 7$ covering the peak or cosmic starformation and much of their early formation. JWST as an infrared survey is suited to looking at the starformation of galaxies, buildup of the Hubble sequence, formation of metals, effects of starbursts are all among the observational capabilities of the telescope \cite{Windhorst2009JWST2009}.  
+\subsubsection{EUCLID}
+
+The EUCLID satellite will carry two instruments VIS \& NISP between them they will cover from 500nm to 2000nm wavelengths down to the 24th magnitude, providing images of galaxies up to redshift 2. Euclid will survey 15,000 deg$^2$ of the sky and then perform a deep survey covering 40 deg$^2$ to 2 magnitudes deeper. The primary mission goals of Euclid are to address open questions on dark matter, dark energy, cosmic expansion and the formation of large scale structures \cite{Amendola2018CosmologySatellite}. To address these questions galaxies will be used as tracers of dark matter that can provide tests of cosmological models, to do this the EUCLID pipeline will contain advance galaxy cluster detection algorithms \cite{EuclidCollaboration2019EuclidSelection}. 
 
