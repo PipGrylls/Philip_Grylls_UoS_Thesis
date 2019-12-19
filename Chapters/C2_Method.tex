@@ -6,16 +6,37 @@
 
 \section{Why do we need a new modeling technique in galactic astrophysics.}
 %What is missing: Massive galaxies, checks 
+In this thesis we propose a new modelling technique further diversifying the range of semi-empirical models already used in the field. With the breadth of simulations and techniques already used any additional models must justify their existence by showing they can succeed where others cannot. The primary and the arguably largest shortcoming of all the galaxy modeling techniques is the trade-off between volume and resolution. So far this limitation has severely limited the ability of models to constrain against the massive galaxy population. The reliance on discrete halos from merger trees or n-body simulations limits the number of massive galaxies simulated in more traditional models, limiting the ability of models to compare with observations of massive galaxies found in comprehensive surveys. 
+
 %How can a new model succeed where others haven't
+\steel has been designed as a complementary tool to the other galaxy models. In this chapter we describe the gaps in the current modelling space and the design choices in steel designed to address these gaps.
+
 \section{Designing to specification.}
 %General format: Science problem and design solution 
+\subsection{Volume vs. Resolution}
 %Volume/resolution - statistical
+The trade-off between volume (or number of galaxies) and resolution stems directly from computational limitations. High resolution simulations resolve orders of magnitude more small haloes than large, below $10^13.5$ the halo number density increases by just below 1 magnitude for each drop of one magnitude in mass, left panel Figure \ref{fig:SubHaloes_byz}. Given a computer has a limited memory and processing power there is an upper limit to the total number of haloes/galaxies that can be simulated, either increasing the volume or lowering the resolution will increase the total number of galaxies simulated and therefore one must come at the expense of the other. In Figure \ref{fig:Vol_v_Res} this is visualised showing the Baryon Mass Resolution against the Number of Galaxies for many hydrodynamical simulations. The along the diagonals that are parallel to the line that connects top left to bottom right there are lines of constant particle number which when all other factors are constant will correspond to computational power. The two shaded boxes show the simulations that explore two modelling regimes:
+\begin{itemize}
+    \item The 'zoom in' where resolution is favoured allowing for the analysis of small galaxies/haloes and the structures of larger galaxies/haloes.
+    \item The 'box' where a box of a given volume is simulated to try and understand what the structures look like on the scale of the box, this sacrifices the resolution of smaller galaxies and haloes.
+\end{itemize}
+
 \begin{figure}[h]
     \centering
     \includegraphics[width = \linewidth]{Figures/Chapter2/VolumeResolutionComparison.png}
     \caption{Image used with permission from: Illustris-TNG Project, \citet{Nelson2019FirstFeedback}}
-    \label{fig:Bolshoi}
+    \label{fig:Vol_v_Res}
 \end{figure}
+
+In semi-analytic and semi-empirical models the analogous feature is found in the selection of merger trees fed to the models\footnote{For those semi-analytic/semi-empirical models that use n-body dark matter directly they follow the same pattern as the above but with dark matter particle resolution and number of haloes.} the number of haloes on a given merger tree is directly related to the lowest mass halo of interest. However, models using merger trees have one additional level of flexibility they can have a minimum subhalo mass and a minimum central halo mass. This provides flexibility in what can be simulated, for example:
+\begin{itemize}
+    \item High mass centrals, large box, high threshold for both central and subhalo mass. Suitable for exploring the evolution of massive galaxies.
+    \item High mass centrals, medium/small box, low threshold for subhalo masses, moderate/high threshold for central masses. Suitable for exploring the environments around massive galaxies.
+    \item Moderate/low mass centrals, medium/small box, low threshold for centrals and subhaloes. Suitable for exploring the evolution of large populations of smaller galaxies.
+\end{itemize}
+
+
+\steel has been specifically designed to not suffer from this trade-off by using a \textit{'Statistical Dark Matter Accretion history`} described in full in Section \ref{subsec:SDMAH}. In brief the statistical accretion histories follow the average growth of a given mass of halo backwards in time from $z = 0$. At each time-step the USHMF is assigned to the halo mass track by comparing the USHMF at t and t +$\Delta$t the subhalo accretion in $\Delta$t is calculated. The lifetime subhaloes is assigned using dynamical time arguments. This accretion history requires only the average halo mass tracks and the SHMF, each of which is a numerical quantity for each mass bin one mass track is calculated and scatter is implemented using the intrinsic statistical distributions of galaxies where appropriate. \steel therefore simulates massive haloes and small haloes equally and is able to produce massive rare galaxies in the same run as smaller galaxies whilst simulating neither with higher precedence.
 
 %Flexibility - empirical
 %Consistency - ensuring connections between high and low redshift
@@ -23,7 +44,7 @@
 \section{Modules and Methods}
 
 \subsection{Statistical Dark matter accretion history}
-
+\label{subsec:SDMAH}
 %First we should explain merger trees and traditional simulation techniques.
 \subsubsection{Traditional methods and merger trees}
 
