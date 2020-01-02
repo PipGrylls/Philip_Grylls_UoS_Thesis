@@ -45,51 +45,95 @@ Hydrodynamical and Semi-Analytic models are tuned for two reasons. The first is 
 This degeneracy has in some part been addressed by semi empirical models. Fundamental variables such as galaxy stellar mass are set using techniques such as abundance matching (Section \ref{C2:SubSec:AbnMtch}), doing so removes the reliance on the physical models and parameters that are required to tune to this quantity. 'Bottom-up' modelling like this gives semi-empirical models the ability to use dramatically reduced parameter spaces and then reproduce essential observable such as the central stellar mass function by design. Additional physical models are added only where necessary creating tight constraints for the core of the model. Empirical modelling is reproducing the core structures and evolution
 by design once stability has been achieved additions can be made in a modular fashion, for example in \citet{Shankar2014} with abundance matching constraining the growth of galaxies and the halo structures the merger histories a size evolution model can be independently invoked. Semi-empirical models can use this to massive advantage testing, for example, multiple size evolution models on one assembly background without need for re-tuning or fear of disrupting the essential results. In this thesis we extend this idea of empirical stability and flexibility further, using the statistical backbone as discussed physical models are turned into probabilistic models that cannot influence the central galaxy growth. These models are entirely modular and can be added or removed at will and there impact on the populations can be individually analysed. 
 
-It is noteworthy that some hydrodynamical cluster simulations are now able to use a technique called 'genetic SOMETHING' by running a simulation multiple times and making slight adjustments they can do an 'apples to pears' comparison. This vernacular has the intended meaning that the models are nearly the same for example changing the distribution of dark matter without changing the total mass can change the merger mass ratios of galaxies and such look at how the merger mass ratio affects the final galaxy in two systems that are near identical. This is highly complementary and powerful technique that is yet to be fully realised (REF!).
+It is noteworthy that some hydrodynamical cluster simulations are now able to use a technique with "genetically modified" haloes/galaxies by running a simulation multiple times and making slight adjustments they can do an 'apples to pears' comparison. This vernacular has the intended meaning that the models are nearly the same for example changing the distribution of dark matter without changing the total mass can change the merger mass ratios of galaxies and such look at how the merger mass ratio affects the final galaxy in two systems that are near identical. This is highly complementary and powerful technique that is yet to be fully realised \cite{Rey2018QuadraticHistory}.
 
 \subsection{Consistency}
 %Consistency - ensuring connections between high and low redshift
-It is well documented that reproduction of the stellar mass function as multiple epochs has been a challenge for semi-analytic models \cite{Knebe2018CosmicModels, Asquith2018CosmicModels} and hydrodynamical models (although major improvements have been seen recently ILL vs TNG). This has not however prevented such models from making bold claims about the successes of their models in terms of morphology and mass assembly (CITES). However, it is the opinion held by PG that these claims should be viewed as entirely unsubstantiated. If a kettle at temperature A that is modelled to cool under an arbitrary physical model $\gamma$ to temperature B in time T. If A is observed to be false compared to the data and B is observed to be consistent with the data than the inference that $\gamma$ is a correct physical model is baseless. Galaxy models that fail to reproduce the stellar mass function at high redshift repeatedly invoke this kind of logic when the z=0 stellar mass function is reproduced. An over abundant stellar mass function at high redshift that evolves to the observed stellar mass function at low redshift implies either lack of growth in the galaxy population to allow the observed stellar mass function to catch up or over merging of galaxies to reduce the total number density.
+It is well documented that reproduction of the stellar mass function as multiple epochs has been a challenge for semi-analytic models \cite{Knebe2018CosmicModels, Asquith2018CosmicModels} and hydrodynamical models (although major improvements have been seen recently for example Illustris vs Illustris TNG \cite{Nelson2015TheRelease, Nelson2018TheRelease}). This has not however prevented such models from making bold claims about the successes of their models in terms of morphology and mass assembly without providing a full stellar mass function history \cite[e.g.][]{Somerville2008ANuclei, Hopkins2010MERGERSMATTER}\footnote{A merger history matched to an observational merger history as provided by \citet{Hopkins2010MERGERSMATTER} is insufficient as we show in Chapter \ref{Chapter:GalPairs} the methods involving pair fractions used to estimate these rates have a large degree of systematic error.}. However, it is the opinion held by PG that these claims should be viewed as entirely unsubstantiated. As an example, if a kettle at temperature A that is modelled to cool under an arbitrary physical model $\gamma$ to temperature B in time T. If A is observed to be false compared to the data and B is observed to be consistent with the data than the inference that $\gamma$ is a correct physical model is baseless. Galaxy models that fail to reproduce the stellar mass function at high redshift repeatedly invoke this kind of logic when the z=0 stellar mass function is reproduced. An over abundant stellar mass function at high redshift that evolves to the observed stellar mass function at low redshift implies either lack of growth in the galaxy population to allow the observed stellar mass function to catch up or over merging of galaxies to reduce the total number density.
 
 A semi empirical model that puts reproduction of the stellar mass function and the distribution of satellite galaxies as the foremost modelling priority has a major advantage. Any model that is internally self-consistent is a viable candidate for the true physical model with stronger evidence than those presented in models that do not achieve consistency over multiple epochs. 
 
-
+\subsection{Speed}
 %Systematics - speed
+
+Speed is a critical ingredient to any model, hydrodynamic models have run-times of months using millions of CPU hours, and semi-analytic models constrain highly-multi dimensional parameter space for thousands of merger histories. In each case speed allows for the models to reach conclusions in shorter time frames. Semi-empirical models are faster by design with smaller better constrained parameter spaces, they can therefore leverage more computational time to explore physical models or larger simulation boxes. In forgoing discrete merger trees the run time of \steel depends on different factors to other models, the width of the mass bins used for the halo and subhalo mass functions (which corresponds to the resolution of halo or mass particle) and secondly is the computational complexity of any physical modelling routines. Where \steel is not running to tune to high N parameter space or thousands of discrete merger trees it can instead test combinations of internal physical models or be run on more modest, cheaper, and widely accessible hardware.
+
 \section{Modules and Methods}
 
-\subsection{Statistical Dark matter accretion history}
+\subsection{Statistical Dark Matter Accretion History}
 \label{subsec:SDMAH}
+
+Undeniably the single most important element of \steel and a large part of what makes it unique and enables a alternative view of galaxy formation problems is the \textbf{\textit{statistical dark matter accretion history}}. As described above a large part of the power of \steel come from the removal of discrete merger tress or haloes achieved using this technique. We provide here a discussion of n body and processed merger trees building upon Section \label{sec:LCDM} followed by a detailed description of how the statistical dark matter accretion history is constructed.
+
 %First we should explain merger trees and traditional simulation techniques.
 \subsubsection{Traditional methods and merger trees}
 
 %first n body
+
+The state of the art in dark matter modelling is n-body simulations, simulating billions of individual particles and solving the equation of state for each over many epochs to simulate their evolution from the distributions calculated from the CMB to the cosmic web of haloes and filaments inferred from observations of galaxies today. The non-interacting nature of \textbf{cold} dark matter is extremely fortuitous as it means its behaviour can be modelled using gravitational tensors only thus modern dark matter simulations are able to leverage the massive power gains made recently in GPU computing allowing for ever larger and higher resolution dark matter only simulations to be run. 
+
+Whilst the massive n-body simulations are impressive they do little to impact out understanding of galactic astrophysics, the outputs of even the previous generation n-body dark matter simulations such as the Bolshoi simulation a snapshot of which is shown in Figure \ref{fig:Bolshoi} total tens of gigabytes for individual sections and terabytes to capture the whole simulation. To use all of this information would be impractical for any galactic modeller without access to high performance computing hardware and a good understanding of memory management. Furthermore despite the excellence provided by halo-finders and merger tree extractors such as \textsc{rockstar} \cite{Behroozi2013THECORES} and the consistent trees algorithm' \cite{Behroozi2013GRAVITATIONALLYCOSMOLOGY}, the merger trees are frequently not fit for use in models not specifically built to handle these inputs. Furthermore, as discussed by van den Bosch \cite{vandenBosch2014ComingWells, vandenBosch2017DissectingSimulation, vandenBosch2018DisruptionFiction} the interpretation of dark matter simulations is of vital importance, as the analysis tool and the fundamental design decisions taken in building the simulation all have systematic effects on the outputs all of which complicating comparison between simulation.
+
 \begin{figure}[h]
     \centering
     \includegraphics[width = \linewidth]{Figures/Chapter2/Bolshoi.jpg}
-    \caption{Slice of the 250 Mpc$^3$ box of the Bolshoi Simulation. Brighter regions indicate a higher density of dark matter. Note the clustered bright points connected by large filaments. This structure is known as the cosmic web.
+    \caption{Snapshot of the 250 Mpc$^3$ box of the Bolshoi Simulation. Brighter regions indicate a higher density of dark matter. Note the clustered bright points connected by large filaments. This structure is known as the cosmic web.
     Image credit: Bolshoi Simulation http://hipacc.ucsc.edu/Bolshoi/Images.html}
     \label{fig:Bolshoi}
 \end{figure}
 
-%then halofinders and trees (ROCKSTAR)
-
-%then eps P08
-
-%then hmf
-
-%then shmf
+The choice of many analytic or empirical models to instead opt for analytically derived press schecter trees that can be generated 'on-the-fly' or pre-processed comes for the simplicity and flexibility afforded by this technique. However trees generated in this way are still affected by volume (i.e. number simulated) and resolution (i.e. size of the smallest halo accounted for in any split) limiting there effectiveness.
 
 \subsubsection{State of the art statistical method}
 %then get onto what makes STEEL STEEL
-\begin{figure}[h]
+\begin{figure}[h!]
 	\centering
 	\includegraphics[width = \linewidth]{Figures/Chapter2/StatDM.png}
-    \caption{I show the main steps in building the statistical dark matter accretion history for STEEL. Each panel shows a feature from a traditional merger tree and the statistical function used to replace it. A: The HMF is used to calculate the number densities of central haloes. B: Average mass growth histories are used to calculate the size of each mass bin at previous epochs. C: The (unevolved)SHMF is used to populate each central at each redshift with subhaloes. D: The average number densities of accreted subhaloes at each epoch, are calculated by taking the difference between each mass bin of the (unevolved)SHMF at consecutive redshift steps.}
+    \caption{We show the main steps in building the statistical dark matter accretion history for STEEL. Each panel shows a feature from a traditional merger tree and the statistical function used to replace it. A: The HMF is used to calculate the number densities of central haloes. B: Average mass growth histories are used to calculate the size of each mass bin at previous epochs. C: The (unevolved)SHMF is used to populate each central at each redshift with subhaloes. D: The average number densities of accreted subhaloes at each epoch, are calculated by taking the difference between each mass bin of the (unevolved)SHMF at consecutive redshift steps.}
 	\label{fig:StatDM}
 \end{figure}
 
+
+The core principle of the statistical methodology is to treat parent haloes, and satellites galaxies/haloes, as ``average'' populations avoiding issues with volume and resolution as described previously. Here  we detail step by step construction of the statistical dark matter accretion history complemented with a graphic representation in Figure \ref{fig:StatDM}.
+
+\textbf{Central Haloes}
+
+We start by considering a fine grid of central dark matter haloes ranging from $M_{h}=10^{11}\, M_{\odot}$ to $M_{h}=10^{15}\, M_{\odot}$ at redshift $z=0$. Their number densities are given by the halo mass function (HMF) of \citet{Despali2016TheDefinitions}, which is obtained using the COLOSSUS Python package \citep{Diemer2017COLOSSUS:Halos} which contains many other halo mass functions as well as spherical over density conversions required throughout this work. 
+
+The halo mass function provides the number densities of haloes in a given mass bin (Figure \ref{fig:StatDM}, Panel A).
+The average mass growth histories of all main progenitors with mass in the bin of halo mass $[M_{h},M_{h}+dM_{h}]$, are then calculated using the analytic model from \cite{vandenBosch2014ComingWells}\footnote{This model further improves on the seminal work by \citet{Parkinson2008GeneratingTrees}, which was aimed at reproducing numerical merger trees, optimized with small redshift steps minimizing the development of systematic errors at late cosmic epochs.}. This provides the average ``main progenitor'' branch of a traditional merger tree for each mass bin at $z = 0$ (Figure \ref{fig:StatDM}, Panel B.)
+
+\textbf{Assigning Subhaloes to Parent Haloes}
+
+In order to predict the number of satellite galaxies, we must associate to each parent/central halo the number and mass of subhaloes they are expected to contain. To achieve this we use the subhalo mass function (SHMF). The SHMF describes the expected distribution of subhaloes, of mass $M_{h,sat}$, in a given parent halo of mass $M_{h,cent}$, as a function of $M_{h,sat}/M_{h,cent}$. Multiple definitions for the SHMF exist depending on the way a subhalo is defined. In this work we use two definitions of the SHMF. The first is the unevolved SHMF (USHMF), which describes the total subhaloes accreted over a parent halo's lifetime. In the unevolved SHMF any merging or stripping in the subhaloes occurring after infall are ignored. A number of groups have been able to constrain the unevolved SHMF \citep{Giocoli2008AnalyticalHaloes,Jiang2016StatisticsFunctions}. In what follows, we use the latest rendition of the unevolved SHMF by \citet{Jiang2016StatisticsFunctions}, which is calibrated against the Bolshoi simulation\footnote{ We direct the interested reader to \citet{Jiang2016StatisticsFunctions} for further discussion of the unevolved SHMF as well as of other SHMFs, such as the evolved SHMF where the number densities are effected by both subhalo stripping and mergers.}.
+
+The second definition we use in this work is the unevolved ``surviving'' SHMF (USSHMF). Subhalo masses are assumed frozen at infall but the subhalo number densities can reduce compared to the unevolved SHMF as the unevolved surviving SHMF accounts for subhalo disappearance due to tidal disruption in the parent halo. We show in Figure \ref{fig:SHMF_clus} for a representative parent halo of mass $\log M_{h,cent} M_{\odot} = 12.80$, the unevolved SHMF and three unevolved surviving SHMF characterized by different dynamical friction timescales $\tau_{dyn}$. Larger $\tau_{dyn}$ lead to a milder reduction in subhalo number densities as subhaloes take longer to merge with the parent halo. Lower $\tau_{dyn}$ are less effective in reducing the number densities of smaller subhaloes which are more likely to have dynamical friction timescales comparable to or larger than the Hubble time at $z = 0$.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width = \linewidth]{Figures/Chapter2/SHMF_OneCluster.png}
+	\caption{Comparison between the unevolved SHMF (solid line) and three unevolved surviving SHMF  (dotted lines) for a parent halo of mass $\log$ $M_{h,parent}$ $[M_{\odot}] = 12.80$. The factor $f_{t_{dyn}}$ is applied to the merging timescales of the haloes. Lower factors correspond to lower unevolved surviving SHMF where more sub haloes have merged.}
+	\label{fig:SHMF_clus}
+\end{figure}
+
+\textbf{Average Subhalo Accretion}
+
+At each redshift step along the mass growth histories we calculate the unevolved SHMF associated to the parent halo mass. This is equivalent to the substructure found in traditional merger trees (Figure \ref{fig:StatDM}, Panel C). However, unlike traditional methods, our statistical approach is able to probe ``rare'' subhaloes without running prohibitively large volumes of merger trees.
+
+For each time step we can now calculate a mass function describing the number density of subhaloes accreted onto the population of central haloes in the halo mass bin $[M_{h,cent}(z),$ $M_{h,cent}(z) + dM_{h,cent}(z)]$. The latter is achieved by differentiating the unevolved SHMF across two neighbouring redshift steps $z$ and $z+dz$, we can calculate the average number density of subhaloes of any given mass $M_{h, sat}$ that are accreted in the redshift interval $dz$ onto the main progenitor haloes with mass in the bin $[M_{h,cent}(z),$ $M_{h,cent}(z) + dM_{h,cent}(z)]$,
+\begin{equation}
+\label{eqn:deltSHMF}
+\begin{split}
+&\delta USHMF[z, M_{h,cent},M_{h,sat}] =  \\
+&USHMF\Big(\frac{M_{h,sat}}{M_{h,cent}(z)}\Big) - USHMF\Big(\frac{M_{h,sat}}{M_{h,cent}(z + \delta z)}\Big)
+\end{split}
+\end{equation}
+In this way the unevolved subhalo accretion history ($\delta USHMF$) is retrieved for all main progenitor haloes at all redshifts.
+
+
 \subsection{Abundance matching}
 \label{C2:SubSec:AbnMtch}
+In this work we populate dark matter haloes with galaxies using the abundance matching technique where galaxies are assigned to haloes by comparing the relative abundances of galaxies and haloes. For example in Figure \ref{fig:Abn_Toon} the horizontal lines connect points of constant number density between the HMF (red, top left) and the SMF (green, bottom right). Halo/stellar masses with corresponding number density are then define a mapping between the masses called the stellar-mass-halo-mass (SMHM) relationship (black, bottom left).
+
 \begin{figure}[h]
 	\centering
 	\includegraphics[width = \linewidth]{Figures/Chapter2/AbundaceMatching.png}
@@ -97,12 +141,47 @@ A semi empirical model that puts reproduction of the stellar mass function and t
 	\label{fig:Abn_Toon}
 \end{figure}
 
+The abundance matching used in \steel takes central haloes from the halo mass function from \citet{Despali2016TheDefinitions} obtained using \textsc{colossus}\cite{Diemer2017COLOSSUS:Halos}, and a subhalo mass function subdivided by redshift of infall generated from the statistical dark matter accretion history used by \textsc{steel}. Subhaloes are assumed to follow the central SMHM relation at infall. We simplify our abundance matching by using a frozen model such that baryonic evolution after infall (stripping, starformation, etc.) is not included. The latter assumption provides a good approximation as after infall the dominant factor determining the abundances of satellite galaxies is the dynamical time and not evolutionary processes (Paper \RomanNumeralCaps{1}).
+
+To fit stellar mass functions over multiple epochs we convolve our halo mass functions with a parametric SMHM relation similar to that proposed by \cite{Moster2010},
+\begin{equation}
+\label{eqn:MosAbn}
+\begin{split}
+M_*(M_h, z) &= 2M_hN(z)\Big[ \Big( \frac{M_h}{M_{n}(z)}\Big) ^{- \beta(z)} + \Big( \frac{M_h}{M_{n}(z)}\Big)^{\gamma(z)} \Big ]^{-1}\\
+N(z) &= N_{0.1} +N_z\Big(\frac{z-0.1}{z+1}\Big)\\
+M_{n}(z) &= M_{n,0.1} +M_{n,z}\Big(\frac{z-0.1}{z+1}\Big)\\
+\beta(z) &= \beta_{0.1} +\beta_z\Big(\frac{z-0.1}{z+1}\Big)\\
+\gamma(z) &= \gamma_{0.1} +\gamma_z\Big(\frac{z-0.1}{z+1}\Big).
+\end{split}
+\end{equation}
+
+In what follows we adopt both the cmodel and PyMorph SMF described in Section \ref{subsec:SMF} at redshift $z=0$ to constrain the parameters N, M, $\beta$, and $\gamma$ (normalization, knee, low mass slope, and high mass slope). We use only the central stellar mass function, using the \cite{Yang2012EvolutionHalos} central/satellite identification, and central halo mass function. The fit is performed using a Markov Chain Monte Carlo (MCMC), implemented using the \textsc{python} package \textsc{emcee} \citep{Foreman-Mackey2013Emcee:Hammer}, over a large parameter space ($P_{M, N, \beta, \gamma}$) covering all four parameters. Given a point in parameter space $P_{M_i, N_i, \beta_i, \gamma_i}$, the stellar mass function is constructed using the halo mass function and the SMHM relation. Each bin of parent halo mass is associated to a Gaussian distribution of stellar mass with scatter 0.15 dex. This distribution is multiplied by the halo mass number density to convert to galaxy number density which are added to the relevant stellar mass bins of the stellar mass function in construction. This operation is then repeated over all mass bins of the halo mass function to produce the complete central stellar mass function. For each point $P_{M_i, N_i, \beta_i, \gamma_i}$ in the parameter space, the stellar mass function associated to that point is compared via a likelyhood function to the observed stellar mass function to provide the MCMC with the probability that the given point is the `true' SMHM relationship. 
+
+We then fit to the \cite{Davidzon2017TheSnapshots} data both uncorrected and corrected for the cmodel and PyMorph fits respectively (see Section \ref{subsec:SMF} for details). At high redshift we use the central and subhalo mass functions initializing satellites at infall as described above\footnote{Ideally, as for low redshift, we would use the centrals only as we are primarily concerned with the central SMHM relation. However, lacking a well-defined central stellar mass function at high redshift, this method represents a reliable way to extend the model to higher redshifts.}. For central haloes the method is the same as detailed above, however, as we use the total stellar mass functions at high redshift we also include the total unevolved surviving subhalo mass function in the abundance matching. 
+We assume that a halo before infall hosts a central galaxy; under this assumption we use the central SMHM relation to assign satellite galaxy stellar mass at the point of accretion. For the latter we must have information about the redshift of infall for subhaloes. We obtain from \textsc{steel} the unevolved surviving subhalo mass function as contributed by each redshift of infall. Each contributing part is calculated using the SMHM relation at the redshift of infall and added to the central stellar mass function using the same method as with the centrals. The total stellar mass function is compared, at each redshift step available, to the data via the likely-hood function to give the probability that the given point is the `true' evolution parameters. The abundance matching best-fit parameters and associated errors for both the cmodel and PyMorph are given in Table \ref{tab:AbnResult}, and plots showing the cross sections of the parameter space are shown in Appendix \ref{Appx:AbnMCMC}.
+
+\begin{table}
+\centering
+\begin{tabular}{l|llllllll}
+        & M\_n & N     & $\beta$ & $\gamma$ & $M_{n,z}$ & N\_z   & $\beta_z$ & $\gamma_z$ \\ \hline
+\\
+cmodel  & $11.91_{-0.34}^{+0.40}$ & $0.029_{-0.013}^{+0.018}$ & $2.09_{-1.02}^{+1.21}$    & $0.64_{-0.10}^{+0.11}$     & $0.52_{-0.19}^{+0.24}$       & $-0.018_{-0.004}^{+0.005}$ & $-1.03_{-0.34}^{+0.049}$     & $0.084_{-0.14}^{+0.20}$      \\
+\\
+PyMorph & $11.92_{-0.36}^{+0.39}$ & $0.032_{-0.012}^{+0.016}$ & $1.64_{-0.73}^{+0.85}$     & $0.53_{-0.11}^{+0.11}$     & $0.58_{0.19}^{+0.15}$        & $-0.014_{-0.006}^{+0.007}$ & $-0.69_{-0.36}^{+0.29}$      & $0.03_{-0.147}^{+0.154}$      
+\end{tabular}
+\caption{The abundance matching results for the cmodel and PyMorph data. The errors are the 16th and 86th percentile from the MCMC fiting.}
+\label{tab:AbnResult}
+\end{table}
+
 \begin{figure}[h]
 	\centering
 	\includegraphics[width = \linewidth]{Figures/Chapter2/AbundaceMtch_Data.png}
     \caption{Left: The SMHM relation at redshift $z=0.1$. The PyMorph (blue solid line) and cmodel (orange dashed line) fits from this work are both for central haloes/galaxies, the fit from \citet{Moster2013} (M13, red dotted line) is for all haloes/galaxies. The grey band is the relation from Illustris TNG100. Right: Stellar mass functions created using the central halo mass function and the three SMHM relations compared to PyMorph (blue circles) and cmodel (orange triangles) central stellar mass functions. The black squares are the stellar mass function from Illustris TNG100.}
 	\label{fig:Abn_Data}
 \end{figure}
+
+In Figure \ref{fig:Abn_Data} we show the results of our abundance matching to the PyMorph and cmodel central stellar mass functions. The PyMorph fit is steeper above the knee compared to either the cmodel or the \citet{Moster2013} model fits, as expected given the larger number density of massive galaxies found applying the S\'ersic-Exponential model \citep[eg.,][]{Shankar2014, Kravtsov2018StellarHalos}. The low mass slope for both PyMorph and cmodel are almost identical as the galaxies in this range are not affected by the photometric choice. Differences between the fits from this work and \citet{Moster2013} are due to our selection of using only central haloes/galaxies as opposed to the total population, and the stellar mass functions shown in the right-hand panel are lower than even cmodel are are therefore missing massive galaxies.
+
 
 \subsection{Continuity star formation rate}
 \begin{figure}[h]
