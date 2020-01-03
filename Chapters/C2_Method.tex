@@ -184,6 +184,9 @@ In Figure \ref{fig:Abn_Data} we show the results of our abundance matching to th
 
 
 \subsection{Continuity star formation rate}
+
+The continuity star formation rate was theorised in an effort to reconcile the observed evolution of the stellar mass function and the observed star formation rate. The observed UV star formation rates applied to high redshift stellar mass functions evolving populations conserving number density yield stellar mass functions higher than those observed. This deviation proved challenging for models which can not simultaneously reproduce the observed SFR and SMF, without invoking harsh feedback routines.
+
 \begin{figure}[h]
 	\centering
 	\includegraphics[width = \linewidth]{Figures/Chapter2/ContinuityEqn.png}
@@ -191,8 +194,9 @@ In Figure \ref{fig:Abn_Data} we show the results of our abundance matching to th
 	\label{fig:Cont_Eqn}
 \end{figure}
 
-%Mass recycling
+The continuity star formation rate is a theoretical quantity calculated such that the observed growth of the stellar mass function is conserved. As illustrated in Figure \ref{fig:Cont_Eqn} by connecting two SMF at consistent number density at times `$t$' and `$t + \Delta t$' the growth in mass $\Delta M$ at each number density over the time $\Delta t$ is obtained. In the simplest approximation the SFR is equal to $\Delta M / \Delta t$. However, the star formation rate is higher than the this value. As new stars are created a proportion of the mass is recycled through supernova 'quickly' in terms of cosmological time. This mass recycling given in \citet{Moster2018Emerge10} is used to amend the star formation rate, to account for the mass loss based on the entire star formation history of the galaxy. The fraction of mass lost by 
 
+%Mass recycling
 \begin{equation}
 \label{eqn:f_ml}
 f(\tau_{ml}) = 0.05 \ln \Big(\frac{\tau_{ml}}{1.4 Myr}+1\Big) ,
@@ -200,7 +204,7 @@ f(\tau_{ml}) = 0.05 \ln \Big(\frac{\tau_{ml}}{1.4 Myr}+1\Big) ,
 
 \begin{equation}
 \label{eqn:MLR}
-MLR(t) = \frac{ \sum_{t' = t_{infall}}^{t} SFH(t')(f[t' - (t-\delta t)]-f[t' - t]) }{\delta t} .
+MLR(t) = \frac{ \sum_{t' = t_{inf}}^{t} SFH(t')(f[t' - (t-\delta t)]-f[t' - t]) }{\delta t} .
 \end{equation}
 
 %Central Postprocessing 
