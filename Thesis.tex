@@ -76,7 +76,10 @@
 % e.g
 \newcommand{\steel}{\textsc{steel} }
 \newcommand{\LCDM}{$\Lambda$CDM }
-
+\newcommand{\RomanNumeralCaps}[1]
+    {\MakeUppercase{\romannumeral #1}}
+\newcommand{\Paper}[1]
+    {Paper \RomanNumeralCaps{#1}}
 %% ----------------------------------------------------------------
 \begin{document}
 \frontmatter	  % Begin Roman style (i, ii, iii, iv...) page numbering
