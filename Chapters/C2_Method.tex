@@ -106,7 +106,7 @@ The average mass growth histories of all main progenitors with mass in the bin o
 
 In order to predict the number of satellite galaxies, we must associate to each parent/central halo the number and mass of subhaloes they are expected to contain. To achieve this we use the subhalo mass function (SHMF). The SHMF describes the expected distribution of subhaloes, of mass $M_{h,sat}$, in a given parent halo of mass $M_{h,cent}$, as a function of $M_{h,sat}/M_{h,cent}$. Multiple definitions for the SHMF exist depending on the way a subhalo is defined. In this work we use two definitions of the SHMF. The first is the unevolved SHMF (USHMF), which describes the total subhaloes accreted over a parent halo's lifetime. In the unevolved SHMF any merging or stripping in the subhaloes occurring after infall is ignored. Several groups have been able to constrain the unevolved SHMF \citep{Giocoli2008AnalyticalHaloes,Jiang2016StatisticsFunctions}. In what follows, we use a recent rendition of the unevolved SHMF by \citet{Jiang2016StatisticsFunctions}, which is calibrated against the Bolshoi simulation\footnote{We direct the interested reader to \citet{Jiang2016StatisticsFunctions} for further discussion of the unevolved SHMF as well as of other SHMFs, such as the evolved SHMF where the number densities are affected by both subhalo stripping and mergers.}.
 
-The second definition we use in this work is the unevolved ``surviving'' SHMF (USSHMF). Subhalo masses are assumed frozen at infall but the subhalo number densities can reduce compared to the unevolved SHMF as the unevolved surviving SHMF accounts for subhalo disappearance due to tidal disruption in the parent halo. We show in Figure \ref{fig:SHMF_clus} for a representative parent halo of mass $\log M_{h,cent} M_{\odot} = 12.80$, the unevolved SHMF and three unevolved surviving SHMF characterized by different dynamical friction timescales $\tau_{dyn}$. Larger $\tau_{dyn}$ lead to a milder reduction in subhalo number densities as subhaloes take longer to merge with the parent halo. Lower $\tau_{dyn}$ are less effective in reducing the number densities of smaller subhaloes which are more likely to have dynamical friction timescales comparable to or larger than the Hubble time at $z = 0$.
+The second definition we use in this work is the unevolved ``surviving'' SHMF (USSHMF). Subhalo masses are assumed frozen at infall but the subhalo number densities can reduce compared to the unevolved SHMF as the unevolved surviving SHMF accounts for subhalo disappearance due to merging with the parent halo. Sub-halo merging is due to loos of angular momentum to the parent halo via `Dynamical Friction' described in Section \ref{subsub:DynF}. We show in Figure \ref{fig:SHMF_clus} for a representative parent halo of mass $\log M_{h,cent} M_{\odot} = 12.80$, the unevolved SHMF and three unevolved surviving SHMF characterised by different dynamical friction timescales $\tau_{dyn}$. Larger $\tau_{dyn}$ lead to a milder reduction in subhalo number densities as subhaloes take longer to merge with the parent halo. Lower $\tau_{dyn}$ are less effective in reducing the number densities of smaller subhaloes which are more likely to have dynamical friction timescales comparable to or larger than the Hubble time at $z = 0$.
 \begin{figure}[h!]
     \centering
     \includegraphics[width = \linewidth]{Figures/Chapter2/SHMF_OneCluster.png}
@@ -127,6 +127,33 @@ For each time step we can now calculate a mass function describing the number de
 \end{split}
 \end{equation}
 In this way the unevolved subhalo accretion history ($\delta USHMF$) is retrieved for all main progenitor haloes at all redshifts.
+
+\subsubsection{Dynamical Friction}
+\label{subsub:DynF}
+Dynamical Friction is the process by which an object (particle) moving though a mass `field' (or distribution of particles) looses velocity and increases the velocity of the field via gravitational interactions. A simplified example is shown in Figure \ref{fig:Tdyn_toon}, the red particle is initially moving to the left between two rows of particles of infinite extent that interact only though gravity (and only with the red particle). The particle in Panel A receives an equal pull from all particles and therefore experiences no acceleration the black particles directly above and below the red are the most strongly attracted and therefore move the greatest distance toward the red, with further particle moving slightly less. By Panel B the red particle has moved to the left and due to the previous effects now has more clustered mass directly behind it path. The break in the symmetry act to exert a net force on the red particle in the opposite direction to its motion. The black particles nearest the red are again drawn toward it most and after the red particle has moved further to the left again in Panel C the effect is magnified with the number of particles directly behind and the resultant force strongly opposes the motion. 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = \linewidth]{Figures/Chapter2/Dynamical_Friction.png}
+    \caption{In this hand made cartoon, we depict a thought experiment to demonstrate the process of dynamical friction. We show a red test particle moving though two rows of black particles that are infinite in extent. The particles interact only though an attractive force that reduces with distance akin to gravity. The black particles interact only with the red and not with each other. The black particles start at rest and the red particle starts with some arbitrary velocity to the left. The panel A shows the starting configuration of the particles, the panels B and C show two theorised later states of the system.}
+    \label{fig:Tdyn_toon}
+\end{figure}
+
+As a descriptive thought experiment this case achieves several of the properties dynamical friction has well:
+\begin{itemize}
+    \item The red particle experiences a `drag' force due to the particles it draws in behind it, eventually loosing most of its momentum.
+    \item The particles are non-interacting aside from gravity, as are the leading dark matter theories.
+    \item The energy of the red particle is dissipated into the velocities of the black particles, the motion of a galaxy though a dark matter field increase the random motion of the dark matter.
+\end{itemize}
+The main features missing from the thought experiment are:
+\begin{itemize}
+    \item The dark matter field is not uniform and in-fact are a virialised potential well with more mass in the centre and the distributions and velocities of particles within this field are random within this distribution.
+    \item The red `test' particle is in-fact a distribution of masses that are gradually lost to the field.
+    \item The red particle moves in an orbit around the centre of the potential well and is stripped of mass, velocity, and momentum.
+    \item The dark matter is self interacting under gravity and there is baryonic matter that interacts via processes other than gravity, although these tend to be of a lower order.
+\end{itemize}
+
+
 
 \section{Utilised Data}
 
@@ -161,7 +188,7 @@ We compare to the cluster sample from \citet{Wen2018ARedshifts}, which contains 
 
 \subsection{Abundance matching}
 \label{C2:SubSec:AbnMtch}
-In this work we populate dark matter haloes with galaxies using the abundance matching technique where galaxies are assigned to haloes by comparing the relative abundances of galaxies and haloes. For example in Figure \ref{fig:Abn_Toon} the horizontal lines connect points of constant number density between the HMF (red, top left) and the SMF (green, bottom right). Halo/stellar masses with corresponding number density are then define a mapping between the masses called the stellar-mass-halo-mass (SMHM) relationship (black, bottom left).
+In this work we populate dark matter haloes with galaxies using the abundance matching technique where galaxies are assigned to haloes by comparing the relative abundances of galaxies and haloes. For example in Figure \ref{fig:Abn_Toon} the horizontal lines connect points of constant number density between the HMF (red, top left) and the SMF (green, bottom right). Halo/stellar masses with corresponding number density are then used to define a mapping between the masses, this connection is called the stellar-mass-halo-mass (SMHM) relationship (black, bottom left).
 
 \begin{figure}[h]
     \centering
@@ -170,7 +197,7 @@ In this work we populate dark matter haloes with galaxies using the abundance ma
     \label{fig:Abn_Toon}
 \end{figure}
 
-The abundance matching used in \steel takes central haloes from the halo mass function from \citet{Despali2016TheDefinitions} obtained using \textsc{colossus}\cite{Diemer2017COLOSSUS:Halos}, and a subhalo mass function subdivided by the redshift of infall generated from the statistical dark matter accretion history used by \textsc{steel}. Subhaloes are assumed to follow the central SMHM relation at infall. We simplify our abundance matching by using a frozen model such that baryonic evolution after infall (stripping, star formation, etc.) is not included. The latter assumption provides a good approximation as after infall the dominant factor determining the abundances of satellite galaxies is the dynamical time and not evolutionary processes (Paper \RomanNumeralCaps{1}).
+The abundance matching used in \steel extracts central haloes from the halo mass function from \citet{Despali2016TheDefinitions} obtained using \textsc{colossus}\cite{Diemer2017COLOSSUS:Halos}, and a subhalo mass function subdivided by the redshift of infall generated from the statistical dark matter accretion history used by \textsc{steel}. Sub-haloes are assumed to follow the central SMHM relation at infall. We simplify our abundance matching by using a frozen model such that baryonic evolution after infall (stripping, star formation, etc.) is not included. The latter assumption provides a good approximation as after infall the dominant factor determining the abundances of satellite galaxies is the dynamical time and not evolutionary processes (Paper \RomanNumeralCaps{1}).
 
 To fit stellar mass functions over multiple epochs we convolve our halo mass functions with a parametric SMHM relation similar to that proposed by \cite{Moster2010},
 \begin{equation}
@@ -184,15 +211,15 @@ M_{n}(z) &= M_{n,0.1} +M_{n,z}\Big(\frac{z-0.1}{z+1}\Big)\\
 \end{split}
 \end{equation}
 
-In what follows we adopt both the cmodel and PyMorph SMF described in Section \ref{subsec:SMF} at redshift $z=0$ to constrain the parameters N, M, $\beta$, and $\gamma$ (normalization, knee, low mass slope, and high mass slope). We use only the central stellar mass function, using the \cite{Yang2012EvolutionHalos} central/satellite identification, and central halo mass function. The fit is performed using a Markov Chain Monte Carlo (MCMC), implemented using the \textsc{python} package \textsc{emcee} \citep{Foreman-Mackey2013Emcee:Hammer}, over a large parameter space ($P_{M, N, \beta, \gamma}$) covering all four parameters. Given a point in parameter space $P_{M_i, N_i, \beta_i, \gamma_i}$, the stellar mass function is constructed using the halo mass function and the SMHM relation. Each bin of parent halo mass is associated with a Gaussian distribution of stellar mass with scatter 0.15 dex. This distribution is multiplied by the halo mass number density to convert to galaxy number density which is added to the relevant stellar mass bins of the stellar mass function in construction. This operation is then repeated overall mass bins of the halo mass function to produce the complete central stellar mass function. For each point, $P_{M_i, N_i, \beta_i, \gamma_i}$ in the parameter space, the stellar mass function associated to that point is compared via a likelihood function to the observed stellar mass function to provide the MCMC with the probability that the given point is the `true' SMHM relationship. 
+In what follows we create SMHM relations using both the cmodel and PyMorph SMF described in Section \ref{subsec:SMF} at redshift $z=0$ to constrain the parameters N, M, $\beta$, and $\gamma$ (normalization, knee, low mass slope, and high mass slope). We use only the central stellar mass function, using the \cite{Yang2012EvolutionHalos} central/satellite identification, and central halo mass function. The fit is performed using a Markov Chain Monte Carlo (MCMC)\footnote{In actuality the fit is first done by hand correcting parameters one at a time and visualised at each step. In doing so an appreciation of the connection between parameter value, SMHM shape, and SMF is built that promotes an in-depth understanding of the system and its caveats. Around the minimum value a brute force search is performed with various ranges and resolutions, this provides a test of the fit estimator that will be included in the MCMC. Once the limitations of the method are known building the MCMC is more robust as sensible checks and balances are included. The MCMC will often provide a solution close to the one found by the previous methods but find the robustness/errors associated with the result.}, implemented using the \textsc{python} package \textsc{emcee} \citep{Foreman-Mackey2013Emcee:Hammer}, over a large parameter space ($P_{M, N, \beta, \gamma}$) covering all four parameters. Given a point in parameter space $P_{M_i, N_i, \beta_i, \gamma_i}$, the stellar mass function is constructed using the halo mass function and the SMHM relation. Each bin of parent halo mass is associated with a Gaussian distribution of stellar mass with scatter 0.15 dex. This distribution is multiplied by the halo mass number density to convert to galaxy number density which is added to the relevant stellar mass bins of the stellar mass function in construction. This operation is then repeated overall mass bins of the halo mass function to produce the complete central stellar mass function. For each point, $P_{M_i, N_i, \beta_i, \gamma_i}$ in the parameter space, the stellar mass function associated to that point is compared via a likelihood function to the observed stellar mass function to provide the MCMC with the probability that the given point is the `true' SMHM relationship. 
 
-We then fit to the \cite{Davidzon2017TheSnapshots} data both uncorrected and corrected for the cmodel and PyMorph fits respectively (see Section \ref{subsec:SMF} for details). At high redshift we use the central and subhalo mass functions initializing satellites at infall as described above\footnote{Ideally, as for low redshift, we would use the centrals only as we are primarily concerned with the central SMHM relation. However, lacking a well-defined central stellar mass function at high redshift, this method represents a reliable way to extend the model to higher redshifts.}. For central haloes the method is the same as detailed above, however, as we use the total stellar mass functions at high redshift we also include the total unevolved surviving subhalo mass function in the abundance matching. 
+We then fit to the \cite{Davidzon2017TheSnapshots} data both uncorrected and corrected for the cmodel and PyMorph fits respectively (see Section \ref{subsec:SMF} for details). At high redshift we use the central and subhalo mass functions initialising satellites at infall as described above\footnote{Ideally, as for low redshift, we would use the centrals only as we are primarily concerned with the central SMHM relation. However, lacking a well-defined central stellar mass function at high redshift, this method represents a reliable way to extend the model to higher redshifts.}. For central haloes the method is the same as detailed above, however, as we use the total stellar mass functions at high redshift we also include the total unevolved surviving subhalo mass function in the abundance matching. 
 We assume that a halo before infall hosts a central galaxy; under this assumption we use the central SMHM relation to assign satellite galaxy stellar mass at the point of accretion. For the latter, we must have information about the redshift of infall for subhaloes. We obtain from \textsc{steel} the unevolved surviving subhalo mass function as contributed by each redshift of infall. Each contributing part is calculated using the SMHM relation at the redshift of infall and added to the central stellar mass function using the same method as with the centrals. The total stellar mass function is compared, at each redshift step available, to the data via the likely-hood function to give the probability that the given point is the `true' evolution parameters. The abundance matching best-fit parameters and associated errors for both the cmodel and PyMorph are given in Table \ref{tab:AbnResult}, and plots showing the cross-sections of the parameter space are shown in Appendix \ref{Appx:AbnMCMC}.
 
 \begin{table}
 \centering
-\begin{tabular}{l|llllllll}
-        & M\_n & N     & $\beta$ & $\gamma$ & $M_{n,z}$ & N\_z   & $\beta_z$ & $\gamma_z$ \\ \hline
+\begin{tabular}{l||llll|llll}
+        & $M_n$ & $N$     & $\beta$ & $\gamma$ & $M_{n,z}$ & N\_z   & $\beta_z$ & $\gamma_z$ \\ \hline
 \\
 cmodel  & $11.91_{-0.34}^{+0.40}$ & $0.029_{-0.013}^{+0.018}$ & $2.09_{-1.02}^{+1.21}$    & $0.64_{-0.10}^{+0.11}$     & $0.52_{-0.19}^{+0.24}$       & $-0.018_{-0.004}^{+0.005}$ & $-1.03_{-0.34}^{+0.049}$     & $0.084_{-0.14}^{+0.20}$      \\
 \\
@@ -214,7 +241,7 @@ In Figure \ref{fig:Abn_Data} we show the results of our abundance matching to th
 
 \subsection{Continuity star formation rate}
 
-The continuity star formation rate was theorised in an effort to reconcile the observed evolution of the stellar mass function and the observed star formation rate. The observed UV star formation rates applied to high redshift stellar mass functions evolving populations conserving number density yield stellar mass functions higher than those observed. This deviation proved challenging for models which can not simultaneously reproduce the observed SFR and SMF, without invoking harsh feedback routines.
+A substantial modelling problem arises from the continuity between the evolution of the SMF and the observed SFR. The observed UV star formation rates applied to high redshift stellar mass functions when evolving populations conserving number density between epochs yield stellar mass functions higher than those observed. This deviation led to models which can not simultaneously reproduce the observed SFR and SMF, without invoking harsh feedback routines.
 
 \begin{figure}[h]
     \centering
@@ -223,19 +250,19 @@ The continuity star formation rate was theorised in an effort to reconcile the o
     \label{fig:Cont_Eqn}
 \end{figure}
 
-The continuity star formation rate is a theoretical quantity calculated such that the observed growth of the stellar mass function is conserved. As illustrated in Figure \ref{fig:Cont_Eqn} by connecting two SMF at consistent number density at times `$t$' and `$t + \Delta t$' the growth in mass $\Delta M$ at each number density over the time $\Delta t$ is obtained. In the simplest approximation, the SFR is equal to $\Delta M / \Delta t$. However, the star formation rate is higher than the this value. As new stars are created a proportion of the mass is recycled through supernova 'quickly' in terms of cosmological time. This mass recycling given in \citet{Moster2018Emerge10} is used to amend the star formation rate, to account for the mass loss based on the entire star formation history of the galaxy. The fraction of mass lost by a population of stars over time $\tau_{ml}$ is given by,
+The continuity star formation rate is a theoretical quantity calculated such that the observed growth of the stellar mass function is conserved. As illustrated in Figure \ref{fig:Cont_Eqn} by connecting two SMF at consistent number density at times `$t$' and `$t + \Delta t$' the growth in mass $\Delta M$ at each number density over the time $\Delta t$ is obtained. In the simplest approximation, the SFR is equal to $\Delta M / \Delta t$. However, the observed star formation rate is higher than the this value. As new stars are created a proportion of the mass is recycled through supernova `quickly' in terms of cosmological time. This mass recycling given in \citet{Moster2018Emerge10} is used to amend the star formation rate, to account for the mass loss based on the entire star formation history of the galaxy. The fraction of mass lost by a population of stars over time $\tau_{ml}$ is given by,
 
 %Mass recycling
 \begin{equation}
 \label{eqn:f_ml}
-f(\tau_{ml}) = 0.05 \ln \Big(\frac{\tau_{ml}}{1.4 Myr}+1\Big) ,
+f(\tau_{ml}) = 0.05 \ln \Big(\frac{\tau_{ml}}{1.4 Myr}+1\Big),
 \end{equation}
 
 summing the difference in fraction lost in a time step $\delta t$ for every star formation epoch in the galaxies history (SFH) gives the mass loss rate (MLR), 
 
 \begin{equation}
 \label{eqn:MLR}
-MLR(t) = \frac{ \sum_{t' = t_{inf}}^{t} SFH(t')(f[t' - (t-\delta t)]-f[t' - t]) }{\delta t} .
+MLR(t) = \frac{ \sum_{t' = t_{inf}}^{t} SFH(t')(f[t' - (t-\delta t)]-f[t' - t]) }{\delta t}.
 \end{equation}
 
 The continuity SFR is therefore calculated to be $\Delta M / \Delta t$ + MLR. The final correction made to this star-formation rate is that galaxies also accrete mass via mergers this accrete mass term ($M_{acc}$) is prominent for massive galaxies $M_* > 10^{11} M_{\odot}$. The continuity SFR at time t' is then finally,
@@ -256,6 +283,6 @@ Using the stellar-mass-halo-mass (SMHM) relation and halo mass growth histories 
     \label{fig:Cent_Mass_PP}
 \end{figure}
 
-At several redshift epochs, the HMGH to the SMGH are connected following the colour-coded lines, it is found the shape of the SMHM relationship is the primary factor that dictates the shape of the SMGH. Identifying for each growth history the step before the central galaxy growth rapidly slows z = 3 for orange and z = 1 for blue each of these lines intersect the HMGH when it is still growing, whereas they intersect the SMHM relationship just before the 'knee'. This change in the growth behaviour is thought to be an effect of active galactic nuclei suppressing the formation of stars in a galaxy. However, as the knee is a function of halo mass once could also attribute this to the halo mass at which infalling gas is shock heater and can no longer efficiently accrete to the central galaxy.
+At several redshift epochs, the HMGH to the SMGH are connected following the colour-coded lines, it is found the shape of the SMHM relationship is the primary factor that dictates the shape of the SMGH. Identifying for each growth history the step before the central galaxy growth rapidly slows $z = 3$ for orange and $z = 1$ for blue each of these lines intersect the HMGH when it is still growing, whereas they intersect the SMHM relationship just before the 'knee'. This change in the growth behaviour is thought to be an effect of active galactic nuclei suppressing the formation of stars in a galaxy. However, as the knee is a function of halo mass once could also attribute this to the halo mass at which infalling gas is shock heated and can no longer efficiently accrete to the central galaxy.
 
 \section{Discussion}
