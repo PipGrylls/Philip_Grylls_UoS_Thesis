@@ -215,9 +215,9 @@ In what follows we create SMHM relations using both the cmodel and PyMorph SMF d
 
 In Figure \ref{fig:Gauss_build} the above process is visualised, stripes in halo mass function are selected as shown in the left hand plot and then again in the middle as red bands. By propagating these bins of halo mass through the SMHM relation and associated scatter they each create a Gaussian of stellar mass as shown by overlapping green shading in the middle panel. Once weighted by the median halo number density they are added as green solid lines in the rightmost panel. Summing up each of the Gaussians created an estimation of the stellar mass is achieved. This figure is available animated at \url{https://twitter.com/RSEGrylls/status/1231279549704474624}. From this figure we see several features of the SMHM relation:
 \begin{itemize}
-    \item scatter specifically up-scatter
-    \item key zones (knee)
-    \item high mass slope dictates very little of the SMF
+    \item From the visualisation it can be seen that the scatter in the SMHM relation has two major effects: Firstly it can smooth out jaggedness introduced by the binning, one should therefore ensure that the scatter parameter is not influenced by the size of the binning to ensure results are physical and not numerical artefacts; Secondly the scatter dictates the size of the stellar mass gaussians it therefore dictates the range of stellar masses within a given halo mass bin. The width of the scatter has a second effect whereby lower mass halo bins can contribute to higher mass stellar mass bins this is known as 'upscatter', due to the greater number densities of lower mass haloes this can greatly impact the number densities of massive galaxies. This can be seen at high stellar masses where the peak of the stellar mass distribution sits below the previous distribution, this is the reason the scatter and the high mass slope are degenerate parameters when crating massive galaxies.
+    \item It can be seen from the animated figure or by tracing haloes of mass $~10^{12}$ though the middle panel that the knee of the SMHM relation is closely related to the high mass cutoff in the SMF.
+    \item Due to the fact that the high mass slope of the SMHM relation is much shallower than the low mass slope we see that the stellar mass distributions created are far more clustered and thus the high mass slope dictates a much smaller range of galaxies than the low mass slope.
 \end{itemize}
 
 \begin{figure}[h]
