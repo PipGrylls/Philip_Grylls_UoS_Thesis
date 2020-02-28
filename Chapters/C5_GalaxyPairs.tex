@@ -156,3 +156,30 @@ Given that lenticulars sit between and share properties of both the other types 
 \subsection{Lenticular formation in empirically constrained environments.}
 \textit{The work presented in this subsection was carried out by SP under the supervision of PJG and FS. The direction of the project was heavily influenced by PJG and builds upon the successes found in predicting morphologies in \steel.}
 Given the successes in ratifying the simple merger model of elliptical formation within \steel, we use several literature suggested models of lenticular formation to build a `minimal assumption' model that fits the morphological fractions from SDSS.
+
+\subsubsection{\citet{Cook2009Two-phaseFormation} Model}
+
+We started our investigation by implementing the lenticular formation model from \citet{Cook2009Two-phaseFormation}. This model divides halo growth into two distinct phases, a fast collapse and intense merging phase at high redshift and a slow accretion low redshift phase after a transition epoch $z_{t}$. The galaxy growth related to this two phase halo growth is that the spheriod forms at high redshift and the disk at low redshift. The model for building spheorids in this semi-analytic model is the same as that implemented in \citet{Granato2004AHosts}. 
+
+Translating semi-analytical techniques into a semi-empirical model by nature of the two models results in a loss of complexity, to distil this model we focus on the two phase formation. Galaxies are selected where they have grown a significant fraction of their mass (e.g. 70\%) between two epochs as assigned as lenticulars. These galaxies can then undergo further evolution by being transformed into ellipticals as described by the merger model from the previous section. Despite utilising complete freedom in the mass fraction required and redshift thresholds we find that within the framework given by \steel this model can not reproduce the lenticular fractions as shown in Figure \ref{fig:CookeModel}.
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{Figures/Chapter5/CookModel.pdf}
+    \caption{Lenticular galaxy fractions generated using a very simplified
+      version of the lenticular formation method described in
+      \cite{Cook2009Two-phaseFormation}. The model assumes lenticular galaxies are those that have formed during a particular epoch. That is, we can label galaxies that grew to more than, e.g. 70\% of their mass within some defined epoch as being
+      lenticulars. However, even after significant optimisation of the mass
+      threshold and epoch definitions, it is not possible to reproduce the SDSS
+      data within \steel using this model.}
+    \label{fig:CookeModel}
+\end{figure}
+
+\subsubsection{Minimal assumption model}
+
+Given the unsuccessful implementation of the \citet{Cook2009Two-phaseFormation} model we revisit other literature proposed models to find out which (or combination of which) have the potential to generate the observed lenticular fraction. Considering the nature of lenticulars in observations which increase their fraction with decreasing redshift in a similar fashion to ellipticals the first model we implement extends that of the elliptical merger model. An additional merger mass threshold ($\mu$) is implemented at $\mu = M_{*, sat}/M_{*, cen} = 0.05$ central galaxies that experience a merger in this mass range are assigned to be lenticulars. Lenticular galaxies that then experience mergers above the ratio are reassigned as ellpticals. This essentially adds a central 3rd column to Figure \ref{fig:Gal_Morph_toon}. As can be seen in the first panel of \ref{fig:Lentcular_panels} this simplistic model over produces lenticulars in the high mass end. Following, the analysis of PAPER we then implement a hard gas threshold whereby only galaxies with a gas fraction above the threshold can be converted into lenticulars, as shown in the middle panel this removes all lenticulars from the high mass end where galaxies tend to be gas poor. Finally, a soft gas fraction is implemented where galaxies below a given mass fraction become statistically less likely to become lenticulars after experiencing a major merger. This combination of models well fits the high mass lenticulars as can be seen in the rightmost panel of Figure \ref{fig:Lentcular_panels}.
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{Figures/Chapter5/Lenticular_three.pdf}
+    \caption{Lenticular galaxy}
+    \label{fig:Lentcular_panels}
+\end{figure}
