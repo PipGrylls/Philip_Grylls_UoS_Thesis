@@ -107,10 +107,48 @@ Due to the steepness of the low mass slope the fraction of pairs is lower in thi
 Finally, when the high mass slope parameter, $\gamma$, is altered more pairs are found at high and low redshift when the slope is shallow. 
 This is again attributed to more galaxies seeded within the mass ratio range.
 
+\subsection{Simulation and Observational Results}
+\label{subsec:SimObsRes}
+The observed pair fraction is known to have discrepancies based on the galaxy property used to calculate the ratio. In \citet{Man2016RESOLVING03} it is shown that selecting pairs by flux ratio or stellar mass creates differences in the pair fraction evolution. 
+In Figures \ref{fig:MassRatioCartoon} \& \ref{fig:SMHM_PF_Cartoon} we show the predicted effect of the determination of stellar mass on the SMHM relation and the propagation of these changes into the pair fraction. 
+Through the use of a toy model in Figure \ref{fig:PairFracSystematic} we show how isolated perturbations to the eight SMHM relation parameters propagate into the galaxy pair fraction.
+Given this analysis we find that any observation of the pair fraction must be understood in terms of its implicit observational assumptions. 
+Furthermore, direct comparison of pair fraction results should only be undertaken under identical stellar mass derivation assumptions, where this is not the case the influence of any differences must be accounted for.
+In this section we fit, by making use of $\steel$, observed pair fractions using small changes to the SMHM relation.
+We anticipate this modelling can be used to provide corrections to pair fraction results to allow for fair comparisons.
+
+In Figure \ref{fig:PairFractionIll} we show the simulated galaxy pair fractions for galaxies in the mass range $M_*$ = $10^{10}$ to $10^{10.6}$. The pair fraction is shown for two different SMHM relation inputs to $\steel$. In blue we show the PyMorph (S\`ersic Exponential) input used as the baseline in Figure \ref{fig:PairFracSystematic}, in orange the input calibrated to match the Illustris TNG simulation. In the right hand panel we see that the the prediction from \steel with the TNG-calibrated input is in good agreement to the pair fraction extracted directly from the Illustris TNG simulation. The pair fraction predicted using the PyMorph input is 0.5 dex lower, this is to be expected as in the mass range we are considering the Illustris TNG simulation SMHM relation is shallower and more pairs are therefore created in a greater mass range of halo mergers. 
+\begin{figure*}
+	\centering
+	\includegraphics[width = \linewidth]{Figures/Chapter5/PairFractionIllustris.png}
+    \caption{Left: Two SMHM relations are shown from \steel using parameters designed to reproduce the SMHM relation found in the Illustrius TNG simulation (Orange line) and the PyMorph(S\`ersic Exponential) fit parameters (Blue line). The shaded region is the output from the Illustris TNG simulation. Right: The pair fraction, for galaxies in the mass range $M_*$ = $10^{10}M_{\odot}$ to $10^{10.6}M_{\odot}$ generated from \steel is shown for runs using both the SMHM relations, lines follow the same colours as the left hand panel. The pair fraction extracted directly from the Illustris TNG simulation is shown using black crosses.}
+	\label{fig:PairFractionIll}
+\end{figure*}
+
+Figure \ref{fig:PairFractionData} shows the predicted pair fraction evolution using the two SMHM relations from PyMorph and cmodel presented in Section \ref{subsec:SMHM}. The left panel shows each SMHM relation at redshift $z = 0.1$ and $z = 2.5$. Following the systematic investigation in Figure \ref{fig:PairFracSystematic} we attribute the 0.1 dex difference in pair fraction to the difference in high mass slope between PyMorph and cmodel. The best-fit relation from \citet{Mundy2017A3.5}, shown as black crosses, rises rather than falling as seen from PyMorph and cmodel. We see in Figure \ref{fig:PairFracSystematic} a SMHM relation with a high mass slope that decreases with redshift creating a pair fraction evolution of this nature.
+
+\begin{figure*}
+	\centering
+	\includegraphics[width = \linewidth]{Figures/Chapter5/PairFractionData.png}
+    \caption{Left: The stellar mass halo mass relations derived from PyMorph (blue) and cmodel (orange) at redshifts 0.1 (solid lines) and 2.0 (dotted lines). Right: The pair fraction evolution for galaxies using both SMHM relations. We make mass cuts, $>10^{10}M_{\odot}$ (dashed line) and $>10^{10}M_{\odot}$ (solid line), in PyMorph and cmodel. The black crosses show the corresponding best fits for the $>10^{11}M_{\odot}$ mass cut from \citet{Mundy2017A3.5}.}
+	\label{fig:PairFractionData}
+\end{figure*}
+
+To attempt to match the \citet{Mundy2017A3.5} pair fractions we begin using the cmodel SMHM relation which gives the closest match in pair fraction at low redshift. Following the analysis of Figure \ref{fig:PairFracSystematic} where higher $\gamma_{z}$ increases the pair fraction at high redshift we alter the parameter from 0.0 to 0.5 in steps of 0.1. In Figure \ref{fig:PairFractionHMevo} the left panel shows the SMHM relation at redshift 0.1 as a black dotted line then coloured lines show the relation at redshift $z = 2$ given the different $\gamma_{z}$ parameters. The right panel shows the impact of this evolution on the pair fraction, as predicted higher $\gamma_{z}$ increases the pair fraction with redshift and a value of above 0.1 removes the turnover. Comparing to \citet{Mundy2017A3.5} we see a value of $\gamma_{z}$ between 0.1 and 0.2 best reproduces the rise in pair fraction. 
+
+\begin{figure*}
+	\centering
+	\includegraphics[width = \linewidth]{Figures/Chapter5/PairFractionHMevo.png}
+    \caption{Left: The stellar mass halo mass relations derived from cmodel (black) at redshift $z = 0.1$ (dotted lines) and at $z = 2.0$ (coloured lines) with altered high mass slope evolution parameter. Right: The pair fraction evolution for galaxies each altered SMHM relation. The black crosses show the corresponding best fits for the $>10^{11}M_{\odot}$ mass cut from \citet{Mundy2017A3.5}.}
+	\label{fig:PairFractionHMevo}
+\end{figure*}
+
 \section{Galaxy Morphologies Resulting from Galaxy Mergers}
 %What happens during a galaxy merger?
 
-Galaxy mergers happen on timescales that dwarf human timescales when we observe galaxy mergers we see what equates to a static snapshot of the process. Much of our knowledge of galaxy mergers then comes from simulations of merging systems \cite[e..g.][]{Hopkins2006ASpheroids,Hopkins2009TheDemographics, Hopkins2010MergersRate,Hopkins2009HOWMERGERS,Hopkins2010MERGERSMATTER,OLeary2020EMERGE:zsim6,Fensch2017High-redshiftFormation,Stewart2008MergerSurvival,Stewart2009GALAXYDEPENDENCE}. Despite this wealth of simulation knowledge about the physics of galaxy mergers, the fulcrum of our understanding lies with the estimation of the rate and significance of mergers \cite{Hopkins2010MERGERSMATTER, Hopkins2010MergersRate}. Using the merger rates derived in Chapter \ref{Chapter:GalGrowth} we implement a post-processing method to ascertain the effects of traditional models when decoupled from merger trees and applied to true, statistical, populations in \steel.
+Mergers are thought to be one of the drivers for morphological transformation, size growth and other galaxy changes \citep{Bournaud2007, Hopkins2009TheDemographics, Hopkins2010MergersFunctions, Shankar2011SizeUniverse, Fontanot2015OnMergers}. A number of analytically-based cosmological models have generally assumed that major mergers, in particular, with a mass ratio of at least $M_{sat}/M_{cen} > 0.25(to 0.3)$, are effective in destroying disks and in forming ellipticals \citep{Baugh2006AApproach, Malbon2007BlackFormation, Bower2010TheFormation}. However, galaxy mergers happen on timescales that dwarf human lifespans so when we observe galaxy mergers we essentially see a static snapshot of the process. Therefore, much of our knowledge of galaxy mergers then comes from simulations of merging systems \cite[e..g.][]{Hopkins2006ASpheroids,Hopkins2009TheDemographics, Hopkins2010MergersRate,Hopkins2009HOWMERGERS,Hopkins2010MERGERSMATTER,OLeary2020EMERGE:zsim6,Fensch2017High-redshiftFormation,Stewart2008MergerSurvival,Stewart2009GALAXYDEPENDENCE}. 
+
+Despite this wealth of simulations of galaxy mergers, the fulcrum of our understanding lies with the estimation of the rate and significance of mergers \cite{Hopkins2010MERGERSMATTER, Hopkins2010MergersRate}. Using the merger rates derived in Chapter \ref{Chapter:GalGrowth} we implement a post-processing method to ascertain the effects of traditional models when decoupled from merger trees and applied to true, statistical, populations in \steel.
 
 %The fraction of elliptical galaxies stemming from galaxy major merger in steel
 \subsection{Implementing discrete processes in a statistical model.}
@@ -176,10 +214,84 @@ Translating semi-analytical techniques into a semi-empirical model by nature of 
 
 \subsubsection{Minimal assumption model}
 
-Given the unsuccessful implementation of the \citet{Cook2009Two-phaseFormation} model we revisit other literature proposed models to find out which (or combination of which) have the potential to generate the observed lenticular fraction. Considering the nature of lenticulars in observations which increase their fraction with decreasing redshift in a similar fashion to ellipticals the first model we implement extends that of the elliptical merger model. An additional merger mass threshold ($\mu$) is implemented at $\mu = M_{*, sat}/M_{*, cen} = 0.05$ central galaxies that experience a merger in this mass range are assigned to be lenticulars. Lenticular galaxies that then experience mergers above the ratio are reassigned as ellpticals. This essentially adds a central 3rd column to Figure \ref{fig:Gal_Morph_toon}. As can be seen in the first panel of \ref{fig:Lentcular_panels} this simplistic model over produces lenticulars in the high mass end. Following, the analysis of PAPER we then implement a hard gas threshold whereby only galaxies with a gas fraction above the threshold can be converted into lenticulars, as shown in the middle panel this removes all lenticulars from the high mass end where galaxies tend to be gas poor. Finally, a soft gas fraction is implemented where galaxies below a given mass fraction become statistically less likely to become lenticulars after experiencing a major merger. This combination of models well fits the high mass lenticulars as can be seen in the rightmost panel of Figure \ref{fig:Lentcular_panels}.
+Given the unsuccessful implementation of the \citet{Cook2009Two-phaseFormation} model we revisit other literature proposed models to find out which (or combination of which) have the potential to generate the observed lenticular fraction. Considering the nature of lenticulars in observations which increase their fraction with decreasing redshift in a similar fashion to ellipticals the first model we implement extends that of the elliptical merger model. An additional merger mass threshold ($\mu$) is implemented at $\mu = M_{*, sat}/M_{*, cen} = 0.05$ central galaxies that experience a merger in this mass range are assigned to be lenticulars. Lenticular galaxies that then experience mergers above the ratio are reassigned as ellpticals. This essentially adds a central 3rd column to Figure \ref{fig:Gal_Morph_toon}. As can be seen in the first panel of \ref{fig:Lentcular_panels} this simplistic model over produces lenticulars in the high mass end. Following simmilar ideas to the gas dissipation models utilised in \citet{Hopkins2009} we test a hard gas threshold. Physically this gas threshold can be interpreted as a damping force, the gas dissipates the energy of the merger into heating the gas reservoir limiting the disruption to the galaxy structures. Initially only galaxies with a gas fraction above the threshold can be converted into lenticulars, as shown in the middle panel this removes all lenticulars from the high mass end where galaxies tend to be gas poor. 
+Finally, to improve the fit a soft gas fraction is implemented where galaxies below a given mass fraction become statistically less likely to become lenticulars after experiencing a major merger. We include the soft gas threshold to reflect the efficiency of the gas ratios at dissipating the energy. This combination of models well fits the high mass lenticulars as can be seen in the rightmost panel of Figure \ref{fig:Lentcular_panels}.
 
 \begin{figure}
   \includegraphics[width=\linewidth]{Figures/Chapter5/Lenticular_three.pdf}
-    \caption{Lenticular galaxy}
+    \caption{Three plots from left to right show lenticular fractions generated using the progressive development of the lenticular merger model. The first (leftmost) panel shows the fraction generated by summing the number densities of merging galaxies with mass ratio in the range $0.05 < \mu < 0.25$. The middle panel shows the effect of adding a hard gas ratio cutoff to the merger model, galaxies that are above a gas fraction threshold (GFT) do not form lenticulars. Finally, changing the model to a `soft' gas fraction threshold where the efficiency of lenticular formation is reduced above the GFT.}
     \label{fig:Lentcular_panels}
 \end{figure}
+
+Lower mass galaxies reside in less rich environments and grow more via secular (in-situ) processes, it is therefore understandable that the merger/dissipation model does not make lenticulars at these masses.
+
+To build lenticulars at these masses we implement a disk instability model following the baryonic inflow rates given by \citet{Bournaud2011BLACKSTREAMS}. Applied along the accretion histories we allow galaxies to build their central bulges though gas transport from the disk using Equation \ref{eqn:DiskInflow}, 
+
+\begin{equation}
+    \label{eqn:DiskInflow}
+    \dot{M}_{inflow} = 25 log_{10}\Big[\frac{M_{*,disk}}{10^{11}}\Big]\Big(\frac{1 + z}{3}\Big)^{1.5},
+\end{equation}
+
+the mass of the bulge is then given by,
+
+\begin{equation}
+    M_{bulge} = \sum_z \dot{M}_{inflow} \times \delta t(z),
+\end{equation}
+
+in each mass bin a fraction of galaxys proportional to the mass ratio of the bulge to the total stellar mass, $A \times M_{bulge} / M_{*, total}$, is added to the lenticular population. The resulting fit to the population is shown in Figure \ref{fig:All_Morphologies}.
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{Figures/Chapter5/Bulge_Growth_Final_All_Morph.png}
+    \caption{We show the fractions of morphologies as a function of mass. Ellipticals are generated using a major merger model, lenticulars using the combined merger (with soft gas fraction) and baryonic inflow models} and, spirals are the remaining population.
+    \label{fig:All_Morphologies}
+\end{figure}
+
+We find the combination of a merger and inflow model is able to adequately recreate the lenticular fractions. This two model fit is potentially consistent with the distinct morphological types, barred and un-barred found within the lenticular population \cite{Laurikainen2005MulticomponentGalaxies, VanDenBergh2012LuminositiesGalaxies}.
+
+In summary, to recreate the lenticular population we find it necessary to add three parameters in addition to the major merger mass ratio used to create the ellipticals. The first is the `minor' mass ratio limit that defines the minimium mass ratio at which lenticulars are formed via mergers, the second the is the `soft' gas mass threshold that damps the creation of lenticulars and, finally the parameter to convert the bulge ratios to lenticular fraction. 
+
+\section{Discussion}
+
+In this chapter we have shown two applications of \steel. Firstly is the ability of \steel to unravel the effects of systematics in galaxy observables using the galactic pair fractions. Secondly, we show an example of how constrained merger histories can be used to test if proposed morphological evolution models recreate the observed morphological fractions.  
+
+\subsection{Pair Fractions}
+
+The primary goal of the pair fraction analysis is to show the propagation of systematics in galaxy modelling. 
+Specifically, we use the SMHM relationship to connect assumptions used when estimating stellar masses from observations to systematics in galaxy pair fractions in the context of a \LCDM Universe. 
+In this chapter we have used two observed stellar mass functions from SDSS-DR7 observations that use a de Vaucoulers and a S\`ersic + Exponential fit to determine stellar masses, which in turn generate stellar mass functions with notably different number densities at the high mass end. Each stellar mass function then generates, through abundance matching, a different SMHM relationship. The S\`ersic + Exponential mass function generates a steeper high-mass slope in the SMHM relationship at any epoch.
+In addition to the SMHM relationships from the observed data we use a relationship fitted to match the outputs of the Illistris simulation. Furthermore, we also consider a toy model SMHM relation individually perturbing each input parameter to transparently probe the impact of the input SMHM relation on the pair fractions.
+In each case we find that small changes introduced into the SMHM relationship can have significant effects on the expected pair fractions, as shown in Figures \ref{fig:MassRatioCartoon},\ref{fig:SMHM_PF_Cartoon}, \& \ref{fig:PairFracSystematic}.
+This suggests that in the contxet of a \LCDM Universe tensions in previous observational studies could, in large part, be traced back to systematics in stellar mass estimates.
+
+In \citet{Mundy2017A3.5} the $M_{*,cen} > 10^{10} M_{\odot}$ pair fraction is given, however, this is not significantly different from the $M_{*,cen} > 10^{11} M_{\odot}$ pair fraction shown in Figure \ref{fig:PairFractionData}. In Figure \ref{fig:PairFracSystematic} we find the pair fraction drops significantly when mass a selection is taken below the SMHM relation knee. As this drop is not found by \citet{Mundy2017A3.5} we interpret that their pair fraction measurement is not consistent with a break in the SMHM relation between $10^{10} M_{*,cen}$ and $10^{11} M_{*,cen}$.
+
+\citet{Man2016RESOLVING03} noticed that the choice between luminosity-selected and stellar-mass selected pairs affected the pair fraction evolution. In this work we have provided a clear framework to properly interpret how input choices create systematic effects in the observed pair fraction and its evolution. Furthermore, it is a common approach to infer the assembly history of galaxies by converting the pair fractions into merger rates by assigning timescales to galaxy pairs \citep{Conselice2003A3,Conselice2008TheField,Mundy2017A3.5}. 
+In \Paper{2} we developed a model that calculates the stellar mass growth rates of central galaxies and the stellar mass accretion rate from satellite galaxies.
+It is found that, for some SMHM relationships, the accretion rate can be greater than the total growth rate implying the model is internally inconsistent and the SMHM relationship is not compatible with this \LCDM cosmology.
+The stellar mass accretion rate is connected to the merger frequency and therefore the galaxy pair fraction. 
+In this work we connect the shape and evolution of the SMHM relationship to the evolution of the pair fractions.
+We propose it is therefore possible to use the pair fraction as an additional constraint to the SMHM relationship, this is a natural extension of conditional abundance matching or extended SHAM (subhalo abundance matching) models \citep{Hearin2013SHAMGroups}.
+Using \steel one can test simultaneously the accretion ratio and the pair fraction generated from a given stellar mass function and cosmology.
+
+Any changes to the stellar mass estimates such as photometry, background subtraction, IMF, e.t.c. that affect the stellar mass function will in a given cosmology create a change in the SMHM relationship. Therefore by the systematic propagation demonstrated in this work any stellar mass estimation will create systematic differences in the pair fractions. 
+With the techniques presented throughout this thesis, one could retrieve the systematic differences created in pair fraction under multiple \LCDM cosmologies and for any given set of stellar mass functions. As a further test of our results we show the pair fractions found in Illustris, together with the pair fractions predicted by \steel, using a SMHM relationship designed to match
+that of Illustris are fully consistent.
+
+In the era of wide and deep surveys, such as EUCLID, constraining a model using a single multi-epoch data set with consistent photometry will become a reality. The advantages of this are twofold: By tuning the SMHM relation to a given survey over a large range of redshifts the growth of the stellar mass function over time can be tested against the implied satellite accretion and star formation rate as in Chapter \ref{Chapter:GalGrowth} this can be seen as a test of the consistency of the cosmological model or of the consistency of the stellar mass and/or starformation rate estimation. Secondly, as in Chapter \ref{Chapter:GalDist} one can test if the high redshift SMHM relation is consistent with the low redshift satellite distributions. The constraints on a given photometry, cosmological model, satellite evolution, starformation rate, e.t.c... are still not complete however it will allow nonphysical results to be identified. Furthermore, by making the model accessible it can then be used in the manner described above to make systematic adjustments to compare between current and future data sets that may use different stellar mass estimations.
+
+\subsection{Morphologies}
+
+Given the very promising results of \steel in predicting satellite number densities in different environments and epochs, we here take a step further and explore whether \steel's cumulative number of major mergers is able to account for the local fraction of elliptical galaxies as well as implementing several literature inspired lenticular formation models. 
+
+Despite the noticeably good agreement between model predictions and data in Figure \ref{fig:All_Morphologies}, we stress that different input SMHM relations can, as shown in this Chapter \ref{Chapter:GalGrowth}, substantially affect the accretion rate which in turn will modify the number of galaxies experiencing major mergers. It follows that any cosmological galaxy evolution model that uses mergers as a physical driver for galaxy transformation should first simultaneously and self-consistently closely reproduce stellar mass functions, the SMHM relation, satellite distributions, and pair fractions at previous redshifts.
+
+\section{Conclusions}
+\label{sec:Conclusions}
+
+In this Chapter, we show that the input SMHM relations, based on different stellar mass estimations, have a significant impact on the predicted galaxy pair fraction. In short, the steeper the relation, the lower the pair fraction. Specifically we compare stellar mass functions created with a de Vaucoulers-based photometry (cmodel) to a S\'ersic-Exponential photometry (PyMorph), the latter leading to an enhancement in the number density of high mass galaxies. The resulting effect of these stellar mass functions is a different input SMHM relation to $\steel$, the primary difference consisting of a steeper high mass slope when adopting the S\'ersic-Exponential profile. As expected, the S\'ersic-Exponential results in a lower pair-fraction. To attempt to explain the difference in pair-fraction evolution with redshift we create a suite of toy models testing different alterations to the SMHM relation. We find that this evolution is linked to the evolution of the high mass slope.
+
+The purpose of this work is to show how subtle changes in derivation of stellar mass could lead to large differences in the pair fraction observed. It is therefore crucial when comparing two different samples to account for the systematic biases introduced by the assumptions implicit in stellar mass estimation as shown in this work to avoid systematic effects from a simulations foundation propagating to more `delicate' physics or driving unwanted feedback processes.
+
+The second part of the chapter showed how simple morphological models can be quickly implemented in \steel to show how they propagate into the galaxy populations. We are able to show that some models such as the major merger model well reproduce the observed distributions as is expected from it widespread use in semi-analytic modelling. The example of building a `least assumption' model shows how the transparency of the empirical and statistical approach can aid the testing and development galactic modelling. ARGHHHHH
+
+Future surveys should look to use fast and flexible modelling alongside data products to be able to properly understand the systematic effects of assumptions made on derived data products. For example the SMHM relation must simultaneously fit: traditional abundance matching, self-consistency between satellite accretion and central galaxy growth, and as shown in this paper the normalisation and evolution of the galaxy pair fraction. This multi-product fitting will ensure relations such as the SMHM relation are better constrained. The methods described in this work and \Paper{2} will also provide more stringent theoretical limits to the stellar mass estimations and photometerys used for future surveys.
