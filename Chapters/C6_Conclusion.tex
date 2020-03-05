@@ -4,12 +4,36 @@
 \label{Chapter:Conclusion}
 \lhead{Chapter 6. \emph{Conclusion}} % Write in your own chapter title to set the page header
 
+This thesis describes \steel, the STastical sEmi-Empirical modeL, a model designed to use the empirical technique in a new fashion to make a predictions that are complementary to traditional discrete models. The foremost problem concerning galactic modelling on a cosmological scale is one of constraint in overwhelmingly complex systems. Complexity and uncertainty is built into systems form all contributing aspects, from the dark matter simulations \cite[e.g.]{vandenBosch2018DisruptionFiction}, to observations \cite[e.g.]{Bernardi2017ComparingLight, Lapi2017StellarEquation, Leja2019AnSurvey}. Techniques have been developed to try to reduce the impact of these effects for example:
+\begin{itemize}
+    \item Abundance matching is able to create a mapping between any stellar mass function and halo mass function. In doing so it provides a consistent framework to use for galactic modelling for a given dark matter model.
+    \item Continuity modelling uses the growth of the stellar mass functions to avoid conflicts between observed star formation rates and cosmological stellar mass densities. 
+\end{itemize}
+
+The mantra `publish or perish' combined with a hostility between different modelling techniques creates an environment where researchers are pushed to report positive and new results. It is unsurprising then that the number of papers that report new techniques or fits to data far outweigh those models which deconstruct the techniques to understand how are models work and document their limitations \cite[e.g.][]{vandenBosch2017DissectingSimulation, vandenBosch2018DisruptionFiction, Asquith2018CosmicModels}. We are driven to tune multi parameter systems and over-fit or be out competed by those who do.
+
+\steel was designed as a reaction to this gap in cosmological modelling. Through flexible modelling and prioritising the understanding of systematics and internal self consistency above that of fitting new features we find a unique perspective. \steel is therefore not a physical model and in this way is the antithesis of high resolution single galaxy or cluster simulations such as FIRE \cite{Hopkins2018FIRE-2Formation}. Galaxy modelling is often seen as a spectrum from hydrodynamical, though semi-analytic and semi-empirical to mock catalogues produced via HOD. In this regime \steel can be thought of as occupying a space between traditional semi-empirical and HOD modelling, we retain the ability to track galaxy populations in redshift but forgo the tracking of discrete objects from step to step. Despite the antithetical nature of \steel to the hydrodynamical and non-statistical models it is not adversarial, use in conjunction with other techniques is likely its best use case. 
+
 \section{Pros and Cons of \steel as a Galaxy Model}
 %successes of STEEL where other models fall down
 %what if theoretically impossible in steel that other models can do
 
+\steel has had the following major successes:
+\begin{itemize}
+    \item Reproduction of the statistical distribution of satellite galaxies in dark matter halos over a broad redshift range.
+    \item Identification of the inconstancy between certain stellar mass functions and dark matter accretion histories produced by \LCDM cosmologies.
+    \item Derivation of the star formation rate from a new halo centric approach, consistent with cutting edge observations.
+\end{itemize}
+Each of these directly stem from the statistical dark matter accretion history, however, this technique looses individual galaxies that could be tracked though hydrodynamical, semi-analytic, and traditional semi-empirical models.
+
+\steel is not a physical model it is a systematic model, it is not within the remit of \steel to predict but to apply predictions to full simulations and draw transparent conclusions about the way assumptions and models propagate into observed populations. Furthermore, Chapter \ref{Chapter:GalPairs} shows the potential of this systematic technique to track how changes to input propagate to output in a complex system, as shown with the pair fractions. Finally, using morphological models, we are able to show how we can test multiple models to understand how each effects the resultant population individually.
+
+Creating another cosmological model acting on a discrete dark matter background has little value to add with several good models already existing in the empirical, \cite[e.g.][]{Rodriguez-Puebla2017ConstrainingProperties, Moster2018Emerge10, Behroozi2019UniverseMachine:010, Zavala2012}, analytic \cite[e.g.][]{Somerville2015StarGas, Guo2011FromCosmology, Fontanot2007ReproducingCosmogony, Zoldan2019TheEvolution} and, hydrodynamical
+
 \section{Impact of \steel}
 %how impactful is the work done with STEEL on the wider field?
+
+
 
 \section{Future of \steel in Galactic Astrophysics}
 %How can we build on what we have done?
