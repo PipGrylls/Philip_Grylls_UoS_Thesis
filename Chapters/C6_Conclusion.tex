@@ -50,6 +50,7 @@ Creating another cosmological model acting on a discrete dark matter background 
 We have shown how \steel can be used to combine data with a given cosmology to: predict consistency, satellite distributions, and star formation rates. This has been used to add weight to the claims made about light profiles from \citet{Bernardi2017ComparingLight} and the star formation rates from \citet{Leja2019AnSurvey}. In each of the aforementioned works problems are identified in current data analysis and more advanced data fitting routines are used, in the case of \citet{Bernardi2017ComparingLight} this involves the improved PyMorph photometery and systematic over subtraction of sky background in SDSS to better fit the observed luminosities, and in \citet{Leja2019AnSurvey} the use of prospector that can fully account for the starformation histories to better fit the starformation rate. \steel has currently worked on these problems after the fact, fully realised it could be an integral part of data fitting routines.
 
 \section{Future of \steel in Galactic Astrophysics}
+\label{sec:Future}
 %How can we build on what we have done?
 
 The future of \steel and potentially the future of statistical semi-empirical modelling now relies on communication of the advantages (and disadvantages) of the technique. We have begun to build collaboration around the model with several other empirical modellers, dark matter physicists, observers (both survey designers and data analysts), as well modellers that use semi-analytic and hydrodynamic models. The reception to \steel has been widely positive with many intrigued by its unique capabilities. The most notable group involved is the EUCLID consortium, working with EUCLID steel has the potential to have preferential access to the earliest survey data, and if developed correctly could be used in conjunction with the data analysis pipelines to ensure the routines used to fit the observations are consistent with cosmological theory.
@@ -80,7 +81,29 @@ Items closer to the top of the list are less effected by the modelling and there
 
 \subsection{Galaxy modelling tool}
 
-The proposition for \steel, or another statistical semi empirical model, to become a staple amoungst other competitive galactic modelling tools is based exclusively on the concept of a statistical dark matter accretion history. 
+The proposition for \steel, or another statistical semi empirical model, to become a staple amoungst other competitive galactic modelling tools is based exclusively on the concept of a statistical dark matter accretion history. This is due to two factors; firstly simulating without volume or resolution until computational power is so cheap that these become a non-issue a statistical model will have a place to match the rarest features in observation; secondly, the removal of discrete objects allows for a new type of continuity check where the consistency of a population is modelled as a priority over the consistency of an individual halo/galaxy. 
 
-%where is the low hanging fruit?
-%how can STEEL become a staple model such as UniM or Illistris?
+\steel is an excellent start to statistical semi-empirical modelling, however, it contains remnants of its proof of concept, the development of the proficiency of PJG in research, and code implementation and architecture. \steel was fully rewritten once during this Ph.D. and stands to be fully revised again. With any revision the model should be updated in the following ways,
+
+\begin{itemize}
+    \item The statistical dark matter accretion history should be a separate library, containing flexible cosmology, halo definitions (e.g. virial, splashback, m200c, e.t.c...), and should be built in an object oriented fashion such that it is easily extendable.
+    \item The galaxy modelling should be redesigned such that each dark matter accretion history is built upon using explicit probability distribution convolutions.
+    \item The outputs should be shaped by the statistical dark matter accretion history and contain structured probability distributions to be able to post-process a hierarchical complexity of result.
+    \item The post-processing suit should contain any and all integrators required to process the outputs into galaxy populations for cosmological volumes, single mass tracks, or given mass ranges.
+    \item The post-processing suit should offer `views' on the data structure using flexible plotting routines for ease of query and graph creation by a non expert user simmilar to the API provided to IllustrisTNG \cite[][https://www.tng-project.org/data/vis/]{Nelson2018TheRelease} as well as a more complex return structure to extract the full data products.
+\end{itemize}
+
+As detailed in the PERT chart in Appendix \ref{Appx:HF}, this would take 6 months to a year of full time development depending on the programming and empirical modelling skills of the developer. Once developed, documented, and deployed such a tool would be of enormous value to the galactic astrophysics community. 
+
+\section{In closing}
+
+The applications of \steel detailed in Section \ref{sec:Future} each independently represent a tool that if correctly developed and made publicly available would be at the cutting edge of galactic astrophysics. The work done in this thesis represents the foundations upon which these tools can be built. 
+
+In brief the findings from this thesis are: 
+\begin{itemize}
+    \item The dark matter structure and dynamics is the first order driver for prediction of galaxy properties including, satellite distributions, star formation rate, galaxy morphologies. 
+    \item Assumptions made during stellar mass estimation produce significant non-trivial systematics in the pair fraction of galaxies and likely further properties, and without proper appreciation of such systematics we are likely to fundamentally misinterpret the nature of galaxy assembly. 
+    \item Stellar mass functions with an enhanced number densities of high mass galaxies are in much better agreement with \LCDM cosmology than those with lower number densities of high mass galaxies. Furthermore, some traditional stellar mass functions are fundamentally incompatible with \LCDM hierarchical cosmology.
+\end{itemize}
+
+Dark matter dominating the evolution of galaxies is understood and the contributions made are novel but not unexpected. The source and complexities of the systematics in the pair fraction represent something that once known seems trivial but to the knowledge of PJG and coauthors FS and CC (an expert in galactic pair fractions) has not been addressed before from a quantitative theoretical standpoint. Finally, the lack of self-consistency between hierarchical \LCDM assembly and some stellar mass functions is a result of fundamental importance to galactic astrophysics. This result can only be reproduced from an approach that looks at the statistics of galactic populations and not discrete objects. It hints at a potentially devastating departure between observation and theory that if left unaddressed will hinder our understanding of the evolution of galaxies for the foreseeable future.
