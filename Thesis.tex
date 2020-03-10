@@ -7,7 +7,6 @@
 %\documentclass[a4paper, 11pt, oneside]{Thesis}  % Use the "Thesis" style, based on the ECS Thesis style by Steve Gunn
 \documentclass[a4paper, 11pt, twoside]{Thesis} % Use the "Thesis" style, based on the ECS Thesis style by Steve Gunn
 \graphicspath{{Figures/}}  % Location of the graphics files (set up for graphics to be in PDF format)
-
 % Include any extra LaTeX packages required
 \usepackage[square, numbers, comma, sort&compress]{natbib}  % Use the "Natbib" style for the references in the Bibliography
 \usepackage{verbatim}  % Needed for the "comment" environment to make LaTeX comments
@@ -119,7 +118,11 @@
 \abstract{
 \addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
 \begin{singlespace} %% Gets you more space - delete if you have a teeny abstract
-The Thesis Abstract is written here (and usually kept to just this page). The page is kept centered vertically so can expand into the blank space above the title too\ldots
+This thesis describes the STastical sEmi-Empirical model, \steel, and it's contributions to the modelling of galaxies. \steel is built to overcome the limitations of volume and resolution; traditional models must choose between simulating large volumes or small details. Using a novel technique to replace discrete haloes with a statistical alternative using a combination of halo mass functions we remove these constraints and any associated biases. This cutting edge dark matter backbone is then combined with empirical techniques, e.g. Abundance Matching, to create $\steel$. In this thesis we describe five applications of $\steel$: Recreating the distributions of satellite galaxies over a cosmic time frame; Predicting the in-situ and ex-situ growth of central galaxies using constrained group and cluster environments; Calculating a new continuity style star formation rate; Understanding the systematic effects of the stellar-mass-halo-mass relation on the galaxy pair fraction; Testing proposed models for the evolution galaxy morphological fractions using constrained merger histories.
+
+Using \steel we are able to build a picture of how populations of galaxies respond to modelling assumptions. Probing the in-situ vs. ex-situ growth we find that certain stellar mass functions are inconsistent with \LCDM hierarchical assembly. We find that the growth rate of massive galaxies is less than the predicted stellar mass accretion rate this creates an nonphysical system. \steel finds this result where others have missed it due to both it's statistical and empirical nature, this is a potential answer to why other models invoke large amounts of feedback to regulate galaxy growth when using these stellar mass functions. We find that cutting-edge stellar mass functions boasting enhanced number densities are self-consistent with \LCDM hierarchical assembly.
+
+
 \end{singlespace}
 }
 \normalsize
@@ -168,30 +171,13 @@ Douglas Adams, The restaurant at the end of the Universe.
 \listofsymbols{ll}  % Include a list of Abbreviations (a table of two columns)
 {
 % \textbf{Acronym} & \textbf{W}hat (it) \textbf{S}tands \textbf{F}or \\
-\textbf{LAH} & \textbf{L}ist \textbf{A}bbreviations \textbf{H}ere \\
-
-}
-
-%% ----------------------------------------------------------------
-\clearpage  % Start a new page
-\lhead{\emph{Physical Constants}}  % Set the left side page header to "Physical Constants"
-\listofconstants{lrcl}  % Include a list of Physical Constants (a four column table)
-{
-% Constant Name & Symbol & = & Constant Value (with units) \\
-Speed of Light & $c$ & $=$ & $2.997\ 924\ 58\times10^{8}\ \mbox{ms}^{-\mbox{s}}$ (exact)\\
-
-}
-
-%% ----------------------------------------------------------------
-\clearpage  %Start a new page
-\lhead{\emph{Symbols}}  % Set the left side page header to "Symbols"
-\listofnomenclature{lll}  % Include a list of Symbols (a three column table)
-{
-% symbol & name & unit \\
-$a$ & distance & m \\
-$P$ & power & W (Js$^{-1}$) \\
-& & \\ % Gap to separate the Roman symbols from the Greek
-$\omega$ & angular frequency & rads$^{-1}$ \\
+%\textbf{LAH} & \textbf{L}ist \textbf{A}bbreviations \textbf{H}ere \\
+\textbf{(S)HMF} & (\textbf{Sub}) \textbf{H}alo \textbf{M}ass \textbf{F}unction \\
+\textbf{\LCDM} & \textbf{$\Lambda$} \textbf{C}old \textbf{D}ark \textbf{M}atter\\
+\textbf{(s)SFR} & (\textbf{s}pecific) \textbf{S}tar \textbf{F}ormation \textbf{R}ate\\
+\textbf{SMF} & \textbf{S}tellar \textbf{M}ass \textbf{F}unction\\
+\textbf{SMHM} & \textbf{S}tellar-\textbf{M}ass-\textbf{H}alo-\textbf{M}ass\\
+\steel & \textbf{ST}atistical s\textbf{E}mi-\textbf{E}mpirical mode\textbf{L}\\
 }
 
 %% ----------------------------------------------------------------
