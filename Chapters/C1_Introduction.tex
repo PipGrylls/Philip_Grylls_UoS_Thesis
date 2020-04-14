@@ -284,61 +284,65 @@ A major feature of a Semi-Analytic modelling is the number of parameters that ca
 \section{Semi-Empirical Modelling}
 \label{sec:SEM}
 %What is a SEM
-Semi-empirical models similarly to semi-analytic models are built on prepossessed dark matter accretion. A semi-empirical model additionally uses observations as an input. By comparing the relative abundance of dark matter haloes and observed galaxies a correlation between halo mass and stellar mass is determined \citep{Kravtsov2004TheDistribution,Shankar2006NewFormation}. This process is called abundance matching and is explained in greater depth in Section \ref{C2:SubSec:AbnMtch}. When used correctly abundance matching ensures that semi empirical models recreate the observed distributions of galaxies over many redshift epochs. Constraining galaxy masses and other properties via observations significantly reduces the parameter search space compared to hydro-dynamical or semi-analytic models. In doing so semi-empirical models are able to probe areas of physics that may not yet have clear constraint or physical mechanism.
+Semi-empirical models similarly to semi-analytic models are often built on numerical or analytical dark matter merger trees \cite{Zavala2012}. A semi-empirical model uses a set of observations as inputs to build the model upon and another set of observations as an output. 
+For example, many semi-empirical models us the stellar mass function to calibrate the mass and mass growth of galaxies. In brief, this is achieved by comparing the relative abundance of dark matter haloes and observed galaxies. Under the assumption that galaxies reside in parent halos that share a similar number density an analytic correlation between halo mass and stellar mass is determined \citep{Kravtsov2004TheDistribution,Shankar2006NewFormation}. This process is called abundance matching and is explained in greater depth in Section \ref{C2:SubSec:AbnMtch}. When used correctly abundance matching ensures that semi empirical models recreate the observed distributions of galaxies over many redshift epochs. By then using the growth of dark matter haloes merger trees and the abundance matching relation the need for modelling of galaxy mass and growth is removed via this empirical constraint. Constraining galaxy masses and/or other properties via observations significantly reduces the modelling parameter space compared to hydro-dynamical or semi-analytic models. A reduced parameter space increases the transparency of the model by making the affects of the other parameters more clear. By empirically fixing properties that may not yet have clear constraint or physical mechanism, or those properties that are not of interest to the current simulation, semi-empirical models are able to focus on reproduction of a singular or small subset of properties.
 
-Since there inception semi-empirical models have grown in complexity and with this increased their parametrization, even approaching the levels of semi-analytic models. However semi-empirical models retain more flexibility and transparency. Where the complexity of the models is controlled by observational priors and the model is internally consistent it is possible to accurately probe very specific aspects of galaxy formation whereas in models that require tuning to fit observations subtle effects can be missed in degeneracies. It is even possible to make models where the observational priors, and by extension the model, are not consistent. For example the observed stellar mass function for a long time has been inconsistent with the observed star formation rate \citep{Leja2015ReconcilingFunction,Lapi2017StellarEquation}, in this regard the semi-empirical model could use an empirical relation to show what the observed starformation rate would be without needing the conflicting measurement to form a physical part of the model. Similar yet unappreciated effects involving systematics in galaxy assembly make up a significant parts of Chapters \ref{Chapter:GalGrowth} \& \ref{Chapter:GalPairs}.
+Since there inception, semi-empirical models have grown in complexity and in doing so have naturally increased the number of modelling parameters. However, as the complexity of the models is controlled by observational priors and the model should be \textit{internally consistent}, and thus it is possible to accurately probe very specific aspects of galaxy formation. It is however possible to create SEM where the observational priors, and by extension the model, are \textit{internally inconsistent} i.e. one or more of the observational inputs do not agree. An example of such an inconsistency can be has been found in observed stellar mass function and the observed star formation rate. The time integral of the star formation rate predicts far more stellar mass growth than is possible with the observed growth of the stellar mass function \citep{Leja2015ReconcilingFunction,Lapi2017StellarEquation}. If these two empirical properties were included in a semi-empirical model then the model would be \textit{internally inconsistent}. However, the semi-empirical model could use the stellar mass function as an input to show the implied starformation rate without needing the conflicting measurement to form a physical part of the model. Similar yet unappreciated effects involving systematics in galaxy assembly make up a significant parts of Chapters \ref{Chapter:GalGrowth} \& \ref{Chapter:GalPairs}.
 
 \subsection{State of the art}
-Here we describe three state of the art semi-empirical models. Each of the models described here has a radically different approach to semi-empirical modelling. They are each constrained by observational priors and make predictions about the buildup of mass in galaxies though mergers and star formation rate. The range of approaches show the flexibility and the agreement between models shows the power of the empirical approach. 
+Here we describe three state-of-the-art semi-empirical models. Each of the models described here has a radically different approach to semi-empirical modelling. They are each constrained by observational priors and make predictions about the buildup of mass in galaxies though mergers and star formation rate. The range of approaches show the flexibility and the agreement between models shows the power of the empirical approach. 
 
 
 \subsubsection{\citet{Rodriguez-Puebla2017ConstrainingProperties}}
 %Aldo
-In the model presented in \citet{Rodriguez-Puebla2017ConstrainingProperties} the SMHM is constrained using the 2 point correlation function and the evolution of the SMF. Using this constraint the inconsistent between observed SFR and SMF evolution are avoided. The results of this paper are exceptional constraints on the SFR and quenched fraction of galaxies in multi-parameter space, in both halo mass - redshift space and stellar mass - redshift space as shown in Figure \ref{fig:RP_fig}.
+In the model presented in \citet{Rodriguez-Puebla2017ConstrainingProperties}, the SMHM is constrained using the 2 point correlation function and the evolution of the SMF. Using these constraints the inconsistency between observed SFR and SMF evolution is avoided. The main result of this paper is valuable constraints on the SFR and quenched fraction of galaxies in multi-parameter space, in both halo mass - redshift space and stellar mass - redshift space as shown in Figure \ref{fig:RP_fig}.
 
 %Figure
 \begin{figure}[h]
     \centering
     \includegraphics[width = \linewidth]{Figures/Chapter1/RP17_fig9.pdf}
-    \caption{Image used with permission from: Aldo Rodriguez Puebla \cite{Rodriguez-Puebla2017ConstrainingProperties}}
+    \caption{In this figure the relationship between mass redshift and starformation rate is shown. The black lines show the `galaxy mass tracks' the average path of the galaxies through $M_*$-z space. The colour shows the star formation rate associated with an average galaxy at that point in $M_*$-z space. The dotted and dashed lines show the location where a percentage of galaxies (as labelled) have been quenched.
+    Image is used with permission from: Aldo Rodriguez Puebla \cite{Rodriguez-Puebla2017ConstrainingProperties}}
     \label{fig:RP_fig}
 \end{figure}
 
 
-The key findings are that most stellar mass is built up in-situ at high redshift. Massive galaxies then quench at the point where the sSFR is equal to the specific halo mass accretion rate which happens at $M_{vir} \sim 2 x 10^{11} M_{\odot}$.
+The key message from \ref{fig:RP_fig} is that most stellar mass is built up ``in-situ'' at high redshift as the mass growth below redshift $z<1$ is a few percent. In \citet{Rodriguez-Puebla2017ConstrainingProperties} it is also shown that massive galaxies then quench at the point where the sSFR is equal to the specific halo mass accretion rate which happens at $M_{vir} \sim 2 x 10^{11} M_{\odot}$, this point is shown on the figure as the dotted/dashed lines where it can be seen that the SFR rapidly decreases.
 
 
 \subsubsection{E\textsc{merge}}
 %Moster Emerge
-E\textsc{merge} is presented in \citet{Moster2018Emerge10} built upon N-body dark matter simulations. From the dark matter simulation each halo is tracked with its growth history and relation to other haloes recorded. E\textsc{merge} works under the core assumption that galaxies grow in conjunction with the dark matter haloes they reside in. This is achieved through coupling the star formation rate of each galaxy to the accretion rate of the host dark matter halo parameterised in the following way,
+E\textsc{merge}, presented in \citet{Moster2018Emerge10}, builds upon N-body dark matter simulations. From the dark matter simulation each halo is tracked with its growth history and relation to other haloes. E\textsc{merge} works under the core assumption that galaxies grow in conjunction with the dark matter haloes they reside in. This is achieved through coupling the star formation rate of each galaxy to the accretion rate of the host dark matter halo parameterised in the following way,
 
 \begin{equation}
 \begin{aligned} \log _{10} M_{1}(z) &=M_{0}+M_{z}(1-a)=M_{0}+M_{z} \frac{z}{z+1}, \\ \epsilon_{\mathrm{N}}(z) &=\epsilon_{0}+\epsilon_{z}(1-a)=\epsilon_{0}+\epsilon_{z} \frac{z}{z+1}, \\ \beta(z) &=\beta_{0}+\beta_{z}(1-a)=\beta_{0}+\beta_{z} \frac{z}{z+1}, \\ \gamma(z) &=\gamma_{0}, \end{aligned}
 \end{equation}
 
-where $M$, $\epsilon_{\mathrm{N}}$, $\beta$ and $\gamma$ are the characteristic mass, efficiency normalisation, low mass slope and high mass slope respectively each has a redshift evolution parameter with the exception of $\gamma$. In addition to this additional parameters are included determining; the point at which satellite galaxies are disrupted returning all mass to the ICM, the fraction of mass ejected to the ICM during a merger, and quenching parameters from \citet{Wetzel2013GalaxyUniverse}. The fractions of in-situ vs ex-situ mass build up are computed and fit by,
+where $M$, $\epsilon_{\mathrm{N}}$, $\beta$ and $\gamma$ are respectively the characteristic mass, efficiency normalisation, low mass slope and high mass slope. Each parameter has a value at redshift zero given by, e.g. $M_{0}$, and, with the exception of $\gamma$, a redshift evolution coefficient given by, e.g. $M_{0}$. Additional parameters are included controlling for example; the point at which satellite galaxies are disrupted returning all mass to the ICM, the fraction of mass ejected to the ICM during a merger, and quenching parameters from \citet{Wetzel2013GalaxyUniverse}, e.t.c. The fractions of `in-situ' vs `ex-situ' mass build up are computed and fit by,
 
 \begin{equation}
 f_{\mathrm{acc}}(z) =f_{2} \exp \left[-f_{1}(z+1)\right] 
 \end{equation}
 
-as well as the star formation histories fit by,
+as well as the star formation histories that are fit by,
 
 \begin{equation}
 \log \Psi(z) =-\log \left[\Psi_{1}(z+1)^{-\Psi_{2}}+\mathrm{e}^{\Psi_{3}(z+1)-\Psi_{4}}\right] 
 \end{equation}.
 
-Similarly to \citet{Rodriguez-Puebla2017ConstrainingProperties} it is found that stellar mass is built up in-situ until a break point at $1.1 x 10^{12} M_{\odot}$. Above this mass larger galaxies may accrete a significant proportion of their mass.
+Similarly to \citet{Rodriguez-Puebla2017ConstrainingProperties} it is found that stellar mass is built up in-situ until a break point at $1.1 \multiply 10^{12} M_{\odot}$. Above this point larger galaxies may then accrete a significant proportion of their mass.
 
 \subsubsection{U\textsc{niverse}M\textsc{achine}}
 %Behroozi UnivM
-U\textsc{niverse}M\textsc{achine} \cite{Behroozi2019UniverseMachine:010} is built on a background of halo merger trees extracted from the Bolshoi simulation \citep{Klypin2016,Rodriguez-Puebla2016HaloSimulations}, using the \textsc{rockstar} halo finder and the C\textsc{onsistent} T\textsc{rees} codes \cite{Behroozi2011TheCores, Behroozi2013GRAVITATIONALLYCOSMOLOGY}. There are 21 tuning aspects with 44 parameters and 6 priors using a Markov Chain Monte Carlo the parameters are fit to a large set of observations though the algorithm depicted in Figure \ref{fig:BehMeth}.
+U\textsc{niverse}M\textsc{achine} \cite{Behroozi2019UniverseMachine:010} is built on a background of halo merger trees extracted from the Bolshoi simulation \citep{Klypin2016,Rodriguez-Puebla2016HaloSimulations}, using the \textsc{rockstar} halo finder and the C\textsc{onsistent} T\textsc{rees} codes \cite{Behroozi2011TheCores, Behroozi2013GRAVITATIONALLYCOSMOLOGY}. There are 21 modelled outputs with 44 tuning parameters and 6 priors. Using a Markov Chain Monte Carlo the parameters are fit to a large set of observations though the algorithm depicted in Figure \ref{fig:BehMeth}.
 
 %go to here for the source https://arxiv.org/format/1806.07893
 \begin{figure}[h]
     \centering
     \includegraphics[width = \linewidth]{Figures/Chapter1/sfr_method.pdf}
-    \caption{Image used with permission from: Peter Behroozi \cite{Behroozi2019UniverseMachine:010}}
+    \caption{
+    This figure shows the iterative process used by the Markov Chain Monte Carlo in U\textsc{niverse}M\textsc{achine}. As described by the labels in the figure relations from the empirical parameter space are chosen (1), giving a SFR distribution (2). The distribution is mapped into haloes (3), the SFR is integrated along the merger histories to infer the galaxy growth (4). Observable features are produced (5), and observational bias corrections applied (6). Finally, this is compared to the data and the likely-hood of the parameters produced and new parameters picked accordingly.
+    Image used with permission from: Peter Behroozi \cite{Behroozi2019UniverseMachine:010}}
     \label{fig:BehMeth}
 \end{figure}
 
