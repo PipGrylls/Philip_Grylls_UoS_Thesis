@@ -1,0 +1,42 @@
+% Appendix EXTRASam
+
+\chapter{Additional Semi-Analytic Methods}
+\label{Appx:ExtraSAM}
+\lhead{SAM methods Continued...}
+
+In this Appendix we detail a further common consideration taken in semi-analytic modelling, the state of the gas. The state can be calculated in several different ways, an empirical pressure based relationship is given by \citet{Blitz2006TheRelation}, the pressure in the disk is related to the ratio of molecular and atomic hydrogen. 
+
+\begin{equation}
+    R_{\mathrm{H}_{2}}=\left(\frac{\Sigma_{\mathrm{H}_{2}}}{\Sigma_{\mathrm{HI}}}\right)=\left(\frac{P_{m}}{P_{0}}\right)^{\alpha}
+\end{equation}
+
+The $H_1$ \& $H_2$ surface densities are given by $\Sigma_{\mathrm{HI}}$ \& $\Sigma_{\mathrm{H}_{2}}$, $P_m$ is the mid disk pressure, and $P_0$ \& $\alpha$ are additional free parameters. The gas partitioning can be calculated though an analytic model based on the connection between the interstellar radiation filed and the molecular self shielding \citep{Krumholz2008TheClouds,Krumholz2009THEDENSITIES,Krumholz2009THEGAS},
+
+\begin{equation}
+    f_{H_{2}}=1-\left[1+\left(\frac{3}{4} \frac{s}{1+\delta}\right)^{-5}\right]^{-1 / 5}
+\end{equation}.
+
+This is by no means a complete record of the various analytic recipes used in semi-analytic modelling. However here we have shown a subset of the multitude of free parameters that enable tuning of such models to achieve results consistent with observations.
+
+\begin{equation}
+s=\ln (1+0.6 \chi) /\left(0.04 \Sigma_{\operatorname{comp}, 0} Z^{\prime}\right),
+\end{equation}
+\begin{equation}
+\delta=0.0712\left(0.1 s^{-1}+0.675\right)^{-2.8},
+\end{equation}
+\begin{equation}
+\chi=0.77\left(1+3.1 Z^{\prime0.365}\right),
+\end{equation}
+where $\Sigma_{\operatorname{comp}}$ is the surface density for a given 100pc atomic-molecular cloud.
+
+The final mechanism we discuss here is the enrichment of the galaxy and halo gas with metals. During the process of star formation and stellar mass recycling metals are created. This is modelled as a batch process where $\mathrm{d} M_{Z}=y \mathrm{d} m_{*}$ where a mass $\mathrm{d} M_{Z}$ of metals is produced in each batch of star formation $\mathrm{d} m_{*}$, $y$ is a free parameter. The metal enriched gas formed in this process is ejected by supernovae and assume instantaneously mixed with the cold disk gas. As supernovae are though to be one of the main drivers of galactic wind the metals are thought to be preferentially ejected with the wind parameter $\zeta$ controls the ejected metal fraction, and the equation for the metal mass in the galaxy is updated as such,
+
+\begin{equation}
+\zeta=\zeta_{\mathrm{lo}} \exp \left(-M_{h} / M_{\mathrm{ret}}\right),
+\end{equation}
+
+\begin{equation}
+\dot{M}_{Z}=y(1-R)(1-\zeta) \dot{m}_{*}+Z_{\text {hot }} \dot{m}_{\text {inf }}-Z_{\text {cold }} \dot{m}_{\text {out }},
+\end{equation}
+
+$\zeta_{10}$ and $M_{\mathrm{ret}}$ are free parameters, R is the recycled fraction and $Z_{\text {cold }}$ is the metallicity of the cold gas.

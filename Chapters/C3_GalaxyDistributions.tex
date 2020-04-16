@@ -1,6 +1,6 @@
 % Chapter 3
 
-\chapter{Understanding the origins of the satellite galaxy distribution in central haloes.} 
+\chapter{Probing the origins of the satellite galaxy distribution in central haloes.} 
 \label{Chapter:GalDist}
 \lhead{Chapter 3. \emph{Satellite Distributions}} % Write in your own chapter title to set the page header
 \begin{center}
@@ -17,16 +17,17 @@ Stornoway - `The Bigger Picture'
 
 \section{Background}
 %What do we know about the distributions of galaxies
-In the \LCDM model of the universe growth of haloes is hierarchical.  This results in dark matter substructure and the stellar-mass-halo-mass relation implies that galaxies should be similarly clustered. Satellite galaxies situated in dark matter clusters can therefore be used as tracers of dark matter and used to constrain the cosmological parameters withing a given \LCDM cosmology.
-In this chapter we explore the ability of \steel to reproduce satellite distributions over multiple epochs. \steel is also used to test the affect of changing: the dynamical friction timescale, stripping of satellite stellar mass, and star formation rate. By comparing to SDSS data we are able to identify the magnitude of each of these affects on the satellite distribution. Understanding the strength of these effects is crucial to understanding the nature of satellites and their mergers with central galaxies.  
+In the \LCDM model of the universe growth of haloes is hierarchical. Haloes over time acquire a substructure of accreted haloes. Given each halo is thought to contain a galaxy at it's centre the halo substructure implies that galaxies should be similarly arranged. The potential application of this is that satellite galaxies situated can therefore be used as tracers of dark matter and used to constrain the cosmological parameters within a given \LCDM cosmology. However, to be a reliable method of predicting the distribution of dark matter and a good test of \LCDM cosmology a robust model of the connection between dark matter assembly and satellite galaxies is required.
+
+In this chapter we explore the ability of \steel to reproduce satellite distributions over multiple epochs. By exploiting the transparent nature of semi-empirical modelling and the flexibility of \steel we probe the impact on satellite galaxy distributions of changing: the dynamical friction timescale, stripping of satellite stellar mass, and star formation rate. In turn, probing the strength of these effects which are crucial to understanding the nature of satellites and their mergers with central galaxies.  
 
 \section{Halo Structure and Dynamical Friction}
 
-To understand the evolution of the subhalo/galaxy population we need to isolate which subhalo mass bins from the unevolved subhalo accretion history survive to following epochs. The sum of all the surviving subhaloes (at each epoch) then yields the unevolved surviving SHMF. 
+To constrain the evolution of the subhalo/galaxy population we need to isolate which subhalo mass bins from the unevolved subhalo accretion history have yet to finish their dynamical friction timescale and thus have survived to following epochs. The sum of all the surviving subhaloes (at each epoch) then yields the unevolved surviving sub halo mass function (USSHMF). 
 
 \subsection{Sub-halo Merging Timescale}
 \label{sec:Timescale}
- A key parameter used to calculate the unevolved surviving SHMF is the ``observability timescale'' (or survival time) of each  subhalo mass bin $[M_{h,sat}(z),$ $M_{h,sat}(z) + dM_{h,cent}(z)]$ associated to a parent halo mass bin $[M_{h,cent}(z),$ $M_{h,cent}(z) + dM_{h,cent}(z)]$. This timescale is equivalent to the merger timescale $\tau_{merge}$ of a subhalo of mass $M_{h,sat}$ in a parent halo mass $M_{h,cent}$. To calculate $\tau_{merge}$ we use the routines in Equation \ref{eqn:Tmerge} derived from N-body simulations \citep{Boylan-Kolchin2008},
+ A key parameter used to calculate the unevolved surviving SHMF is the ``observability timescale'' (or survival time) of each  subhalo mass bin $[M_{h,sat}(z),$ $M_{h,sat}(z) + dM_{h,cent}(z)]$ associated to a parent halo mass bin $[M_{h,cent}(z),$ $M_{h,cent}(z) + dM_{h,cent}(z)]$. This timescale is equivalent to the merger timescale $\tau_{merge}$ of a subhalo of mass $M_{h,sat}$ in a parent halo mass $M_{h,cent}$, which is extracted from numerical simulations and represents the (average) time a subhalo ``survives'' orbiting within the parent halo. To calculate $\tau_{merge}$ we use the routines in Equation \ref{eqn:Tmerge} derived from N-body simulations \citep{Boylan-Kolchin2008},
 
 \begin{equation}
 \label{eqn:Tmerge}
@@ -66,7 +67,7 @@ Figure \ref{fig:SHMF} shows the total observable subhalo population for differen
 
 \section{Observed Satellite Distributions}
 
-As shown in Equations \ref{eqn:Tmerge} and \ref{eqn:tdyn} the dynamical friction/observibility timescale is dependent on the ratio of halo to sub-halo mass. In Figure \ref{fig:Tdyn_M} in the left hand panel the merging timescales for subhaloes falling into three different central masses at redshift $z=3$ are shown. In each case smaller subhaloes, with lower mass ratios, have longer merging times. Sub-haloes that are significantly under an order of magnitude of the mass of the central halo the merging timescales can extend past $z=0$ and such objects would still be present in halo structures today. Through association of galaxies to subhaloes, via the SMHM relationship at infall, we can repeat the exorcise with satellite galaxies. It is similarly found that small galaxies in massive haloes are the only galaxies accreted at redshift $z = 1.5$ that one would expect to still be observed orbiting local galaxies.
+As shown in Equations \ref{eqn:Tmerge} and \ref{eqn:tdyn} the dynamical friction/observibility timescale is dependent on the ratio of halo to subhalo mass. In Figure \ref{fig:Tdyn_M} in the left-hand panel the merging timescales for subhaloes falling into three different central masses at redshift $z=3$ are shown. In each case smaller subhaloes, with lower mass ratios, have longer merging times. For subhaloes that are significantly under an order of magnitude of the mass of the central halo, the merging timescales are longer then the age of the Universe and such objects would still be present in halo structures today. Through association of galaxies to subhaloes, via the SMHM relationship at infall, we can repeat the exercise with satellite galaxies. It is similarly found that small galaxies in massive haloes are the only galaxies accreted at redshift $z = 1.5$ that are still orbiting local galaxies.
 
 \begin{figure}[h]
 	\centering
@@ -75,7 +76,7 @@ As shown in Equations \ref{eqn:Tmerge} and \ref{eqn:tdyn} the dynamical friction
 	\label{fig:Tdyn_M}
 \end{figure}
 
-In Figure \ref{fig:AccretionTime} the practical affect of increasing the dynamical time is shown. Increasing the dynamical time factor $f_{tdyn}$ to infinity satellites will never merge with the central and thus the right hand panel shows the total buildup of satellites over cosmic time. In the right hand panel with $f_{tdyn} = 1$ we see how the population of satellites still observable at $z=0.1$ is built up over time. As expected from Figure \ref{fig:Tdyn_M} only recently accreted massive satellite galaxies contribute to the observable population where as smaller galaxies will have a wider distribution of accretion times. Notably there are no galaxies, within our mass ranges, accreted before redshift $z=2$ that remain observable at redshift $z=0.1$.
+In Figure \ref{fig:AccretionTime} the practical effect of increasing the dynamical time is shown. Increasing the dynamical time factor $f_{tdyn}$ to infinity, satellites will never merge with the central and thus the right hand panel shows the total buildup of satellites over cosmic time. In the right hand panel with $f_{tdyn} = 1$ we see how the population of satellites still observable at $z=0.1$ is built up over time. As expected from Figure \ref{fig:Tdyn_M} only recently accreted massive satellite galaxies contribute to the observable population where as smaller galaxies will have a wider distribution of accretion times. Notably there are no galaxies, within our mass ranges, accreted before redshift $z=2$ that remain observable at redshift $z=0.1$.
 
 \begin{figure}[h]
 	\centering

@@ -56,8 +56,11 @@ In this thesis we describe \steel, the STastical sEmi-Empirical modeL, PJG's con
 
 \section{\LCDM Cosmology}
 \label{sec:introLCDM}
+%How do these predictions effect galaxy assembly
+Dark Matter is a theorised form of matter that interacts only though gravity and is therefore not observable with traditional methods that rely on photons. As dark matter is five times more abundant than normal matter it is the dominant gravitational force in the universe. This has important implications for the expected galaxy populations as in a \LCDM universe baryonic matter is theorised to trace the dark matter distribution. Galaxies are thought to assemble at the centre of dark matter halos where gas accumulates, the larger the halo the larger quantity of gas collects in the halo and the larger the galaxy. Hierarchical assembly of dark matter halos is then translated into the galaxy population. Galaxies will follow the merger history of their host haloes, smaller galaxies will follow their host halo when it merges with a larger halo. Massive galaxies, that reside in massive haloes that have accreted many other haloes through mergers, are expected to be surrounded by many smaller satellite galaxies.
+
 %Why do we think dark matter exists
-Dark Matter is a theorised form of matter that interacts only though gravity and is therefore not observable with traditional methods that rely on photons. The first notion of dark matter was from \citet{Zwicky1933DieNebeln}, who observed that the binding mass required to hold the Coma Cluster together was roughly 400 times the observable total stellar mass. It took many years and further evidence such as observations of the motions of satellites around our own galaxy also requiring an extended unseen matter structure until the ideas of dark matter became mainstream. Furthermore, observations of the rotation curves of galaxies \citep{Roberts1973ComparisonTypes} were found to support a `dark' component; the rotation of the outer regions of the galaxy did not fall off as the mass profile of the luminous galaxy should suggest. Whilst alternative theories to dark matter exist, such as Modified Newtonian Dynamics (MOND) that suggests gravity acts differently at large scales, dark matter is now the preferred model amoungst physicists to explain the aforementioned observations. 
+The first notion of dark matter was from \citet{Zwicky1933DieNebeln}, who observed that the binding mass required to hold the Coma Cluster together was roughly 400 times the observable total stellar mass. It took many years and further evidence such as observations of the motions of satellites around our own galaxy also requiring an extended unseen matter structure until the ideas of dark matter became mainstream. Furthermore, observations of the rotation curves of galaxies \citep{Roberts1973ComparisonTypes} were found to support a `dark' component; the rotation of the outer regions of the galaxy did not fall off as the mass profile of the luminous galaxy should suggest. Whilst alternative theories to dark matter exist, such as Modified Newtonian Dynamics (MOND) that suggests gravity acts differently at large scales, dark matter is now the preferred model amoungst physicists to explain the aforementioned observations. 
 
 %What is LCDM
 It follows from the observations of mass deficit that dark matter must permeate the entire universe. Additionally, it interacts only though gravity giving no electromagnetic signature. It is still unclear what dark matter `is' but though simulations, observations, and experiments we can put constraints on what it can be. Initial theories suggested brown dwarf stars or black holes, dark yet familiar objects that satisfy both requirements of adding mass and being mostly invisible. It is now thought that dark matter consists of a massive subatomic particle characterised by a low thermal velocity, and is hence known as cold dark matter (CDM). Including alongside this model for dark matter cosmological constant ($\Lambda$) to create a flat universe, the leading cosmological theory of \LCDM is developed. 
@@ -158,9 +161,6 @@ The Press-Schechter Formalism can be used to analytically create a merger tree b
 
 The merger trees generated using this algorithm are simpler and less computationally expensive than those extracted from N-Body simulations, and if calibrated properly fully consistent with \LCDM cosmology. They therefore are an ideal choice for simulations that need to generate halo merger trees on demand.
 
-%How do these predictions effect galaxy assembly
-Dark matter interacts with baryonic matter via gravity. As dark matter is five times more abundant than normal matter it is the dominant gravitational force in the universe. In a \LCDM universe baryonic matter traces the dark matter distribution. Galaxies are thought to assemble at the centre of dark matter halos where gas accumulates, the larger the halo the larger quantity of gas collects in the halo and the larger the galaxy. The hierarchical assembly of dark matter halos is then translated into the galaxy population. Galaxies will follow the merger history of their host haloes, smaller galaxies will follow their host subhalo when it merges with a larger central halo. Massive galaxies, that reside in massive haloes that have many halo mergers, are expected to be surrounded by many smaller satellite galaxies. These satellite galaxies along with their host sub haloes will loose angular momentum to the central halo and eventually merge with the central galaxy.
-
 \section{Hydrodynamic and N-Body Simulations}
 \label{sec:Hydro}
 %What is Hydrodynamics or N body
@@ -221,48 +221,9 @@ Semi-analytic models rely on several feedback prescriptions to regulate their st
     \dot{m}_{\mathrm{out}}=\epsilon_{\mathrm{SN}}\left(\frac{V_{0}}{V_{c}}\right)^{\alpha_{\mathrm{rh}}} \dot{m}_{*}.
 \end{equation}
 
-In addition to supernova feedback, most SAMs include AGN feedback caused by energy/momentum release from the super-massive black hole at the centre of the galaxy. AGN feedback is bielieved to act in two distinct modes: The first mode, ``quasar mode'', is initiated after a galaxy merger, as the black hole grows in mass, more energy is released to the ISM until the gas accretion is halted by outflows from the black hole. In this mode AGN feedback gradually reduces the SFR by heating the cold gas reservoir. The second AGN feedback mode,``radio mode'', is commonly assumed to be in the form of a jet and triggered when accretion drops below a few percent Eddington. This feedback can also prevent late cooling gas in the central regions of galaxies \cite{Croton2007Thequenching}.
+Where $\epsilon_{\mathrm{SN}}$ is a parameter that scales efficiency of the supernovae's ability to drive outflows, and the remaining parameters control the  binding properties of the gas. In addition to supernova feedback, most SAMs include AGN feedback caused by energy/momentum release from the super-massive black hole at the centre of the galaxy. AGN feedback is bielieved to act in two distinct modes: The first mode, ``quasar mode'', is initiated after a galaxy merger, as the black hole grows in mass, more energy is released to the ISM until the gas accretion is halted by outflows from the black hole. In this mode AGN feedback gradually reduces the SFR by heating the cold gas reservoir. The second AGN feedback mode,``radio mode'', is commonly assumed to be in the form of a jet and triggered when accretion drops below a few percent Eddington. This feedback can also prevent late cooling gas in the central regions of galaxies \cite{Croton2007Thequenching}.
 
-
-Heavy parametrisation to a singular observable
-
-A further consideration taken in semi-analytic modelling, is the state of the gas. The state can be calculated in several different ways, an empirical pressure based relationship is given by \citet{Blitz2006TheRelation}, the pressure in the disk is related to the ratio of molecular and atomic hydrogen. 
-
-\begin{equation}
-    R_{\mathrm{H}_{2}}=\left(\frac{\Sigma_{\mathrm{H}_{2}}}{\Sigma_{\mathrm{HI}}}\right)=\left(\frac{P_{m}}{P_{0}}\right)^{\alpha}
-\end{equation}
-
-The $H_1$ \& $H_2$ surface densities are given by $\Sigma_{\mathrm{HI}}$ \& $\Sigma_{\mathrm{H}_{2}}$, $P_m$ is the mid disk pressure, and $P_0$ \& $\alpha$ are additional free parameters. The gas partitioning can be calculated though an analytic model based on the connection between the interstellar radiation filed and the molecular self shielding \citep{Krumholz2008TheClouds,Krumholz2009THEDENSITIES,Krumholz2009THEGAS},
-
-\begin{equation}
-    f_{H_{2}}=1-\left[1+\left(\frac{3}{4} \frac{s}{1+\delta}\right)^{-5}\right]^{-1 / 5}
-\end{equation}.
-
-This is by no means a complete record of the various analytic recipes used in semi-analytic modelling. However here we have shown a subset of the multitude of free parameters that enable tuning of such models to achieve results consistent with observations.
-
-\begin{equation}
-s=\ln (1+0.6 \chi) /\left(0.04 \Sigma_{\operatorname{comp}, 0} Z^{\prime}\right),
-\end{equation}
-\begin{equation}
-\delta=0.0712\left(0.1 s^{-1}+0.675\right)^{-2.8},
-\end{equation}
-\begin{equation}
-\chi=0.77\left(1+3.1 Z^{\prime0.365}\right),
-\end{equation}
-where $\Sigma_{\operatorname{comp}}$ is the surface density for a given 100pc atomic-molecular cloud.
-
-The final mechanism we discuss here is the enrichment of the galaxy and halo gas with metals. During the process of star formation and stellar mass recycling metals are created. This is modelled as a batch process where $\mathrm{d} M_{Z}=y \mathrm{d} m_{*}$ where a mass $\mathrm{d} M_{Z}$ of metals is produced in each batch of star formation $\mathrm{d} m_{*}$, $y$ is a free parameter. The metal enriched gas formed in this process is ejected by supernovae and assume instantaneously mixed with the cold disk gas. As supernovae are though to be one of the main drivers of galactic wind the metals are thought to be preferentially ejected with the wind parameter $\zeta$ controls the ejected metal fraction, and the equation for the metal mass in the galaxy is updated as such,
-
-\begin{equation}
-\zeta=\zeta_{\mathrm{lo}} \exp \left(-M_{h} / M_{\mathrm{ret}}\right),
-\end{equation}
-
-\begin{equation}
-\dot{M}_{Z}=y(1-R)(1-\zeta) \dot{m}_{*}+Z_{\text {hot }} \dot{m}_{\text {inf }}-Z_{\text {cold }} \dot{m}_{\text {out }},
-\end{equation}
-
-$\zeta_{10}$ and $M_{\mathrm{ret}}$ are free parameters, R is the recycled fraction and $Z_{\text {cold }}$ is the metallicity of the cold gas.
-
+The takeaway of this brief introduction to semi-analytic modelling is that they can be characterised by heavy parametrisation of each singular observable which results in a very highly paramterised model. This is due to the large uncertainties in the choice (and strength thereof) of the physical processes to include. The interested reader can find additional semi-analytic methods that control the properties of the gas described in Appendix \ref{Appx:ExtraSAM}. The following subsections will provide a description of two state of the art semi-analytic models.
 
 %State of the art SAM
 \subsection{State of the art}
@@ -416,6 +377,18 @@ The James Webb Space Telescope is a cold infrared telescope with a planned launc
 
 The EUCLID satellite will carry two instruments VIS \& NISP. Between them they will cover from 500nm to 2000nm wavelengths down to the 24th magnitude, providing images of galaxies up to redshift $z = 2$. Euclid will survey 15,000 deg$^2$ of the sky and then perform a deep survey covering 40 deg$^2$ to 2 magnitudes deeper. The primary mission goals of Euclid are to address open questions on dark matter, dark energy, cosmic expansion and the formation of large scale structures \cite{Amendola2018CosmologySatellite}. To address these questions galaxies will be used as tracers of dark matter that providing tests of cosmological models. To achieve this goal the EUCLID pipeline will contain advanced galaxy cluster detection algorithms \cite{Adam2019EuclidSelection}.
 
+
+\section{STEEL}
+
+There are several outstanding issues in galactic astrophysics that the models and techniques described in this section are not able to comprehensively address. In this thesis we will describe the development of \steel as a tool to be able to directly address these issues by introducing new modelling paradigm. 
+
+
+Firstly, we address the reproduction and evolution of the full stellar mass function history, including satellite and central galaxies over a wide range of masses. This has proven problematic for semi-analytic models \cite{Asquith2018CosmicModels} and is essential to understand how galaxies have grown over cosmic time.
+The importance of the full SMF reproduction is highlighted in Chapter \ref{Chapter:Method} where we show how \steel as an empirical model reproduces this by design. The generation of full satellite galaxy distributions is shown in Chapter \ref{Chapter:GalDist} and compared to the distributions of satellites locally and at high redshift. 
+
+Secondly, in-situ (internal mass growth) vs ex-situ (mass growth from cannibalisation of other galaxies) invites several open questions: The total amount from each source, the characteristic mass at which galaxies switch from one mode to the other, e.t.c.  \cite[e.g.]{Cattaneo2011HowMass, Moster2018Emerge10, Behroozi2019UniverseMachine:010, Bernardi2011Curvature1011M, Shankar2015}. We use the empirically generated/constrained environments from Chapter \ref{Chapter:GalDist} to add constraints to these questions in Chapter \ref{Chapter:GalGrowth}.
+
+Finally, the selection of galaxy pair fractions and their evolution with redshift is in contention \citet{Man2016RESOLVING03, Mundy2017A3.5}. It is unclear if the pair fraction increases or decreases with redshift, which has implications for our ability to observationally estimate the galaxy merger rate. In Chapter \ref{Chapter:GalPairs} we show a systematic analysis of how the choice of stellar mass estimation propagates into observed pair fractions.
 
 \section{Original Sources}
 
