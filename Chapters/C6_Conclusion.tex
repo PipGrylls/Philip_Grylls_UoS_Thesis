@@ -80,19 +80,19 @@ Using Figure \ref{fig:Full_Mod_Toon} we show how \steel can be positioned to bec
 \begin{figure}[t]
     \centering
     \includegraphics[width = \linewidth]{Figures/Chapter6/FullModelCartoon.png}
-    \caption{Schematic cartoon related to Figure \ref{fig:SFRDerevation_Cartoon} of how \steel can be used to check self-consistency between fitting models used on observed data and the theoretical assumptions that underpin the fitting models.}
+    \caption{Schematic cartoon related to Figure \ref{fig:SFRDerevation_Cartoon} of how \steel can be used to check for self-consistency between fitting models used on observed data and the theoretical assumptions that underpin the fitting models.}
     \label{fig:Full_Mod_Toon}
 \end{figure}
-Items closer to the top of the list are less effected by the modelling and therefore likely to be more robust within this method. Often the empirical technique draws on observation to inform modelling, for example the quenching model from \citet{Wetzel2013GalaxyUniverse}, therefore this approach may well present an iterative loop. Using this approach any mismatch between the observational fit and the modelled property can be addressed from three angles appreciating the uncertainties inherent in fitting, modelling, and cosmology together.
+Items closer to the top of the list are less effected by the modelling and therefore likely to be more robust within this method. Given empirical techniques use observation as inputs to modelling, having an empirical model as apart of a data fitting pipeline the model will have the potential to reject/modify its own inputs by influencing the parametisiation of the observational data reduction routines. This fitting, checking, refitting, cycles will ensure that any mismatch between the observational fit and the modelled property can be addressed from multiple distinct angles appreciating the uncertainties inherent in fitting, modelling, and cosmology together.
 
 \subsection{Galaxy modelling tool}
 
-The proposition for \steel, or another statistical semi empirical model, to become a staple amoungst other competitive galactic modelling tools is based exclusively on the concept of a statistical dark matter accretion history. This is due to two factors; firstly the ability to simulate without volume or resolution, until computational power is so cheap that volume and resolution become non-issues a statistical model will have a place to match the rarest features in observation; secondly, the removal of discrete objects allows for a new type of continuity check where the consistency of a population is modelled as a priority over the consistency of an individual halo/galaxy. 
+\steel built around the concept of a statistical dark matter accretion history, can be regarded a new competitive tool in the modelling of galaxies. This is due to two factors; Firstly, the ability to simulate without limits on volume or resolution, until computational power is so cheap that volume and resolution become non-issues a statistical model will have a place to match the rarest features in observation; secondly, the removal of discrete objects allows for a new type of continuity check where the consistency of populations is modelled as a priority instead of the consistency of individual haloes/galaxies. 
 
 \steel is an excellent start to statistical semi-empirical modelling, however, it contains remnants of its proof of concept, the development of the proficiency of PJG in research, and code implementation and architecture. \steel was fully rewritten once during this Ph.D. and stands to be fully revised again. With any revision the model should be updated in the following ways,
 
 \begin{itemize}
-    \item The statistical dark matter accretion history should be a separate library, containing flexible cosmology, halo definitions (e.g. virial, splash-back, m200c, e.t.c...), and should be built in an object oriented fashion such that it is easily extendable.
+    \item The statistical dark matter accretion history should be a separate library, containing flexible cosmology, halo definitions (e.g. virial, splash-back, m200c, e.t.c...), and should be built in an object-oriented fashion such that it is easily extendable.
     \item The galaxy modelling should be redesigned such that each dark matter accretion history is built upon using explicit probability distribution convolutions.
     \item The outputs should be shaped by the statistical dark matter accretion history and contain structured probability distributions to be able to post-process a hierarchical complexity of result.
     \item The post-processing suit should contain any and all integrators required to process the outputs into galaxy populations for cosmological volumes, single mass tracks, or given mass ranges.
@@ -103,7 +103,7 @@ As detailed in the PERT chart in Appendix \ref{Appx:HF}, this would take six mon
 
 \section{In closing}
 
-The applications of \steel detailed in Section \ref{sec:Future} each independently represent a tool that if correctly developed and made publicly available would be at the cutting edge of galactic astrophysics. The work done in this thesis represents the foundations upon which these tools can be built. 
+The applications of \steel detailed in Section \ref{sec:Future} each independently represent a tool, that if correctly developed and made publicly available, would be at the cutting edge of galactic astrophysics. The work done in this thesis represents the foundations upon which these tools can be built. 
 
 In brief the findings from this thesis are: 
 \begin{itemize}
@@ -112,4 +112,4 @@ In brief the findings from this thesis are:
     \item Stellar mass functions with an enhanced number densities of high mass galaxies are in much better agreement with \LCDM cosmology than those with lower number densities of high mass galaxies. Furthermore, some traditional stellar mass functions are fundamentally incompatible with \LCDM hierarchical cosmology.
 \end{itemize}
 
-Dark matter dominating the evolution of galaxies is understood and the contributions made are novel but not unexpected. The source and complexities of the systematics in the pair fraction represent something that once known seems trivial but to the knowledge of PJG and coauthors FS and CC (an expert in galactic pair fractions) has not been addressed before from a quantitative theoretical standpoint. Finally, the lack of self-consistency between hierarchical \LCDM assembly and some stellar mass functions is a result of fundamental importance to galactic astrophysics. This result can only be reproduced from an approach that looks at the statistics of galactic populations and not discrete objects. It hints at a potentially devastating departure between observation and theory that if left unaddressed will hinder our understanding of the evolution of galaxies for the foreseeable future.
+Dark matter dominating the evolution of galaxies is understood and the contributions made are novel but not unexpected. The source and complexities of the systematics in the pair fraction represent something that to the knowledge of PJG and coauthors FS and CC (an expert in galactic pair fractions), has not been addressed before from a quantitative theoretical standpoint. Finally, the lack of self-consistency between hierarchical \LCDM assembly and some stellar mass functions is a result of fundamental importance to galactic astrophysics. This result can only be reproduced from an approach that looks at the statistics of galactic populations and not discrete objects. It hints at a potentially devastating departure between observation and theory that if left unaddressed will hinder our understanding of the evolution of galaxies for the foreseeable future.
