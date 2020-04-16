@@ -76,7 +76,7 @@ As shown in Equations \ref{eqn:Tmerge} and \ref{eqn:tdyn} the dynamical friction
 	\label{fig:Tdyn_M}
 \end{figure}
 
-In Figure \ref{fig:AccretionTime} the practical effect of increasing the dynamical time is shown. Increasing the dynamical time factor $f_{tdyn}$ to infinity, satellites will never merge with the central and thus the right hand panel shows the total buildup of satellites over cosmic time. In the right hand panel with $f_{tdyn} = 1$ we see how the population of satellites still observable at $z=0.1$ is built up over time. As expected from Figure \ref{fig:Tdyn_M} only recently accreted massive satellite galaxies contribute to the observable population where as smaller galaxies will have a wider distribution of accretion times. Notably there are no galaxies, within our mass ranges, accreted before redshift $z=2$ that remain observable at redshift $z=0.1$.
+In Figure \ref{fig:AccretionTime} the practical effect of increasing the dynamical time is shown. Increasing the dynamical time factor $f_{tdyn}$ to infinity, satellites will never merge with the central and thus the left-hand panel shows the total buildup of satellites over cosmic time. In the right-hand panel, with $f_{tdyn} = 1$, we see how the population of satellites still observable at $z=0.1$ is built up over time. As expected from Figure \ref{fig:Tdyn_M}, only recently accreted massive satellite galaxies contribute to the observable population whereas smaller galaxies will have a wider distribution of accretion times. Notably there are no galaxies, within our mass ranges, accreted before redshift $z=2$ that remain observable at redshift $z=0.1$.
 
 \begin{figure}[h]
 	\centering
@@ -85,10 +85,10 @@ In Figure \ref{fig:AccretionTime} the practical effect of increasing the dynamic
 	\label{fig:AccretionTime}
 \end{figure}
 
-\subsection{Affect of Dynamical Friction}
+\subsection{Effects of Dynamical Friction}
 %Show the dynamical friction model and how that actually impacts the distribution.
-In this Section we show the prediction of \steel with different merging timescales, $f_{tdyn}$ = $0.5, 1.0, 2.5$, to probe the effects of dynamical time on the satellite population. In Figure \ref{fig:SMF_Tdyn} we find, as expected, that longer dynamical times tend to increase satellite number densities especially towards lower stellar masses. The number densities of higher-mass satellites are more resilient to increase with dynamical time. In fact, when $f_{tdyn}\gtrsim 1$ the number densities of massive satellites become already very close to the theoretical maximum number density when  $f_{t_{dyn}} = \infty$. This trend is also seen in Figure \ref{fig:AccretionTime} the difference between the buildup of high mass satellites between $f_{t_{dyn}} = \infty$ and $f_{t_{dyn}} = 1$ is much less significant than between that of low mass satellites
-It follows that massive satellites are on average a recently accreted population. In other words, there are only a few high mass satellites that had enough time to merge when $f_{tdyn}\gtrsim 1$. In contrast, lower mass satellites have not yet reached their theoretical limit, and thus they still have room to increase their number densities with increasing dynamical time.  
+In this Section we show the prediction of \steel with different merging timescales, $f_{tdyn}$ = $0.5, 1.0, 2.5$, to probe the effects of dynamical time on the satellite population. In Figure \ref{fig:SMF_Tdyn} we find, as expected, that longer dynamical times tend to increase satellite number densities especially towards lower stellar masses. The number densities of higher-mass satellites are more resilient to increase with dynamical time. In fact, when $f_{tdyn}\gtrsim 1$ the number densities of massive satellites become already very close to the theoretical maximum number density when  $f_{t_{dyn}} = \infty$. This trend is also seen in Figure \ref{fig:AccretionTime}, the difference between the buildup of high mass satellites between $f_{t_{dyn}} = \infty$ and $f_{t_{dyn}} = 1$ is much less significant than between that of low mass satellites.
+It follows that massive satellites are on average a recently accreted population. In other words, there are only a few high mass satellites that had enough time to merge when $f_{tdyn}\gtrsim 1$. In contrast, lower mass satellites have not yet reached their theoretical limit, and thus they can still increase their number densities with increasing dynamical time.  
 
 When computing the distribution of satellites as a function of parent halo mass we show both full number densities, as well as fractional distributions to better highlight the ``skewness'' of the predicted distributions with respect to the data. The latter will be simply computed as
 \begin{equation}
@@ -138,7 +138,7 @@ $f_{t_{dyn}}$   & SSMF   (Fig \ref{fig:SMF_Tdyn})               & \multicolumn{3
 %show stripping/SF routines and their effects
 \subsection{Evolutionary models}
 
-The prior section makes an implicit assumption that satellites do not evolve after infall. In this section we apply several evolutionary affects to the satellites assuming they have the same properties as centrals at infall then evolve both due to in-situ processes and in response to their environment.
+The prior section makes an implicit assumption that satellites do not evolve after infall. In this section we apply several evolutionary effects to the satellites assuming they have the same properties as centrals at infall but then evolve due to in-situ processes and in response to their environment.
 
 
 \subsubsection{Star Formation Rates}
@@ -154,7 +154,7 @@ s_0(z) &= 0.195 + 1.157z - 0.143(z^2) \\
 \end{split}
 \end{equation}
 
-As discussed continuity-equation approaches are more suited to modelling as they avoid the inconsistencies in growth of the SMF and the observed SFR. The novelty in our continuity model with respect to previous work is that we do not tune the resulting star formation rate on the total but rather only on the stellar mass function of \textit{central} galaxies \footnote{ which is in turn iteratively constrained by matching the local stellar mass function of SDSS centrals.}. We use as input for our continuity equation the central SMF generated by the SMHM relation and the central HMF from \cite{Tinker2010THETESTS}. When considering the mass growth we must consider the mass loss, else the SFR is massively under-predicted. We use a instantaneous loss fraction of $40\%$. We also neglect the mass gained from mergers. However, as mergers would decrease the SFR calculated thus this method should be considered an upper limit to the SFR. The fit to the resulting SFRs is given by
+As discussed, continuity-equation approaches are more realistic and physically-based techniques to model galaxy growth, as, by design, they avoid the observed discrepancies between the time-integrated SFR and the independently measured stellar mass function at any given epoch. The novelty in our continuity model with respect to previous work is that we do not tune the resulting star formation rate on the total stellar mass function but rather only on the stellar mass function of \textit{central} galaxies \footnote{Which is in turn iteratively constrained by matching the local stellar mass function of SDSS centrals.}. We use as input for our continuity equation the central SMF generated by the SMHM relation and the central HMF from \cite{Tinker2010THETESTS}. When considering the mass growth we must consider the mass loss, else the SFR is massively under-predicted. We use a instantaneous loss fraction of $40\%$. We also neglect the mass gained from mergers. However, as mergers would decrease the SFR calculated, this method should be considered an upper limit to the real SFR. The fit to the resulting SFRs is given by
 
 \begin{equation}
 \begin{split}
@@ -174,13 +174,13 @@ We also include the ability to quench star formation in satellite galaxies after
 \label{eqn:Cutoff}
 log(M_{cutoff}) = 9 log(M_{\odot}) - (15 log(M_{\odot}) - log(M_{h,host}))/5log(M_{\odot}) ,
 \end{equation}
-below which satellite galaxies all share the same quenching time $\tau_q=2 Gyr$.
+below which satellite galaxies all share the same quenching time $\tau_q=2$ Gyr.
 The rapid quenching timescale $\tau_{f}$ can be expressed as \citep{Wetzel2013GalaxyUniverse},
 \begin{equation}
 \label{eqn:tauf}
-\tau_f = -0.5 log(M_{*,sat}) + 5.7Gyr .
+\tau_f = -0.5 log(M_{*,sat}) + 5.7 Gyr.
 \end{equation}
-We set a minimum $\tau_{f}$ of $0.2$ $Gyr$ for all galaxies. This rapid quenching begins at times $t > \tau_q$ after infall, and it is approximated by an exponential decay which is longer for larger satellites, as can be inferred from Equation \ref{eqn:SFR_Quench}. The look-back time at which a galaxy begins fast quenching is then $t_q = t_{infall} - \tau_q$. After this time the satellite no longer follows the SFR of a typical central galaxy. Figure \ref{fig:QuenchFig} illustrates the quenching model where the dashed/coloured lines demonstrate the halo mass dependence in cutoff mass.
+We set a minimum $\tau_{f}$ of $0.2$ $Gyr$ for all galaxies. This rapid quenching begins at times $t > \tau_q$ after infall, and it is approximated by an exponential decay which is longer for larger satellites, as can be inferred from Equation \ref{eqn:SFR_Quench}. The look-back time at which a galaxy begins fast quenching is then $t_q = t_{infall} - \tau_q$. After this time the satellite no longer follows the SFR of a typical central galaxy. Figure \ref{fig:QuenchFig} illustrates the quenching model where the dashed/coloured lines mark the halo mass dependence in cutoff mass.
 
 \begin{figure}
 	\centering
@@ -189,7 +189,7 @@ We set a minimum $\tau_{f}$ of $0.2$ $Gyr$ for all galaxies. This rapid quenchin
 	\label{fig:QuenchFig}
 \end{figure}
 
-The SFR during the satellite infall is then given by
+The SFR during the satellite infall is then given by,
 
 \begin{equation}
 \label{eqn:SFR_Quench}
@@ -215,7 +215,7 @@ The first, purely observationally-based, star formation rate model strictly foll
 We compare the satellite SMFs produced by the two star formation+quenching models addressed above to our SDSS stellar mass function of satellites in Figure \ref{fig:SMF_SF_Q}. It is apparent that using the observed SFR by T16 (dashed line), even inclusive of the best recipes for quenching, still substantially overproduces the number density of galaxies below $M_* \lesssim 3\times 10^{10}\, M_{\odot}$. This is a well-known problem affecting the full (dominated by central) galaxy population \citep[e.g.,][]{Leja2015ReconcilingFunction}: the integrated (observed) SFR is not consistent with the moderate growth over time of the SMF causing an overproduction of galaxies becoming gradually more severe at lower stellar masses. Our results show a similar problem affecting the satellite population, on the assumption that the latter at infall share the same SFR distribution as a typical central galaxy of the same stellar mass.
 
 
-We now show the relative impact of star formation rate and stellar stripping on the satellite stellar mass function. Figure \ref{fig:SMF_SF_Strip} and Figure \ref{fig:Sat_Dist_SF_Strip} show stellar mass function and host halo mass distributions for the $f_{tdyn} = 1.0$ reference model with no stripping nor star-formation, the CE star formation model, and the CE star formation model with stripping (long-dashed, dot-dashed, and solid lines, respectively). We see from both Figures that the reference and star-formation model are almost indistinguishable. The stripping, at least at the level implemented in this work, also has a rather minor effect, at the most reducing the number densities of the most massive satellites ($>10^{11}M_{\odot}$) by $\lesssim 0.2$dex.
+We now show the relative impact of star formation rate and stellar stripping on the satellite stellar mass function. Figure \ref{fig:SMF_SF_Strip} and Figure \ref{fig:Sat_Dist_SF_Strip} show stellar mass function and host halo mass distributions for the $f_{tdyn} = 1.0$ reference model with no stripping nor star-formation, the CE star formation model, and the CE star formation model with stripping (long-dashed, dot-dashed, and solid lines, respectively). We see from both Figures that the reference and star-formation model are almost indistinguishable. The stripping, at least at the level implemented in this work, also has a rather minor effect, at the most reducing the number densities of the most massive satellites ($>10^{11}M_{\odot}$) by $\lesssim 0.2$ dex.
 
 \begin{figure}
 	\centering
@@ -227,7 +227,7 @@ We now show the relative impact of star formation rate and stellar stripping on 
 \begin{figure}
 	\centering
 	\includegraphics[width = \linewidth]{Figures/Chapter3/Sat_Dist_SF_Strip.png}
-	\caption{Satellite distributions in parent haloes generated from the model are compared to those observed in SDSS (grey band). Columns from left to right show increasing satellite stellar mass cuts as labelled. The top row shows the number density of satellites expected to be found in each parent halo mass. The bottom row shows the fractional distribution described by Equation \ref{eqn:FracPlot}. The models shown all have $f_{tdyn} = 1.0$ and are the reference 'frozen model' (dashed line), starformation only (dot dashed line) and starformation and stripping (solid line). The width of the grey band corresponds to a 10\% uncertainty in satellite stellar masses.}
+	\caption{Satellite distributions in parent haloes generated from the model are compared to those observed in SDSS (grey bands). Columns from left to right show increasing satellite stellar mass cuts as labelled. The top row shows the number density of satellites expected to be found in each parent halo mass. The bottom row shows the fractional distribution described by Equation \ref{eqn:FracPlot}. The models shown all have $f_{tdyn} = 1.0$ and are the reference 'frozen model' (dashed line), starformation only (dot dashed line) and starformation and stripping (solid line). The width of the grey band corresponds to a 10\% uncertainty in satellite stellar masses.}
 	\label{fig:Sat_Dist_SF_Strip}
 \end{figure}
 
@@ -248,7 +248,7 @@ $f_{t_{dyn}}$   & SSMF   & \multicolumn{3}{c}{SDF  } \vline & \multicolumn{3}{c}
 \end{tabular}
 \end{table*} 
 
-Table \ref{tab:SF_Strip} shows the sum of the square residuals to the SMF, SDF and fractional distributions for the same models discussed above, our reference frozen one, and the one with evolution of satellites after infall (stellar stripping and continuity equation-based star formation). Table \ref{tab:SF_Strip} shows that the satellite late evolution has little effect on the fractional distribution. In the number density distribution we see an improved fit for galaxies in the $M_*>10.^{11}\, M_{\odot}$ range, mainly induced by the stripping which slightly reduces the number density of massive galaxies. Table \ref{tab:SF_Strip} shows the sum of square residuals for the dynamical time with $f_{t_{dyn}}=1$, for the frozen and evolved models. 
+Table \ref{tab:SF_Strip} shows the sum of the square residuals to the SMF, SDF and fractional distributions for the same models discussed above, our reference frozen one, and the one with evolution of satellites after infall (stellar stripping and continuity equation-based star formation). Table \ref{tab:SF_Strip} shows that the satellite late evolution has little effect on the fractional distribution. In the number density distribution we see an improved fit for galaxies in the $M_*>10^{11}\, M_{\odot}$ range, mainly induced by the stripping which slightly reduces the number density of massive galaxies. Table \ref{tab:SF_Strip} shows the sum of square residuals for the dynamical time with $f_{t_{dyn}}=1$, for the frozen and evolved models. 
 
 \section{Multi-Epoch Distributions of Satellite Galaxies}
 
