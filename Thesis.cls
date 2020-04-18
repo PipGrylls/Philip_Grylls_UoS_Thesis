@@ -145,34 +145,34 @@
 \newcommand*{\FACULTY}[1]{\def\FACNAME{#1}}
 \newcommand*{\subject}[1]{\def\subjectname{#1}}
 \newcommand*{\keywords}[1]{\def\keywordnames{#1}}
-\supervisor  {}
+\supervisor  {Dr. Francesco Shankar}
 \examiner    {}
 \degree      {}
-\authors     {}
-\university  {\texorpdfstring{\href{University Web Site URL Here (include http://)}
-                {University Name}}
-                {University Name}}
-\UNIVERSITY  {\texorpdfstring{\href{University Web Site URL Here (include http://)}
-                {UNIVERSITY NAME (IN BLOCK CAPITALS)}}
-                {UNIVERSITY NAME (IN BLOCK CAPITALS)}}
-\department  {\texorpdfstring{\href{Department or School Web Site URL Here (include http://)}
-                {Department or School Name}}
-                {Department or School Name}}
-\DEPARTMENT  {\texorpdfstring{\href{Department or School Web Site URL Here (include http://)}
-                {DEPARTMENT OR SCHOOL NAME (IN BLOCK CAPITALS)}}
-                {DEPARTMENT OR SCHOOL NAME (IN BLOCK CAPITALS)}}
-\group       {\texorpdfstring{\href{Research Group Web Site URL Here (include http://)}
-                {Research Group Name}}
-                {Research Group Name}}
-\GROUP       {\texorpdfstring{\href{Research Group Web Site URL Here (include http://)}
-                {RESEARCH GROUP NAME (IN BLOCK CAPITALS)}}
-                {RESEARCH GROUP NAME (IN BLOCK CAPITALS)}}
-\faculty     {\texorpdfstring{\href{Faculty Web Site URL Here (include http://)}
-                {Faculty Name}}
-                {Faculty Name}}
-\FACULTY     {\texorpdfstring{\href{Faculty Web Site URL Here (include http://)}
-                {FACULTY NAME (IN BLOCK CAPITALS)}}
-                {FACULTY NAME (IN BLOCK CAPITALS)}}
+\authors     {Philip John Grylls}
+\university  {\texorpdfstring{\href{https://www.southampton.ac.uk/}
+                {University Of Southampton}}
+                {University Of Southampton}}
+\UNIVERSITY  {\texorpdfstring{\href{https://www.southampton.ac.uk/}
+                {UNIVERSITY OF SOUTHAMPTON}}
+                {UNIVERSITY OF SOUTHAMPTON}}
+\department  {\texorpdfstring{\href{https://www.phys.soton.ac.uk/}
+                {Physics and Astronomy}}
+                {Physics and Astronomy}}
+\DEPARTMENT  {\texorpdfstring{\href{https://www.phys.soton.ac.uk/}
+                {PHYSICS AND ASTRONOMY}}
+                {PHYSICS AND ASTRONOMY}}
+\group       {\texorpdfstring{\href{http://www.astro.soton.ac.uk/}
+                {Southampton Astronomy}}
+                {Southampton Astronomy}}
+\GROUP       {\texorpdfstring{\href{http://www.astro.soton.ac.uk/}
+                {SOUTHAMPTON ASTRONOMY}}
+                {SOUTHAMPTON ASTRONOMY}}
+\faculty     {\texorpdfstring{\href{https://www.feps.soton.ac.uk/}
+                {Faculty of Engineering and Physical Sciences}}
+                {Faculty of Engineering and Physical Sciences}}
+\FACULTY     {\texorpdfstring{\href{https://www.feps.soton.ac.uk/}
+                {FACULTY OF ENGINEERING AND PHYSICAL SCIENCES}}
+                {FACULTY OF ENGINEERING AND PHYSICAL SCIENCES}}
 \addresses   {}
 \subject     {}
 \keywords    {}
