@@ -90,7 +90,7 @@
 \frontmatter	  % Begin Roman style (i, ii, iii, iv...) page numbering
 
 % Set up the Title Page
-\title  {Growing self consistent galaxies in empirically modelled environments using \steel: the STatistical sEmi-Empirical modeL}
+\title  {Growing self consistent galaxies in empirically modelled environments using $\steel$: the STatistical sEmi-Empirical modeL}
 \authors  {\texorpdfstring
             {\href{your web site or email address}{Philip John Grylls}}
             {Philip John Grylls}
@@ -119,9 +119,23 @@
 \abstract{
 \addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
 \begin{singlespace} %% Gets you more space - delete if you have a teeny abstract
-This thesis describes the STastical sEmi-Empirical model, \steel, and it's contributions to the modelling of galaxies. \steel is built to overcome the limitations of volume and resolution; traditional models must choose between simulating large volumes or small details. Using a novel technique to replace discrete haloes with a statistical alternative using a combination of halo mass functions we remove these constraints and any associated biases. This cutting edge dark matter backbone is then combined with empirical techniques, e.g. Abundance Matching, to create $\steel$. In this thesis we describe five applications of $\steel$: Recreating the distributions of satellite galaxies over a cosmic time frame; Predicting the in-situ and ex-situ growth of central galaxies using constrained group and cluster environments; Calculating a new continuity style star formation rate; Understanding the systematic effects of the stellar-mass-halo-mass relation on the galaxy pair fraction; Testing proposed models for the evolution galaxy morphological fractions using constrained merger histories.
 
-Using \steel we are able to build a picture of how populations of galaxies respond to modelling assumptions. Probing the in-situ vs. ex-situ growth we find that certain stellar mass functions are inconsistent with \LCDM hierarchical assembly. We find that the growth rate of massive galaxies is less than the predicted stellar mass accretion rate this creates an nonphysical system. \steel finds this result where others have missed it due to both it's statistical and empirical nature, this is a potential answer to why other models invoke large amounts of feedback to regulate galaxy growth when using these stellar mass functions. We find that cutting-edge stellar mass functions boasting enhanced number densities are self-consistent with \LCDM hierarchical assembly.
+Several popular techniques exist for cosmological modelling of galaxies, from computationally intensive `physical' hydrodynamical simulations, highly parameterised ab-inito semi-analytic models, to data-driven semi-empirical models. Each of these techniques has made valuable contributions to our understanding of galaxy evolution and the contributing effects of; dark matter, galaxy-galaxy mergers, star formation, feedback from supernovae and supermassive black holes, environmental stripping, morphological evolution, and much more.
+
+However, each of the described models has some caveats that present significant drawbacks to the range of predictions they can make and the validity thereof. In the case of hydrodynamical, specifically the sub-grid physics, and semi-analytic models the high parametrisation can cause issues with the degeneracy that prevent clarity in the analysis of the processes that are fundamental to galaxy evolution. Furthermore, all aforementioned models must balance simulating a large universe against simulating galaxies with high fidelity. This trade-off between volume and resolution introduces a bias in the number of objects simulated given their cosmological abundance.
+
+This thesis describes the STastical sEmi-Empirical model, \steel, and it's contributions to the modelling of galaxies. \steel is built to overcome the limitations of volume and resolution. Using a novel technique to replace discrete haloes with a statistical alternative using a combination of halo mass functions we remove these constraints and any associated biases. This cutting edge dark matter backbone is then combined with empirical techniques, e.g. Abundance Matching, to create $\steel$.
+
+In this thesis we describe five applications of $\steel$: Recreating the distributions of satellite galaxies over a cosmic time frame; Predicting the in-situ and ex-situ growth of central galaxies using constrained group and cluster environments; Calculating a new continuity style star formation rate; Probing the systematic effects of the stellar-mass-halo-mass relation on the galaxy pair fraction; Testing proposed models for the evolution galaxy morphological fractions using constrained merger histories.
+
+Using the novel view provided by the statistical nature of \steel, we build a picture of how populations of galaxies respond to modelling assumptions. 
+In this thesis, we empirically generate using \steel the assembly histories of galaxies which are then constrained using SDSS, high redshift cluster observations. Using these constraints we probe the in-situ vs. ex-situ growth of galaxies. It is found that within \LCDM hierarchical assembly the stellar-mass-halo-mass relation created using certain stellar mass functions produces a satellite accretion history that is inconsistent with the central galaxy growth. \steel is able to identify this unique result due to both it's statistical and empirical nature.
+
+Furthermore, there is a noted tension in the observed galaxy pair fraction and its evolution with redshift. We use the flexible nature of  \steel to probe the biases introduced to the pair fraction during the derivation of stellar-mass from observations. Using the stellar-mass-halo-mass relation as a proxy to this bias we present a systematic investigation into how they affect the pair fraction. It is found that the pair fraction can be substantially altered by choices made when determining stellar masses. This provides an avenue to remove the discrepancies in pair fraction observations.
+
+Finally, there exists debate in the significance of mergers on the morphological evolution. Utilising constrained assembly histories from \steel, several morphological evolution models are applied to the galaxy population. We find that mergers are capable of creating the observed elliptical fractions. Additionally, a two pathway merger and in-situ disk instability can produce the observed lenticular fractions.
+
+In summary, the STatistical sEmi-Empirical modeL, $\steel$ is a new take on galaxy modelling. In a short time has been used to add constraints to several open questions in galaxy evolution. Working with new extra-galactic surveys such as EUCLID \steel has the potential to be a prominent feature in the future of extra-galactic astrophysics.
 
 
 \end{singlespace}
@@ -188,7 +202,7 @@ Douglas Adams, The restaurant at the end of the Universe.
 
 \addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
 
-I, Philip John Grylls, declare that this thesis titled, `Growing self consistent galaxies in empirically modelled environments using \steel: the STatistical sEmi-Empirical modeL' and the work presented in it are my own. I confirm that:
+I, Philip John Grylls, declare that this thesis titled, `Growing self consistent galaxies in empirically modelled environments using $\steel$: the STatistical sEmi-Empirical modeL' and the work presented in it are my own. I confirm that:
 
 \begin{itemize} 
 \item[\tiny{$\blacksquare$}] This work was done wholly or mainly while in candidature for a research degree at this University.
@@ -226,11 +240,11 @@ Date:\\
 \begin{itemize}
     \item Charlotte Louise Grylls, my loving and supportive wife, without whom none of this would be possible.
     \item Jamie Francis Friel, my original co-author and best friend from day one. Your enthusiasm and friendly competition in science and mathematics have helped me endlessly.
-    \item Helen Frances and John Grylls, my parents whom encouraged my science from my first breath and endured the tedious conversations that have yet to stop. I owe them both more than I can ever repay.
-    \item Molley Scoble, Liam Jones, Rebecca Pembroke, and Kieran Neville, whom have kept me sane throughout my education. Also to all my friends not mentioned thank you for being there to share a pint and ignore me talking endlessly about science.
+    \item Helen Frances and John Grylls, my parents who encouraged my science from my first breath and endured the tedious conversations that have yet to stop. I owe them both more than I can ever repay.
+    \item Molley Scoble, Liam Jones, Rebecca Pembroke, and Kieran Neville, who have kept me sane throughout my education. Also to all my friends not mentioned thank you for being there to share a pint and ignore me talking endlessly about science.
     \item My schools St. Louis Catholic School Frome and Prior Park College Bath and the excellent teachers who fostered environments that created a love of learning and an appreciation of academic excellence. Specifically Deirdre Cromie, a dedicated teacher who laid much of the foundation of my formal education and whom I distinctly remember arguing at length about triangles with, and Sarah Smith whom I regard as one of the greatest scientific influences in my life.
     \item My friends and colleagues in the Southampton Astronomy Department, even if only Lorenzo Zanizi studies the correct objects! 
-    \item Finally, Dr. Francesco Shankar, his passion for astronomy and this work has been outstanding throughout.
+    \item Finally, Dr Francesco Shankar, his passion for astronomy and this work has been outstanding throughout.
 \end{itemize}
 
 }
