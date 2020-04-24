@@ -145,8 +145,8 @@
 \newcommand*{\FACULTY}[1]{\def\FACNAME{#1}}
 \newcommand*{\subject}[1]{\def\subjectname{#1}}
 \newcommand*{\keywords}[1]{\def\keywordnames{#1}}
-\supervisor  {Dr. Francesco Shankar}
-\examiner    {}
+\supervisor  {Dr Francesco Shankar}
+\examiner    {Dr Brad Gibson}
 \degree      {}
 \authors     {Philip John Grylls}
 \university  {\texorpdfstring{\href{https://www.southampton.ac.uk/}
@@ -235,7 +235,7 @@
   \btypeout{Abstract Page}
   \thispagestyle{empty}
   \null\vfil
-  \begin{center}
+  %\begin{center}
     \setlength{\parskip}{0pt}
     {\normalsize \UNIVNAME \par}
     \bigskip
@@ -250,7 +250,7 @@
     \medskip
     {\normalsize by \authornames \par}
     \bigskip
-  \end{center}
+  %\end{center}
 }
 {
   \vfil\vfil\vfil\null
