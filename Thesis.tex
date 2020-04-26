@@ -116,24 +116,20 @@
 
 % The Abstract Page
 \addtotoc{Abstract}  % Add the "Abstract" page entry to the Contents
+
 \abstract{
 \addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
 \begin{singlespace} %% Gets you more space - delete if you have a teeny abstract
 
-Several popular techniques exist for cosmological modelling of galaxies, from computationally intensive `physical' hydrodynamical simulations, highly parameterised ab-initio semi-analytic models, to data-driven semi-empirical models. Each of these techniques has made valuable contributions to our understanding of galaxy evolution and the contributing effects of; dark matter, galaxy-galaxy mergers, star formation, feedback from supernovae and supermassive black holes, environmental stripping, morphological evolution, and much more.
+Several popular techniques exist for cosmological modelling of galaxies, from computationally intensive hydrodynamical simulations, ab-initio semi-analytic models, to data-driven semi-empirical models. Each has caveats that limit the range of predictions they can make. In hydrodynamical (sub-grid) and semi-analytic models, the high parametrisation can cause degeneracies that prevent clear analysis of which processes are driving galaxy evolution. Furthermore, all must balance simulating a large universe against simulating galaxies with high fidelity. This trade-off between volume and resolution introduces a bias in the number of objects simulated at different masses given differences in cosmological abundances.
 
-However, each of the described models has some caveats that present significant drawbacks to the range of predictions they can make and the validity thereof. In the case of hydrodynamical, specifically their sub-grid physics, and semi-analytic models the high parametrisation can cause non-trivial degeneracies that prevent clear analysis of which processes are driving galaxy evolution. Furthermore, all aforementioned models must balance simulating a large universe against simulating galaxies with high fidelity. This trade-off between volume and resolution introduces a bias in the number of objects simulated at different masses given differences in cosmological abundances.
+This thesis describes the STatistical sEmi-Empirical model, $\steel$, and its contributions to the modelling of galaxies. \steel is built to overcome the limitations of volume and resolution. We remove these constraints and biases using a novel technique to replace discrete haloes with a statistical alternative. This statistical dark matter backbone is then combined with empirical techniques, e.g. Abundance Matching, to create $\steel$.
 
-This thesis describes the STastical sEmi-Empirical model, $\steel$, and its contributions to the modelling of galaxies. \steel is built to overcome the limitations of volume and resolution. We remove these constraints and any associated biases using a novel technique, based on the halo mass function, to replace discrete haloes with a statistical alternative. This cutting edge statistical dark matter backbone is then combined with empirical techniques, e.g. Abundance Matching, to create $\steel$.
+In this thesis, we empirically generate using \steel the assembly histories of galaxies which are then constrained using SDSS, high redshift cluster observations. Using these constraints we probe the in-situ vs. ex-situ growth of galaxies. It is found that within \LCDM hierarchical assembly using certain stellar mass functions produces a satellite accretion history that is inconsistent with the central galaxy growth.
 
-In this thesis we describe five applications of $\steel$: Recreating the distributions of satellite galaxies over a cosmic time frame; Predicting the in-situ and ex-situ growth of central galaxies using constrained group and cluster environments; Calculating a new continuity style star formation rate; Probing the systematic effects of the stellar-mass-halo-mass relation on the galaxy pair fraction; Testing proposed models for the evolution of galaxy morphological fractions using constrained merger histories.
+Furthermore, there is a noted tension in the observed galaxy pair fraction and its evolution with redshift. We use the flexible nature of  \steel we present a systematic investigation into how stellar mass function derivations affect the pair fraction. It is found that the pair fraction can be substantially altered these choices providing an avenue to remove the discrepancies in pair fraction observations.
 
-Using the novel view provided by the statistical nature of $\steel$, we build a picture of how populations of galaxies respond to modelling assumptions. 
-In this thesis, we empirically generate using \steel the assembly histories of galaxies which are then constrained using SDSS, high redshift cluster observations. Using these constraints we probe the in-situ vs. ex-situ growth of galaxies. It is found that within \LCDM hierarchical assembly the stellar-mass-halo-mass relation created using certain stellar mass functions produces a satellite accretion history that is inconsistent with the central galaxy growth. \steel is able to identify this unique result due to both its statistical and empirical nature.
-
-Furthermore, there is a noted tension in the observed galaxy pair fraction and its evolution with redshift. We use the flexible nature of  \steel to probe the biases introduced to the pair fraction during the derivation of stellar-mass from observations. Using the stellar-mass-halo-mass relation as a proxy to this bias we present a systematic investigation into how they affect the pair fraction. It is found that the pair fraction can be substantially altered by choices made when determining stellar masses. This provides an avenue to remove the discrepancies in pair fraction observations.
-
-Finally, there is still an active debate over the significance of mergers on the morphological evolution. Utilising constrained assembly histories from \steel, several morphological evolution models are applied to the galaxy population. We find that mergers are capable of creating the observed elliptical fractions. Additionally, a two pathway merger and in-situ disk instability can produce the observed lenticular fractions.
+Finally, there is still an active debate over the significance of mergers on the morphological evolution. We find that mergers are capable of creating the observed elliptical fractions, and additionally, a two pathway merger and in-situ disk instability can produce the observed lenticular fractions.
 
 In summary, the STatistical sEmi-Empirical modeL, $\steel$ is a new take on galaxy modelling. In this thesis $\steel$ has been used to add constraints to galaxy assembly histories, satellite distributions, star formation rates, and pair fractions. Working alongside new extra-galactic surveys, such as EUCLID, \steel has the potential to be a prominent feature in the future of extra-galactic astrophysics.
 
@@ -193,6 +189,9 @@ Douglas Adams, The restaurant at the end of the Universe.
 \textbf{SMF} & \textbf{S}tellar \textbf{M}ass \textbf{F}unction\\
 \textbf{SMHM} & \textbf{S}tellar-\textbf{M}ass-\textbf{H}alo-\textbf{M}ass\\
 \textbf{\steel} & \textbf{ST}atistical s\textbf{E}mi-\textbf{E}mpirical mode\textbf{L}\\
+\textbf{PJG} & \textbf{P}hilip \textbf{J}ohn \textbf{G}rylls\\
+\textbf{FS} & \textbf{F}rancesco \textbf{S}hankar\\
+\textbf{SP} & \textbf{S}ai \textbf{P}andian
 }
 
 %% ----------------------------------------------------------------
@@ -223,7 +222,7 @@ I, Philip John Grylls, declare that this thesis titled, `Growing self consistent
 Signed:\\
 \rule[1em]{25em}{0.5pt}  % This prints a line for the signature
  
-Date:\\
+Date: /04/2020\\
 \rule[1em]{25em}{0.5pt}  % This prints a line to write the date
 }
 \clearpage  % Declaration ended, now start a new page
