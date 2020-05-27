@@ -52,7 +52,7 @@ With the rapid increase in computing power over the last century, the capability
 
 %What questions will we answer
 \subsection{The questions we answer.}
-In this thesis, we describe \steel, the STastical sEmi-Empirical modeL, PJG's contribution to the galactic modelling community. \steel has been designed to be complementary to existing models of and approaches to galaxy formation. \steel uses semi-empirical modelling techniques but its defining characteristic is its statistical nature. Traditional models, described in more detail below, simulate discrete elements of dark matter extract from a cosmological volume. \steel instead creates a simulation of galaxy populations using number density functions to describe cosmological volumes. By design, this avoids the volume and resolution constraints that effects discrete object simulations. The full methodology of \steel is given in Chapter \ref{Chapter:Method}. The advantage of having a volume free model is twofold. Firstly, we can simulate rare objects that have a number density far lower than what can be extracted from traditional models. Secondly, \steel is not biased in favour of smaller objects which have higher number densities and are thus simulated orders of magnitude more often in traditional simulations.
+In this thesis, we describe \steel, the STastical sEmi-Empirical modeL, PJG's contribution to the galactic modelling community. \steel has been designed to be complementary to existing models of and approaches to galaxy formation. \steel uses semi-empirical modelling techniques but its defining characteristic is its statistical nature. Traditional models, described in more detail below, simulate discrete elements of dark matter extracted from a cosmological volume. \steel instead creates a simulation of galaxy populations using number density functions to describe cosmological volumes. By design, this avoids the volume and resolution constraints that effects discrete object simulations. The full methodology of \steel is given in Chapter \ref{Chapter:Method}. The advantage of having a volume free model is twofold. Firstly, we can simulate rare objects that have a number density far lower than what can be extracted from traditional models. Secondly, \steel is not biased in favour of smaller objects which have higher number densities and are thus simulated orders of magnitude more often in traditional simulations.
 
 \section{\LCDM Cosmology}
 \label{sec:introLCDM}
@@ -324,15 +324,19 @@ Semi-empirical models, as demonstrated above, come in many different flavours. W
 
 \section{Direct Model Comparison}
 
-\begin{table}[]
+In this chapter we compare several different modelling techniques and discuss specific examples in terms of volume, resolution and number of modelling parameters. In Table \ref{tab:ModelComp} we quantitatively show the differences between \steel \cite{Grylls2019AClusters, Grylls2020PredictingSTEEL, Grylls2020TheFractions}, \citet{Rodriguez-Puebla2017ConstrainingProperties}, U\textsc{niverse} M\textsc{achine} \cite{Behroozi2019UniverseMachine:010}, \citet{Somerville2008ANuclei}, and TNG \cite{Nelson2019TheRelease}. As described in the prior sections of this Chapter each `flavour' of galaxy model uses/interprets volume, resolution, and modelling parameters differently. So in many cases the direct comparisons between quantitative descriptors must be caveated by considering the models in question. 
+
+\begin{table}[h!]
+\label{tab:ModelComp}
 \begin{tabularx}{\linewidth}{c|XXXX}
-Model              & Method         & Volume Mpc$^3$ & DM Halo Resolution M$_{\odot}$                                        & Parameters (free) (constrained) \\ \hline \hline
-$\steel$           & StatisticalSEM & N/A (Statistical)             & Arbitrary & 15-30 (1-5) (14-29)             \\
-R-P+2017           & SEM            & 250 - 1000 $h^{-1}$          & $9.6 \times 10^7$ - $8.7 \times 10^9$                             &                                 \\
-UniM               & SEM            & 250 $h^{-1}$                  & $1.6\times10^8h^{-1}$                                                   &                                 \\
-Somerville+08      & SAM            & N/A (PS)                      & $10^{10}$ ($10^{11}$ smallest root)                  &                                 \\
-TNG (50, 100, 300) & Numerical      & 51.7, 110.7, 302.6            & $4.5\times10^5$, $7.5\times10^6$, $5.9\times 10^7$&                                
+Model & Method & Volume Mpc$^3$ & DM Halo Resolution M$_{\odot}$ & Parameters (free) (constrained) \\ \hline \hline
+$\steel$ & Statistical SEM & N/A (Statistical)  & Arbitrary & 15-30 (1-5) (14-29) \\
+R-P+2017 & SEM & 250 - 1000 $h^{-1}$ & $9.6 \times 10^7$ - $8.7 \times 10^9$ & 18 (18) (0)\\
+UniM & SEM & 250 $h^{-1}$ & $1.6\times10^8h^{-1}$ & 46 (44) (2) \\
+Somerville+08 & SAM & N/A (Press Shecter e.g. \citet{Parkinson2008GeneratingTrees}) & $10^{10}$ ($10^{11}$ smallest root) & \\
+TNG (50, 100, 300) & Numerical  & 51.7, 110.7, 302.6 & $4.5\times10^5$, $7.5\times10^6$, $5.9\times 10^7$ & 39+A\textsc{pero} (39) (A\textsc{pero})       
 \end{tabularx}
+\caption{A summary of different codes in terms of method, volume, resolution and modelling parameters.}
 \end{table}
 
 \section{Galaxy Surveys Present and Future}
